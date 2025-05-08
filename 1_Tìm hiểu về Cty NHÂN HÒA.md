@@ -1,14 +1,13 @@
-﻿**BÁO CÁO KẾT QUẢ CÔNG VIỆC **
 
-1. **NHỮNG VIỆC ĐƯỢC TRIỂN KHAI**
+  **NHỮNG VIỆC ĐƯỢC TRIỂN KHAI**
 1. **Tìm hiểu về các dịch vụ của nhà cung cấp Nhân Hòa**
 1. **Các công cụ cần thiết:** 
 - ` `Cài đặt và tìm hiểu về các công cụ VMware, MobaXterm (putty), Vitual studio code, Draw.io.
 - Biết được lý do chọn telegram để sử dụng (bot telegram)
-1. **Tìm hiểu và sử dụng Github:** Biết tạo file, chỉnh sửa, xóa và đồng bộ giữa github và vitual studio code
-1. **Tìm hiểu và sử dụng markdown**
+3. **Tìm hiểu và sử dụng Github:** Biết tạo file, chỉnh sửa, xóa và đồng bộ giữa github và vitual studio code
+4. **Tìm hiểu và sử dụng markdown**
 
-1. **ĐÃ HOÀN THÀNH**
+ **ĐÃ HOÀN THÀNH**
 1. **Các dịch vụ của nhà cung cấp Nhân Hòa:**
    1. **Tên miền**
 - **Tên miền (Domain Name)** là **địa chỉ website** trên internet–giúp người dùng truy cập dễ dàng thay vì phải nhớ dãy số IP dài ngoằng.
