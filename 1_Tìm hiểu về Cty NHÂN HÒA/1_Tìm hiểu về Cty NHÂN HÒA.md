@@ -1,21 +1,22 @@
-﻿**BÁO CÁO KẾT QUẢ CÔNG VIỆC **
 
-1. **NHỮNG VIỆC ĐƯỢC TRIỂN KHAI**
+ # NHỮNG VIỆC ĐƯỢC TRIỂN KHAI
 1. **Tìm hiểu về các dịch vụ của nhà cung cấp Nhân Hòa**
-1. **Các công cụ cần thiết:** 
-- ` `Cài đặt và tìm hiểu về các công cụ VMware, MobaXterm (putty), Vitual studio code, Draw.io.
-- Biết được lý do chọn telegram để sử dụng (bot telegram)
-1. **Tìm hiểu và sử dụng Github:** Biết tạo file, chỉnh sửa, xóa và đồng bộ giữa github và vitual studio code
-1. **Tìm hiểu và sử dụng markdown**
+2. **Các công cụ cần thiết:** 
+   - ` `Cài đặt và tìm hiểu về các công cụ VMware, MobaXterm (putty), Vitual studio code, Draw.io.
+   - Biết được lý do chọn telegram để sử dụng (bot telegram)
+3. **Tìm hiểu và sử dụng Github:** Biết tạo file, chỉnh sửa, xóa và đồng bộ giữa github và vitual studio code
+4. **Tìm hiểu và sử dụng markdown**
 
-1. **ĐÃ HOÀN THÀNH**
+# ĐÃ HOÀN THÀNH
+
 1. **Các dịch vụ của nhà cung cấp Nhân Hòa:**
-   1. **Tên miền**
+   
+   1.1 **Khái niệm**
 - **Tên miền (Domain Name)** là **địa chỉ website** trên internet–giúp người dùng truy cập dễ dàng thay vì phải nhớ dãy số IP dài ngoằng.
 - Tên miền phải được đăng ký. Khi tên miền được đăng ký, thông tin về trang web của bạn – bao gồm địa chỉ IP của web hosting mà bạn sử dụng sẽ được lưu trữ trên máy chủ DNS.
 - **DNS** là viết tắt của Hệ thống tên miền. Máy chủ DNS chịu trách nhiệm thông báo cho tất cả các máy tính khác trên Internet về tên miền và địa chỉ trang web của bạn.
 
-**\*\*Cấu trúc tên miền\*\***
+   1.2. **Cấu trúc tên miền**
 
 - Tên miền thường có 3 phần (đọc từ **phải sang trái**):
 
@@ -23,13 +24,13 @@
 
   www.nhanhoa.com
 
-  ` `│        │           └─Tên miền cấp 1 (Top-Level Domain - TLD): **`.com**`
+  ` `│            │                 └─Tên miền cấp 1 (Top-Level Domain - TLD): **`.com**`
 
-  ` `│        └─────Tên miền cấp 2 (Second-Level Domain): `**nhanhoa**`
+  ` `│            └─────Tên miền cấp 2 (Second-Level Domain): `**nhanhoa**`
 
   ` `└────────Subdomain: `**www**` (có thể thay bằng blog., mail., ...)
 
-**\*\*Nguyên lý đăng ký tên miền\*\***
+   1.3. **Nguyên lý đăng ký tên miền**
 
 - Tên miền không được vượt quá 63 ký tự, bao gồm cả phần .com, .net, .org ...
 - Tên miền chỉ gồm các ký tự trong bảng chữ cái (a-z), các số (0-9) và dấu trừ (-).
@@ -39,7 +40,7 @@
 - Tên miền phải liên quan đến tên chủ thể và lĩnh vực hoạt động.
 - Chủ động nộp phí duy trì trước khi tên miền hết thời hạn sử dụng, tự chịu trách nhiệm khi tên miền bị mất do hết hạn sử dụng mà không đóng phí.
 
-**\*\*Phân loại\*\*** 	
+   1.4. **Phân loại** 	
 
 - Phân loại tên miền (domain) chia thành 2 nhóm
 
@@ -47,10 +48,10 @@
 
   + Tên miền quốc gia cao cấp nhất
 
-  1. **Hosting**
+2. **Hosting**
 - "Hosting" là **nơi lưu trữ tất cả dữ liệu của website** (như hình ảnh, mã nguồn, cơ sở dữ liệu...); Là dịch vụ cho phép chúng ta **đưa website hoặc ứng dụng của mình lên Internet** để người khác có thể truy cập được.
 
-  **\*\*Cách Web Hosting hoạt động\*\***
+  2.1. **Cách Web Hosting hoạt động**
 
 - Web hosting = “máy chủ chứa toàn bộ nội dung web”
 - Người dùng → nhập tên miền → hệ thống trỏ đến hosting → hiển thị web
@@ -61,14 +62,14 @@
 
 - Khi người dùng trình duyệt truy cập vào website của bạn (nhanhoa.com)à Trình duyệt sẽ hỏi DNS *nhanhoa.com* ở đâu à Hệ thống **DNS** trả về **địa chỉ IP** của máy chủ (hosting)à Trình duyệt gửi yêu cầu HTTP đến Hosting qua cổng 80 hoặc 443à Lúc này **Hosting (Web Server)** sẽ xử lý yêu cầu: dùng phần mềm như Apache, Nginx, LiteSpeed để chạy chạy file PHP, truy vấn MySQL, trả về nội dung HTML à Hiển thị giao diện web
 
-**\*\* Các dịch vụ Hosting mà Nhân Hòa cung cấp\*\***
+   2.2. **Các dịch vụ Hosting mà Nhân Hòa cung cấp**
 
 - ` `**NVMe Hosting**: Dùng ổ cứng NVMe (rất nhanh, mới nhất) - phù hợp Web cần tốc độ cao, load nặng, nhiều truy vấn
 - ` `**Workpress Hosting**: Tối ưu sẵn cho WordPress (auto cài, cache, bảo mật...) – phù hợp với người dùng WordPress, không rành kỹ thuật
 - ` `**Linux Hosting:** Chạy hệ điều hành Linux, hỗ trợ PHP, MySQL, WordPress...
 - ` `**Windows Hosting:** Chạy hệ điều hành Windows, hỗ trợ ASP.NET, MSSQL...
 
-  1. **Cloud**
+3. **Cloud**
 - **Cloud** (điện toán đám mây) là mô hình sử dụng **tài nguyên máy chủ (server, lưu trữ, mạng, phần mềm...)** thông qua Internet thay vì cài đặt trên máy vật lý cố định.
 - Các dịch vụ Cloud Nhân Hòa cung cấp:
 
@@ -86,7 +87,7 @@
 
   + Cloud VPS Quốc tế/ Google cloud/Azure
 
-  1. **Máy chủ (Server)**
+4. **Máy chủ (Server)**
 - **Máy chủ** là một máy tính chuyên dụng có nhiệm vụ **cung cấp tài nguyên, dịch vụ hoặc dữ liệu cho các thiết bị khác (gọi là "client")** qua mạng nội bộ hoặc Internet.
 - **Phân loại** **máy chủ** (theo hình thức)
 
@@ -96,7 +97,7 @@
 
   + Máy chủ cloud: VPS chạy trên hệ thống cloud – mở rộng linh hoạt
 
-  1. **SSL**
+5. **SSL**
 - SSL (Secure Sockets Layer) là chứng chỉ bảo mật dùng để mã hóa dữ liệu truyền giữa trình duyệt và máy chủ, giúp bảo vệ thông tin người dùng khi truy cập website.
 
 → Website có SSL sẽ hiển thị https:// và biểu tượng ổ khóa trên trình duyệt.
@@ -114,7 +115,7 @@
 - **SANs SSL (Subject Alternative Names**): Bảo mật cho nhiều tên miền khác nhau
 - **Wildcard SSL (Wildcard SSL Certificate):** Bảo mật cho** 1 tên miền chính + tất cả subdomain của nó
 
-**\*\*Tại sao nên sử dụng SSL?\*\***
+**\*Tại sao nên sử dụng SSL?***
 
 Khi bạn đăng ký tên miền để sử dụng các dịch vụ website, email v.v… luôn có những lỗ hổng bảo mật cho hacker tấn công, SSL bảo vệ website và khách hàng của bạn.
 
