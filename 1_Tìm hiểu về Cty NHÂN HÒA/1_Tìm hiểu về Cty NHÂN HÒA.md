@@ -172,11 +172,11 @@ Khi bạn đăng ký tên miền để sử dụng các dịch vụ website, ema
 - Là** công cụ kết nối điều khiển máy chủ từ xa**,** thường dùng để** quản trị server (đặc biệt là Linux/VPS)** thông qua giao thức** SSH**.**
 - **PuTTY:** nhẹ, cài nhanh, gọn (hợp với thao tác nhanh)
 
-![](Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.001.png)
+![](images/Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.001.png)
 
 - **MobaXterm:** full tính năng, dễ dùng, đặc biệt khi cần kéo file hoặc mở nhiều tab cùng lúc, hỗ trợ nhiều giao thức: SSH, RDP, FTP, VNC...
 
-![](Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.002.png)
+![](images/Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.002.png)
 
 1. **Vitual studio code**
 - **VS Code** là một **trình soạn thảo mã nguồn** do Microsoft phát triển.
@@ -190,7 +190,7 @@ Khi bạn đăng ký tên miền để sử dụng các dịch vụ website, ema
 |` `Làm việc từ xa với server|Dùng **Remote SSH** để kết nối và chỉnh file trực tiếp trên VPS|
 |` `Cài extension|Có kho tiện ích mở rộng khổng lồ (FTP, SFTP, Prettier, Emmet...)|
 
-![](Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.003.png)
+![](images/Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.003.png)
 
 1. **Draw.io**
 
@@ -211,13 +211,13 @@ Khi bạn đăng ký tên miền để sử dụng các dịch vụ website, ema
 
 - **Một số lệnh git cơ bản:**
 
-![](Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.004.png)
+![](images/Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.004.png)
 
 - Coppy mã nguồn trên github và clone về máy:
 
 git clone <repo> → tải(nhân bản) mã nguồn từ Github về máy(local)
 
-![](Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.005.png)
+![](images/Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.005.png)
 
 - Để thêm/sửa/xóa file/thư mục trên repo vừa clone về, sau đó push lên Github, trước tiên ta cần remote vào mã nguồn trên Github:
 
@@ -225,33 +225,33 @@ git clone <repo> → tải(nhân bản) mã nguồn từ Github về máy(local)
 
 sau đó chạy lệnh git remote –v để kiểm tra lại
 
-![](Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.006.png)
+![](images/Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.006.png)
 
 - Sau khi thêm/sửa/xóa các file/thư mục trên repo vừa clone về, lần lượt chạy từng lệnh sau:
 
 git status → xem file nào thay đổi
 
-![](Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.007.png)
+![](images/Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.007.png)
 
 git add . → đưa file vào danh sách theo dõi
 
 git commit -m "…." → ghi lại thay đổi
 
-![](Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.008.png)
+![](images/Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.008.png)
 
 git push -u origin master  → đẩy lên GitHub
 
-![](Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.009.png)
+![](images/Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.009.png)
 
 - Sau khi commit và đẩy lên Github:
 
-  ![](Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.010.png)
+  ![](images/Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.010.png)
 
 git pull → Kéo code mới nhất từ GitHub về máy
 
 git log → Xem lịch sử commit 
 
-![](Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.011.png)
+![](images/Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.011.png)
 
 1. **Tìm hiểu và sử dụng Markdown**
 - Markdown là ngôn ngữ đánh dấu văn bản thô được tạo ra bởi John Gruber.
@@ -274,7 +274,7 @@ Cú pháp:
 
 Kết quả:
 
-![](Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.012.png)
+![](images/Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.012.png)
 
 1. **Định dạng chữ**
 - In nghiêng :  
@@ -305,6 +305,5 @@ Ví dụ: Cú pháp
 
 |**Cú pháp**|**Kết quả**|
 | :-: | :-: |
-|<p>| Cột 1 | Cột 2 | Cột 3 | Cột 4 |</p><p>| :--- | :--- | :--- | :--- |</p><p>| A | B | C | D |</p><p>| E | F | G | H |</p><p>| I | K | L | M |</p><p></p>|![](Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.013.png)|
+|<p>| Cột 1 | Cột 2 | Cột 3 | Cột 4 |</p><p>| :--- | :--- | :--- | :--- |</p><p>| A | B | C | D |</p><p>| E | F | G | H |</p><p>| I | K | L | M |</p><p></p>|![](images/Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.013.png)|
 
-1. **CHƯA HOÀN THÀNH**
