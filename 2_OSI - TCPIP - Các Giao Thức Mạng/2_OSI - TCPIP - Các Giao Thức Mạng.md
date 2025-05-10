@@ -12,7 +12,7 @@
 - Mỗi tầng chỉ cung cấp dịch vụ cho tầng trên và nhận dịch vụ từ tầng dưới.
 - Đường biên rõ ràng giữa phần cứng và phần mềm: Tầng thấp thiên về phần cứng, tầng cao thiên về phần mềm.
 
-![image](Aspose.Words.2133df08-7651-4c99-9f40-5f227c0e6cdf.001.png)
+![](image/Aspose.Words.2133df08-7651-4c99-9f40-5f227c0e6cdf.001.png)
 
    #### c. **Vai trò và chức năng chính các tầng**
 **Tầng 1** - **Vật lý (Physical layer)**:
@@ -56,7 +56,7 @@ TCP/ IP (Transmission Control Protocol/ Internet Protocol - Giao thức điều 
 
    b. **Mô hình phân tầng trong TCP/IP**
 
-![https://www.totolink.vn/public/uploads/img_article/mohinhtcpiplagichucnangcuacactangtrongmohinhtcpip2.png](Aspose.Words.2133df08-7651-4c99-9f40-5f227c0e6cdf.002.png)
+![](image/Aspose.Words.2133df08-7651-4c99-9f40-5f227c0e6cdf.002.png)
 
 **Tầng 1 - Tầng vật lý/ liên kết mạng (Network Access/Link)**
 - Nó là sự kết hợp của tầng Data Link và Physical trong mô hình OSI. Chịu trách nhiệm truyền dữ liệu giữa hai thiết bị trong cùng một mạng
@@ -79,7 +79,7 @@ TCP/ IP (Transmission Control Protocol/ Internet Protocol - Giao thức điều 
 
    c. **Cách thức hoạt động của TCP/IP**
 
-![https://images.viblo.asia/full/d1649da3-07df-43eb-8466-3f9257efcc3a.jpg](Aspose.Words.2133df08-7651-4c99-9f40-5f227c0e6cdf.003.jpeg)
+![](image/Aspose.Words.2133df08-7651-4c99-9f40-5f227c0e6cdf.003.jpeg)
 
 - Khi truyền dữ liệu , quá trình tiến hành từ tầng trên xuống tầng dưới, qua mỗi tầng dữ liệu được thêm vào thông tin điều khiển gọi là Header. Khi nhận dữ liệu thì quá trình xảy ra ngược lại, dữ liệu được truyền từ tầng dưới lên
 - Ở đây, **IP** có vai trò quan trọng, nó cho phép các gói tin được gửi đến đích đã định sẵn, bằng cách thêm các thông tin dẫn đường (chính là Header) vào các gói tin để các gói tin được đến đúng đích đã định sẵn ban đầu.
@@ -92,7 +92,7 @@ TCP/ IP (Transmission Control Protocol/ Internet Protocol - Giao thức điều 
   
    e. **So sánh mô hình OSI và TCP/IP**
 
-![https://user-images.githubusercontent.com/97047640/167060911-a4f98245-0d63-47e9-ad1f-57647ae5da9e.png](Aspose.Words.2133df08-7651-4c99-9f40-5f227c0e6cdf.004.png)
+![](image/Aspose.Words.2133df08-7651-4c99-9f40-5f227c0e6cdf.004.png)
 
 ### **Giống nhau:** Mô hình OSI và TCP/IP có một số điểm chung như sau: 
 - OSI và TCP/IP đều có kiến trúc phân lớp.
