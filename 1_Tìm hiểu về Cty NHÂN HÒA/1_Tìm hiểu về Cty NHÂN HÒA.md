@@ -26,11 +26,11 @@
 
   www.nhanhoa.com
 
-  ` `│            │                 └─Tên miền cấp 1 (Top-Level Domain - TLD): **`.com**`
+  │     `     `       │         `   `        └─Tên miền cấp 1 (Top-Level Domain - TLD): **`.com**`
 
-  ` `│            └─────Tên miền cấp 2 (Second-Level Domain): `**nhanhoa**`
+  │        `     `    └─────Tên miền cấp 2 (Second-Level Domain): `**nhanhoa**`
 
-  ` `└────────Subdomain: `**www**` (có thể thay bằng blog., mail., ...)
+  └────────Subdomain: `**www**` (có thể thay bằng blog., mail., ...)
 
   c. **Nguyên lý đăng ký tên miền**
 
