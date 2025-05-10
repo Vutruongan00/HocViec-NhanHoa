@@ -2,7 +2,7 @@
  # NHỮNG VIỆC ĐƯỢC TRIỂN KHAI
 1. **Tìm hiểu về các dịch vụ của nhà cung cấp Nhân Hòa**
 2. **Các công cụ cần thiết:** 
-   - ` `Cài đặt và tìm hiểu về các công cụ VMware, MobaXterm (putty), Vitual studio code, Draw.io.
+   - Cài đặt và tìm hiểu về các công cụ VMware, MobaXterm (putty), Vitual studio code, Draw.io.
    - Biết được lý do chọn telegram để sử dụng (bot telegram)
 3. **Tìm hiểu và sử dụng Github:** Biết tạo file, chỉnh sửa, xóa và đồng bộ giữa github và vitual studio code
 4. **Tìm hiểu và sử dụng markdown**
@@ -13,12 +13,12 @@
    
   ### 1.1. **Tên miền**
    
-        a. Khái niệm:
+   a. Khái niệm:
 - **Tên miền (Domain Name)** là **địa chỉ website** trên internet–giúp người dùng truy cập dễ dàng thay vì phải nhớ dãy số IP dài ngoằng.
 - Tên miền phải được đăng ký. Khi tên miền được đăng ký, thông tin về trang web của bạn – bao gồm địa chỉ IP của web hosting mà bạn sử dụng sẽ được lưu trữ trên máy chủ DNS.
 - **DNS** là viết tắt của Hệ thống tên miền. Máy chủ DNS chịu trách nhiệm thông báo cho tất cả các máy tính khác trên Internet về tên miền và địa chỉ trang web của bạn.
 
-      b. **Cấu trúc tên miền**
+  b. **Cấu trúc tên miền**
 
 - Tên miền thường có 3 phần (đọc từ **phải sang trái**):
 
@@ -32,7 +32,7 @@
 
   ` `└────────Subdomain: `**www**` (có thể thay bằng blog., mail., ...)
 
-      c. **Nguyên lý đăng ký tên miền**
+  c. **Nguyên lý đăng ký tên miền**
 
 - Tên miền không được vượt quá 63 ký tự, bao gồm cả phần .com, .net, .org ...
 - Tên miền chỉ gồm các ký tự trong bảng chữ cái (a-z), các số (0-9) và dấu trừ (-).
@@ -42,7 +42,7 @@
 - Tên miền phải liên quan đến tên chủ thể và lĩnh vực hoạt động.
 - Chủ động nộp phí duy trì trước khi tên miền hết thời hạn sử dụng, tự chịu trách nhiệm khi tên miền bị mất do hết hạn sử dụng mà không đóng phí.
 
-      c. **Phân loại** 	
+  d. **Phân loại** 	
 
 - Phân loại tên miền (domain) chia thành 2 nhóm
 
@@ -53,7 +53,7 @@
 ## 1.2. **Hosting**
 - "Hosting" là **nơi lưu trữ tất cả dữ liệu của website** (như hình ảnh, mã nguồn, cơ sở dữ liệu...); Là dịch vụ cho phép chúng ta **đưa website hoặc ứng dụng của mình lên Internet** để người khác có thể truy cập được.
 
-      a. **Cách Web Hosting hoạt động**
+  a. **Cách Web Hosting hoạt động**
 
 - Web hosting = “máy chủ chứa toàn bộ nội dung web”
 - Người dùng → nhập tên miền → hệ thống trỏ đến hosting → hiển thị web
@@ -64,7 +64,7 @@
 
 - Khi người dùng trình duyệt truy cập vào website của bạn (nhanhoa.com)à Trình duyệt sẽ hỏi DNS *nhanhoa.com* ở đâu à Hệ thống **DNS** trả về **địa chỉ IP** của máy chủ (hosting)à Trình duyệt gửi yêu cầu HTTP đến Hosting qua cổng 80 hoặc 443à Lúc này **Hosting (Web Server)** sẽ xử lý yêu cầu: dùng phần mềm như Apache, Nginx, LiteSpeed để chạy chạy file PHP, truy vấn MySQL, trả về nội dung HTML à Hiển thị giao diện web
 
-      b. **Các dịch vụ Hosting mà Nhân Hòa cung cấp**
+  b. **Các dịch vụ Hosting mà Nhân Hòa cung cấp**
 
 - ` `**NVMe Hosting**: Dùng ổ cứng NVMe (rất nhanh, mới nhất) - phù hợp Web cần tốc độ cao, load nặng, nhiều truy vấn
 - ` `**Workpress Hosting**: Tối ưu sẵn cho WordPress (auto cài, cache, bảo mật...) – phù hợp với người dùng WordPress, không rành kỹ thuật
