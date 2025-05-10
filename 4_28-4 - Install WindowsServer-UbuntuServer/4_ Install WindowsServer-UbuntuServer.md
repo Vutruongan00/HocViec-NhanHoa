@@ -1,15 +1,16 @@
-﻿**BÁO CÁO KẾT QUẢ CÔNG VIỆC**
-
-1. **NHỮNG VIỆC ĐƯỢC TRIỂN KHAI**
+# **NHỮNG VIỆC ĐƯỢC TRIỂN KHAI**
 1. **Tìm hiểu về Domain name và một số nhà cung cấp tên miền tại Việt Nam và quốc tế**
-1. **Cài đặt Windows Server trên VMWare và tìm hiểu các tập lệnh cơ bản**
-1. **Cài đặt Ubuntu Server trên VMWare và tìm hiểu các tập lệnh cơ bản**
-1. **ĐÃ HOÀN THÀNH**
-1. **Domain name?**
+   
+2. **Cài đặt Windows Server trên VMWare và tìm hiểu các tập lệnh cơ bản**
+   
+3. **Cài đặt Ubuntu Server trên VMWare và tìm hiểu các tập lệnh cơ bản**
+   
+# **ĐÃ HOÀN THÀNH**
+## 1. **Domain name?**
 - ` `Domain Name (tên miền) là địa chỉ dùng để xác định vị trí của một website trên Internet.
 - Nó thay thế cho địa chỉ IP khó nhớ (ví dụ: 172.217.194.100) thành một chuỗi dễ nhớ hơn (ví dụ: google.com).
 - Ví dụ:Thay vì gõ 172.217.194.100 vào trình duyệt, bạn chỉ cần gõ google.com.
-1. **Cấu trúc của một Domain Name**
+### 1.1. **Cấu trúc của một Domain Name**
 - Domain name thường gồm 3 phần chính, phân tách bằng dấu chấm:
 
 VD: [www.nhanhoa.com](http://www.nhanhoa.com) , trong đó: 
@@ -20,7 +21,7 @@ VD: [www.nhanhoa.com](http://www.nhanhoa.com) , trong đó:
 
 ·  com: phần mở rộng (Top-level domain – TLD: .net .org .vn .edu .jp .uk …)
 
-1. **Quá trình hoạt động của Domain Name**
+### 1.2. **Quá trình hoạt động của Domain Name**
 - Khi bạn nhập một domain vào trình duyệt, hệ thống DNS (Domain Name System) sẽ dịch tên miền thành địa chỉ IP tương ứng để máy tính có thể kết nối đúng máy chủ.
 - Quy trình đơn giản:
   - Người dùng nhập google.com.
@@ -29,29 +30,27 @@ VD: [www.nhanhoa.com](http://www.nhanhoa.com) , trong đó:
 
 Trình duyệt dùng IP đó để kết nối tới server chứa website.
 
-1. **Domain Name được quản lý như thế nào?**
+### 1.3. **Domain Name được quản lý như thế nào?**
 - Tổ chức ICANN (Internet Corporation for Assigned Names and Numbers) chịu trách nhiệm điều phối tên miền toàn cầu.
 - Các công ty gọi là nhà đăng ký tên miền (Registrar) được ICANN cấp quyền bán và quản lý tên miền, ví dụ: GoDaddy, Namecheap, Nhân Hòa, v.v.
-1. **Một số lưu ý về Domain Name**
+### 1.4. **Một số lưu ý về Domain Name**
 - Tên miền phải duy nhất trên toàn thế giới.
 - Tên miền cần được gia hạn định kỳ (thường mỗi năm).
 - Có thể mua bán, chuyển nhượng domain name.
-1. **Các nhà cung cấp tên miền phổ biến**
-1. **Tại Việt Nam**
+### 1.5. **Các nhà cung cấp tên miền phổ biến**
+#### a. **Tại Việt Nam**
 - Ngoài Công ty **Nhân Hòa** là một trong những nhà đăng ký lớn nhất và đi đầu trong lĩnh vực Tên miền ở Việt Nam được **VNNIC và ICANN** cấp phép, thì bên cạnh đó còn có rất nhiều nhà cung cấp khác cũng có sức cạnh tranh không kém trong mảng này:
 - Ví dụ 1 vài cái tên điển hình: PA Việt Nam, Mắt Bão, Viettel IDC, iNET, Tenten, Vietnix, TinoHost,…
-1. **Quốc tế**
+#### b. **Quốc tế**
 
 GoDaddy, Namecheap, Bluehost, Google Domain, Cloudflare
 
-1. **Install Windows Server 2016 trên VMWare và tìm hiểu các lệnh PowerShell cơ bản**
+## 2. **Install Windows Server 2016 trên VMWare và tìm hiểu các lệnh PowerShell cơ bản**
 - **Windows Server** là hệ điều hành do Microsoft phát triển dành riêng cho **máy chủ (server)** – nơi lưu trữ, xử lý dữ liệu và cung cấp dịch vụ mạng (như website, email, file sharing, domain, v.v.) cho nhiều máy tính khác.
 
-1. **Cài đặt Windows Server trên VMWare**
+### 2.1. **Cài đặt Windows Server trên VMWare**
 
-   **(Do em em đã cài đặt và từng sử dụng Winserver 2016 trước đó nên em xin phép bỏ qua bớt phần này)**
-
-1. **Những tính năng chuyên biệt trên Windows Server**
+### 2.2. **Những tính năng chuyên biệt trên Windows Server**
 
 Khác với Windows 10/11 dùng cho máy cá nhân, Windows Server có thêm nhiều tính năng chuyên biệt như:
 
@@ -61,7 +60,7 @@ Khác với Windows 10/11 dùng cho máy cá nhân, Windows Server có thêm nhi
 - **Web Server (IIS)** – chạy website.
 - **Remote Desktop Services** – cho phép người dùng truy cập server từ xa.
 - **Group Policy** – kiểm soát và cấu hình máy trạm tập trung.
-1. **Một số tập lệnh PowerShell cơ bản**
+### 2.3. **Một số tập lệnh PowerShell cơ bản**
 - **Quản lý Active Directory:** 
 
   Get-ADUser, New-ADUser, Get-ADGroup, Add-ADGroupMember, ...
@@ -94,7 +93,7 @@ Test-Connection, Get-NetIPAddress, New-NetIPAddress, Get-NetAdapter
 |Restart-Service|Khởi động lại dịch vụ|Restart-Service -Name w32time|
 |Set-Service|Thay đổi trạng thái khởi động của dịch vụ|Set-Service -Name w32time -StartupType Automatic|
 
-1. **Cài đặt Ubuntu Server trên VMWare và tìm hiểu các tập lệnh cơ bản (Đã cài đặt)**
+## 3. **Cài đặt Ubuntu Server trên VMWare và tìm hiểu các tập lệnh cơ bản (Đã cài đặt)**
 - **Ubuntu Server** là phiên bản hệ điều hành **Ubuntu** được thiết kế tối ưu cho **máy chủ (server)**. Không giống như Ubuntu Desktop, nó **không có giao diện đồ họa (GUI)** mặc định, chỉ sử dụng dòng lệnh (Terminal), giúp nhẹ hơn, tiết kiệm tài nguyên và an toàn hơn cho môi trường server.
 - **Những chức năng Ubuntu Server làm được:**
   - **Web server: Apache, Nginx, LAMP stack**
@@ -104,7 +103,7 @@ Test-Connection, Get-NetIPAddress, New-NetIPAddress, Get-NetAdapter
   - **Database server: MySQL, PostgreSQL, MongoDB**
   - **Ứng dụng doanh nghiệp: ERP, CRM, Docker, Kubernetes...**
 
-1. **Lệnh về hệ thống**
+### 3.1. **Lệnh về hệ thống**
 
 |**Lệnh**|**Công dụng**|
 | :-: | :-: |
@@ -114,7 +113,7 @@ Test-Connection, Get-NetIPAddress, New-NetIPAddress, Get-NetAdapter
 |whoami|Xem bạn đang đăng nhập bằng user nào|
 |date|Hiển thị ngày giờ hiện tại|
 
-1. **Lệnh quản lý file và thư mục**
+### 3.2. **Lệnh quản lý file và thư mục**
 
 |**Lệnh**|**Công dụng**|
 | :-: | :-: |
@@ -133,14 +132,14 @@ Test-Connection, Get-NetIPAddress, New-NetIPAddress, Get-NetAdapter
 |head [file]|Xem 10 dòng đầu file|
 |tail [file]|Xem 10 dòng cuối file|
 
-1. **Lệnh về quyền và quyền sở hữu**
+### 3.3. **Lệnh về quyền và quyền sở hữu**
 
 |**Lệnh**|**Công dụng**|
 | :-: | :-: |
 |chmod [quyền] [file]|Đổi quyền truy cập file/thư mục|
 |chown [user]:[group] [file]|Đổi chủ sở hữu file/thư mục|
 
-1. **Lệnh quản lý tiến trình**
+### 3.4. **Lệnh quản lý tiến trình**
 
 |**Lệnh**|**Công dụng**|
 | :-: | :-: |
@@ -150,7 +149,7 @@ Test-Connection, Get-NetIPAddress, New-NetIPAddress, Get-NetAdapter
 |kill [PID]|Dừng tiến trình theo PID|
 |killall [tên\_tiến\_trình]|Dừng tiến trình theo tên|
 
-1. **Lệnh nén và giải nén**
+### 3.5. **Lệnh nén và giải nén**
 
 |**Lệnh**|**Công dụng**|
 | :-: | :-: |
@@ -159,7 +158,7 @@ Test-Connection, Get-NetIPAddress, New-NetIPAddress, Get-NetAdapter
 |zip [tên\_file.zip] [file/thư\_mục]|Nén file hoặc thư mục thành .zip|
 |unzip [tên\_file.zip]|Giải nén file .zip|
 
-1. **Lệnh quản lý người dùng (cần quyền root)**
+### 3.6. **Lệnh quản lý người dùng (cần quyền root)**
 
 |**Lệnh**|**Công dụng**|
 | :- | :- |
@@ -167,7 +166,7 @@ Test-Connection, Get-NetIPAddress, New-NetIPAddress, Get-NetAdapter
 |passwd [tên\_user]|Đổi mật khẩu user|
 |deluser [tên\_user]|Xóa user|
 
-1. **Một số lệnh về mạng**
+### 3.7. **Một số lệnh về mạng**
 
 |**Lệnh**|**Công dụng**|
 | :-: | :-: |
@@ -177,7 +176,7 @@ Test-Connection, Get-NetIPAddress, New-NetIPAddress, Get-NetAdapter
 |curl [url]|Gửi yêu cầu HTTP đơn giản|
 |wget [url]|Tải file từ URL|
 
-1. **Một số lệnh khác hay dùng**
+### 3.8. **Một số lệnh khác hay dùng**
 
 |**Lệnh**|**Công dụng**|
 | :- | :- |
