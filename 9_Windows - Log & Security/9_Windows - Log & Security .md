@@ -25,7 +25,7 @@
 - Cho phép lọc, tìm kiếm, tạo custom views, xuất log.
 - Có thể tạo cảnh báo khi xuất hiện log cụ thể.
 
-![](Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.001.png)
+![](image/Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.001.png)
 
 1. **Wevtutil**
 - Công cụ dòng lệnh cho phép truy vấn, lưu log:
@@ -54,7 +54,7 @@ Task Scheduler (Bộ lập lịch tác vụ) là một công cụ có sẵn tron
 1. **Bảo trì hệ thống**
 - Task Scheduler là công cụ thực hiện nhiệm vụ chạy các chương trình diệt virus hoặc các công cụ bảo mật vào những thời điểm cụ thể để đảm bảo máy tính luôn an toàn.
 
-![](Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.002.png)
+![](image/Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.002.png)
 
 1. **Tự động hóa tác vụ**
 - Cho phép lên lịch để tự động chạy các chương trình, script hoặc lệnh vào thời điểm cụ thể (ví dụ: mỗi ngày, mỗi tuần, khi đăng nhập, khi máy khởi động).
@@ -85,19 +85,19 @@ Task Scheduler cho phép người dùng tự động hóa quá trình sao lưu d
 1. **Các loại log chính trong Event Viewer**
 - **Application**: Ghi lại sự kiện từ các ứng dụng phần mềm cài đặt (như SQL Server, Office...), thông tin, lỗi và báo cáo cảnh báo về các hoạt động của chương trình
 
-![](Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.003.png)
+![](image/Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.003.png)
 
 - **System**: Ghi lại sự kiện từ hệ điều hành và driver (như lỗi driver, khởi động/dừng dịch vụ)
 
-![](Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.004.png)
+![](image/Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.004.png)
 
 - **Security**: Ghi lại các sự kiện bảo mật: đăng nhập, đăng xuất, thất bại xác thực, chính sách bảo mật
 
-![](Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.005.png)
+![](image/Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.005.png)
 
 - **Setup**: Ghi lại các sự kiện liên quan đến quá trình cài đặt hệ thống
 
-![](Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.006.png)
+![](image/Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.006.png)
 
 - **Forwarded Events**: Nhận log từ các máy khác nếu hệ thống có cấu hình Event Forwarding
 1. **Các mức độ sự kiện (Event Level)**
@@ -125,7 +125,7 @@ Task Scheduler cho phép người dùng tự động hóa quá trình sao lưu d
 
   ``` Control Panel  > Administrative Tools > Computer Management ```
 
-![](Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.007.png)
+![](image/Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.007.png)
 
 - Phân quyền cho file/folder
 - Sử dụng Group Policy để quản lý user theo cấp hệ thống
@@ -136,7 +136,7 @@ Windows Firewall là tường lửa tích hợp sẵn của Windows, giúp kiể
 
 1. **Quản lý Firewall Rules -** Truy cập bằng: **wf.msc**
 
-![](Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.008.png)
+![](image/Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.008.png)
 
 - Windows Firewall sử dụng **rules** (quy tắc) để kiểm soát lưu lượng **Inbound** và **Outbound** dựa trên:
   - Giao thức (TCP/UDP)
@@ -153,16 +153,16 @@ Windows Firewall là tường lửa tích hợp sẵn của Windows, giúp kiể
 - **Ví dụ:** Mở port 80 (HTTP) cho web server chạy trên Windows:
 - **Tạo Inbound Rule: → New Rule**
 
-![](Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.009.png)
+![](image/Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.009.png)
 
 - Chọn **Port** → **Next**
 
-![](Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.010.png)
+![](image/Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.010.png)
 
-![](Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.011.png)
+![](image/Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.011.png)
 
 →**Next,  ,** \
-![](Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.012.png)
+![](image/Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.012.png)
 
 - Đặt tên:  Allow\_HTTP\_Port\_80 → **Finish**
 
@@ -184,7 +184,7 @@ Windows Firewall là tường lửa tích hợp sẵn của Windows, giúp kiể
 
 1. **Thường xuyên cập nhật (update) Windows**
 
-![](Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.013.png)
+![](image/Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.013.png)
 
 1. **Giám sát hệ thống:**
 - Giám sát hệ thống Windows là quá trình theo dõi và ghi nhận các hoạt động diễn ra trên hệ điều hành nhằm:
@@ -228,7 +228,7 @@ Windows Firewall là tường lửa tích hợp sẵn của Windows, giúp kiể
     - Workstation Name
     - Failure Reason
 
-![](Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.014.png)
+![](image/Aspose.Words.aa3be11f-0e90-446e-ab61-e1142a818fca.014.png)
 
 - VD: ```
 
