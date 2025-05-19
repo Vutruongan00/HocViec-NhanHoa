@@ -11,15 +11,14 @@ sudo apt update
 sudo apt upgrade
 ```
 
-![image alt](https:// "title")
-
+!
 Kiểm tra cài đặt ufw
 
 Để kiểm tra ufw đã được cài đặt chưa bạn sử dụng lệnh which để kiểm tra như sau.
 
 `which ufw`
 
-![image alt](https:// "title")
+!
     
 Và nếu không trả về kết quả hiển thị đầu ra có nghĩa ufw chưa được cài đặt và bạn hãy cài đặt như sau.
 
@@ -42,7 +41,7 @@ III. Hướng dẫn sử dụng ufw
   
 `sudo ufw enable`
 
-![image alt][reference]
+!
     
 cài đặt cấu hình UFW trên Ubuntu Debian
 
@@ -62,7 +61,7 @@ cài đặt cấu hình UFW trên Ubuntu Debian
   
 `sudo ufw reload`
 
-![image alt](https:// "title")
+!
     
 2. Sử dụng ufw để quản lý quy tắc
 
@@ -105,7 +104,7 @@ sudo ufw deny 3306
 sudo ufw allow 8080
 ```    
 
-![image alt](https:// "title")
+!
 
 Ngoài ra ufw còn hỗ trợ cú pháp đơn giản như sau. Nếu bạn xác định được cổng thuộc dịch vụ nào bạn có thể deny dịch vụ thay vì cổng thuộc dịch vụ đó.
 
@@ -122,7 +121,7 @@ sudo ufw allow from 192.168.126.195 to any port 22
 sudo ufw allow from 192.168.126.195 to any port 3306
 ```
   
-![image alt](https:// "title")
+!
     
 Với cú pháp này sẽ cho phép một IP cụ thể được quyền truy cập vào cổng đã được chỉ định. Như ví dụ trên mình thực hiện cho phép địa chỉ IP là 192.168.126.137 được phép truy cập vào cổng 22 là ssh và cổng 3306 là mysql
 
@@ -132,7 +131,7 @@ Với cú pháp này sẽ cho phép một IP cụ thể được quyền truy c�
 
 `sudo ufw status numbered`
   
-![image alt](https:// "title")
+!
 
 Ví dụ thực tế: Như ảnh trên là tất cả các quy tắc và mình sẽ thực hiện xoá bỏ quy tắt số 7, là cho phép IP 192.168.0.1 sử dụng port 22. Mình sẽ sử dụng cú pháp sau để xoá
 
@@ -140,7 +139,7 @@ Ví dụ thực tế: Như ảnh trên là tất cả các quy tắc và mình s
   
 `sudo ufw delete 7`
   
-![image alt](https:// "title")
+!
 
 2.5 Cho phép phạm vi cổng
 
