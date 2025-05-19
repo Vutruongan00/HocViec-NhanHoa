@@ -1,8 +1,8 @@
 ## Cài Đặt UFW
 
-Bước 1:Truy cập vào hệ thống ubuntu
+### Bước 1:Truy cập vào hệ thống ubuntu
 
-Bước 2: Cập nhật hệ thống kiểm tra cài đặt
+### Bước 2: Cập nhật hệ thống kiểm tra cài đặt
 
 Cập nhật hệ thống
 
@@ -22,7 +22,7 @@ Kiểm tra cài đặt ufw
     
 Và nếu không trả về kết quả hiển thị đầu ra có nghĩa ufw chưa được cài đặt và bạn hãy cài đặt như sau.
 
-Bước 3: Cài đặt ufw
+### Bước 3: Cài đặt ufw
   
 `sudo apt-get install ufw`
     
@@ -33,11 +33,11 @@ Sau khi bạn cài đặt ufw hoàn tất, bạn hãy sử dụng lệnh sau đ�
 `sudo ufw status verbose`
 
 
-III. Hướng dẫn sử dụng ufw
+## Hướng dẫn sử dụng ufw
 
-1. Một số lệnh quản lý kích hoạt ufw
+### 1. Một số lệnh quản lý kích hoạt ufw
 
-1.1 Kích hoạt ufw và khởi động cùng hệ thống
+#### 1.1 Kích hoạt ufw và khởi động cùng hệ thống
   
 `sudo ufw enable`
 
@@ -45,11 +45,11 @@ III. Hướng dẫn sử dụng ufw
     
 cài đặt cấu hình UFW trên Ubuntu Debian
 
-1.2 Vô hiệu kích hoạt ufw
+#### 1.2 Vô hiệu kích hoạt ufw
   
 `sudo ufw disable`
 
-1.3 Khôi phục ufw về mặc định
+#### 1.3 Khôi phục ufw về mặc định
 
 Một lý do nào đó bạn cần phục hồi xoá tất cả các rule hiện có để đưa về mặc định ban đầu, bạn hãy sử dụng tuỳ chọn reset để thực hiện như sau.
   
@@ -57,15 +57,15 @@ Một lý do nào đó bạn cần phục hồi xoá tất cả các rule hiện
     
 cài đặt cấu hình UFW trên Ubuntu Debian
 
-1.4 Tải lại các quy tắc
+#### 1.4 Tải lại các quy tắc
   
 `sudo ufw reload`
 
 !
     
-2. Sử dụng ufw để quản lý quy tắc
+### 2. Sử dụng ufw để quản lý quy tắc
 
-2.1. Cho phép, mở port kết nối
+#### 2.1. Cho phép, mở port kết nối
 
 Cú pháp thực hiện
 
@@ -91,7 +91,7 @@ Hoặc
     
 !
 
-2.2 Từ chối, đóng port kết nối
+#### 2.2 Từ chối, đóng port kết nối
   
 Để cấm, từ chối bạn sử dụng deny và thực hiện theo cấu trúc cú pháp như sau.
 
@@ -114,7 +114,7 @@ Ví dụ: Cổng 3306 thuộc dịch vụ mysql và bạn có thể deny mysql t
 `sudo ufw deny mysql`
     
 
-2.3 Cho phép IP truy cập đến cổng nhất định
+#### 2.3 Cho phép IP truy cập đến cổng nhất định
   
 ```
 sudo ufw allow from 192.168.126.195 to any port 22
@@ -125,7 +125,7 @@ sudo ufw allow from 192.168.126.195 to any port 3306
     
 Với cú pháp này sẽ cho phép một IP cụ thể được quyền truy cập vào cổng đã được chỉ định. Như ví dụ trên mình thực hiện cho phép địa chỉ IP là 192.168.126.137 được phép truy cập vào cổng 22 là ssh và cổng 3306 là mysql
 
-2.4 Xoá bỏ các quy tắc
+#### 2.4 Xoá bỏ các quy tắc
   
 Để quản lý các quy tắc trên UFW của bạn, bạn có thể liệt kê chúng ra theo dạng menu danh sách. Để thực hiện được bạn sử dụng lệnh sau, màn hình hiển thị các quy tắc kèm số thứ tự và bạn sẽ chọn các số thứ tự hoặc tên quy tắc để xoá bỏ.
 
@@ -141,7 +141,7 @@ Ví dụ thực tế: Như ảnh trên là tất cả các quy tắc và mình s
   
 !
 
-2.5 Cho phép phạm vi cổng
+#### 2.5 Cho phép phạm vi cổng
 
 UFW cho phép bạn truy cập vào phạm vi cổng kết nối thay vì bạn mở cho từng cổng riêng biệt. Và khi bạn cho phép phạm vi cổng bạn cần xác định phạm vi cổng thuộc giao thức TCP hay là UDP để mở nhé.
 
@@ -153,7 +153,7 @@ sudo ufw allow 35000:35999/tcp
 sudo ufw allow 35000:35999udp
 ```  
 
-2.6 Đóng phạm vi cổng
+#### 2.6 Đóng phạm vi cổng
 
   Cũng giống như mở phạm vi cổng kết nối ở phần 2.5 Cho phép phạm vi cổng. Bạn cũng có thể đóng phạm vi cổng bằng deny. Bạn sử dụng cú pháp sau để đóng nhé.
 
@@ -165,7 +165,7 @@ Ví dụ: Bên dưới mình thực hiện đóng phạm vi cổng 35000:35999 T
 sudo ufw deny 35000:35999udp
  ```
 
-2.7 Cho phép và từ chối IP
+#### 2.7 Cho phép và từ chối IP
 
   Cho phép IP truy cập
   
@@ -189,7 +189,7 @@ Từ chối IP
 
 Rule updated
     
-2.8 Bật kích hoạt IPv6
+#### 2.8 Bật kích hoạt IPv6
   
 Nếu bạn sử dụng IPv6 trên VPS của mình, bạn cần đảm bảo rằng IPv6 được bật trong UFW. Để thực hiện bạn cần mởi file cấu hình ufw /etc/default/ufw và điều chỉnh như sau.
 
