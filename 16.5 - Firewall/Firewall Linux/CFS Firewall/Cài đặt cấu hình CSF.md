@@ -56,7 +56,7 @@ Tiếp theo các bạn tiến hành cài đặt các thư viện cần thiết c
 
 4. Bước 4:  cài đặt CSF.
 
-Sau khi đã cài đặt đầy đủ các thư viện chúng ta tiến hành cài đặt CSF.
+Sau khi đã cài đặt đầy đủ các thư viện ta tiến hành cài đặt CSF.
 
 ```
 cd /opt
@@ -80,7 +80,7 @@ rm -rf /opt/csf /opt/csf.tgz
 ![image](https://user-images.githubusercontent.com/62273292/166623723-a985c1da-6413-4160-b8dd-01ce3a0995f9.png)
 
 
-Bây giờ chúng ta sẽ kiểm tra xem CSF có thực sự hoạt động trên máy chủ không.
+Kiểm tra hoạt động của CSF trên máy chủ 
 ```
 cd /usr/local/csf/bin/
 perl csftest.pl
@@ -88,7 +88,7 @@ perl csftest.pl
 
 ![image](https://user-images.githubusercontent.com/62273292/166623803-9a1a70a4-d6a2-4fcb-b3d2-422f852e4e55.png)
 
-CSF sẽ hoạt động mà không gặp sự cố nào trên máy chủ của bạn.
+CSF sẽ hoạt động mà không gặp sự cố nào.
 
 ```
 Testing ip_tables/iptable_filter...OK
@@ -113,7 +113,7 @@ Cấu hình CSF bằng cách chỉnh sửa file /etc/csf/csf.confcsf.conf.
 `nano /etc/csf/csf.conf`
 
 
-Các bạn sẽ cần sửa một số thông số dưới đây
+Sửa một số thông số dưới đây
 
 ```
 TESTING = "0"
@@ -130,7 +130,7 @@ systemctl start csf
 ![image](https://user-images.githubusercontent.com/62273292/166624865-70bb2107-0df6-4d33-a2a9-b631e89398fb.png)
 
 
-Để kiểm tra xem csf đã hoạt động hay chưa các bạn có thể sử dụng lệnh dưới đây
+Để kiểm tra xem csf đã hoạt động hay chưa, sử dụng lệnh:
 
 `systemctl status csf`
 
@@ -138,7 +138,7 @@ systemctl start csf
 
 
 6. Mở Port SMTP
-Theo mặc định CSF sẽ không mở TCP_OUT với port 465, điều này có thể sẽ khiến bạn gặp lỗi khi sử dụng SMTP mail. Để mở port 465 các bạn mở file /etc/csf/csf.conf và tìm dòng sau
+Theo mặc định CSF sẽ không mở TCP_OUT với port 465, điều này có thể sẽ gặp lỗi khi sử dụng SMTP mail. Để mở port 465, mở file /etc/csf/csf.conf và tìm dòng sau:
 
 `TCP_OUT = "20,21,22,25,53,80,110,113,443,587,993,995"`
 
