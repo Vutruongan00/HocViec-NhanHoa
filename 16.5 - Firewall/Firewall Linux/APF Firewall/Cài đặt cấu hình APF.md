@@ -51,7 +51,7 @@ Other Details: Listening TCP ports: 1,21,22,25,53,80,110,111,143,443,465,993,995
 
 Có nghĩa là đã cài đặt thành công. Ngược lại, kết quả trả về như hình dưới thì chúng ta bắt đầu sang bước thứ 3.
 
-![image]
+![image]()
 
 Bước 3 : Tiến hành Cấu hình APF Firewall
 
@@ -91,7 +91,7 @@ thành
 ```
 SET_MONOKERN=”1″
 ```
-Cuối cùng, hãy lưu file vào. Bây giờ, bạn phải khởi động APF Firewall nhé.
+Cuối cùng, hãy lưu file vào và khởi động lại APF Firewall 
 
 ## Một số câu lệnh command APF Firewall
 
