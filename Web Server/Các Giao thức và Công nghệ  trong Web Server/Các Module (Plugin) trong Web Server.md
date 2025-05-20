@@ -110,5 +110,75 @@ Apache thực sự xử lý: `https://example.com/product.php?id=123
 
 
 ### 2. Mod_ssl
-`mod_ssl` là một module của Apache Web Server giúp kích hoạt và xử lý giao thức HTTPS (SSL/TLS) trên website 
+`mod_ssl` là một module của Apache Web Server giúp kích hoạt và xử lý giao thức HTTPS (SSL/TLS) trên website. Module này sử dụng thư viện OpenSSL để thực hiện mã hóa và giải mã dữ liệu, đảm bảo tính bảo mật cho thông tin truyền tải giữa máy chủ và người dùng.
+
+
+#### a. Chức năng chính của `mod_ssl`
+- Kích hoạt giao thức HTTPS (cổng 443)
+
+- Sử dụng chứng chỉ SSL/TLS để mã hóa dữ liệu
+
+- Xác thực server và/hoặc client
+
+- Thiết lập các tham số bảo mật như cipher, giao thức (TLS 1.2, 1.3...)
+#### b. Thành phần cấu hình chính
+Khi cấu hình `mod_ssl` trong Apache để bật HTTPS, bạn sẽ làm việc chủ yếu với các chỉ thị (`directive`) trong file cấu hình. Các thành phần chính bao gồm:
+ 
+- **SSLEngine**
+    - Cú pháp: `SSLEngine on`
+
+    -    Chức năng: Bật chế độ SSL/TLS cho VirtualHost hiện tại.
+
+    - Ghi chú: Nếu không có dòng này, Apache sẽ không xử lý các kết nối HTTPS dù đã có chứng chỉ.
+
+- **SSLCertificateFile**:
+    - Cú pháp: `SSLCertificateFile /đường_dẫn/đến/file.crt`
+    - Chức năng: Trỏ đến file chứa chứng chỉ SSL đã được cấp cho tên miền (domain)
+    - Ví dụ:
+```
+    SSLCertificateFile /etc/ssl/certs/example.com.crt
+```
+
+-  **SSLCertificateKeyFile**:
+    - Cú pháp: `SSLCertificateKeyFile /đường_dẫn/đến/private.key`
+    - Chức năng: Trỏ đến khóa riêng tư (private key) tương ứng với chứng chỉ phía trên.
+    - **Lưu ý**: File **.key** này cần được giữ an toàn tuyệt đối.
+    - Ví dụ:
+    ```
+    SSLCertificateKeyFile /etc/ssl/private/example.com.key
+    ```
+- **SSLCertificateChainFile (tùy chọn, dùng với chứng chỉ từ CA)**:
+    - Cú pháp: `SSLCertificateChainFile /đường_dẫn/đến/chain.pem`
+    - Chức năng: Dùng để chỉ ra chuỗi chứng chỉ trung gian nếu nhà cung cấp chứng chỉ yêu cầu.
+    - Ví dụ:
+```
+SSLCertificateChainFile /etc/ssl/certs/chain.pem
+```
+- **SSLProtocol**: Chỉ định các phiên bản giao thức SSL/TLS được phép sử dụng.
+
+- **SSLCipherSuite**: Quy định tập hợp thuật toán mã hóa (cipher) được phép dùng trong kết nối.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## CÁC MODULE TRONG NGINX
+| Module                       | Mục đích                                          |
+| ---------------------------- | ------------------------------------------------- |
+| `ngx_http_ssl_module`        | Hỗ trợ HTTPS                                      |
+| `ngx_http_gzip_module`       | Nén dữ liệu khi gửi                               |
+| `ngx_http_rewrite_module`    | Viết lại URL bằng các rule logic                  |
+| `ngx_http_auth_basic_module` | Xác thực truy cập bằng user/pass                  |
+| `ngx_http_proxy_module`      | Chuyển tiếp request đến server khác (proxy\_pass) |
 
