@@ -16,7 +16,8 @@ Nó được thiết kế để hỗ trợ các ứng dụng web cần cập nh�
 ## 2. Kiến trúc WebSocket
 Một khi kết nối WebSocket được thiết lập, client và server có thể gửi dữ liệu bất kỳ lúc nào, không cần phải chờ yêu cầu từ phía client (như HTTP).
 
-![image](https://hackmd.io/_uploads/rJ1NswYbgg.png)
+![image](https://github.com/user-attachments/assets/b11b2aab-55ce-41f9-a85e-9a8e23b0a74e)
+
  ## 3. Cách hoạt động
 - **Giai đoạn 1**: Máy khách khởi tạo kết nối HTTP.
 
