@@ -159,7 +159,145 @@ SSLCertificateChainFile /etc/ssl/certs/chain.pem
 - **SSLCipherSuite**: Quy định tập hợp thuật toán mã hóa (cipher) được phép dùng trong kết nối.
 
 
+## Quy trình cài đặt và cấu hình `mod_ssl`
+Để thực hiện tạo chứng chỉ SSL trên Apache trước tiên cần đảm bảo đã cài đặt cấu hình đầy đủ máy chủ web Apache trên server 
 
+**Bước 1: Cài đặt `mod_ssl`**
+
+- Trên Ubuntu:  `sudo a2enmod ssl`
+- Trên Centos/RHEL: `sudo yum install httpd mod_ssl
+`
+
+**Bước 2: Tạo chứng chỉ SSL tự ký mới:**
+
+- Thư mục `/etc/ssl/certs` được sử dụng để chứa chứng chỉ công khai đã có trên server. 
+- **Tạo một thư mục `/etc/ssl/private`** để chứa file khóa riêng tư:
+    >Tính bảo mật của khóa này vô cùng quan trọng. Chính vì vậy, việc khóa quyền truy cập để ngăn chặn truy cập trái phép là rất cần thiết.
+    ```
+    sudo mkdir /etc/ssl/private
+
+    sudo chmod 700 /etc/ssl/private
+    ```
+- Tạo cặp khóa và chứng chỉ self-signed với OpenSSL bằng lệnh sau:
+``` 
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt 
+```
+trong đó: 
+`openssl req`: Công cụ OpenSSL được sử dụng với chứng năng là tạo yêu cầu chứng chỉ.
+
+`-x509`: Là một chuẩn cơ bản về quản lý khóa công khai mà cả SSL và TLS sử dụng để kiểm soát khóa và chứng chỉ. Giúp tạo chứng chỉ ký, không yêu cầu chứng nhận bên ngoài.
+
+`-nodes`: Cho phép OpenSSL biết bỏ qua tùy chọn bảo vệ chứng chỉ bằng mật khẩu. Apache có thể đọc file mà không cần đến sự can thiệp của người dùng mỗi khi server khởi động lại. Mật khẩu giữ nhiệm vụ ngăn cản điều này xảy ra do cần nhập mật khẩu mỗi lần khởi động lại.
+
+`-days 365`: là xác định thời hạn có hiệu lực của chứng chỉ 365 ngày()
+
+ `-newkey rsa:2048`: tạo ra một chứng chỉ và khóa mới cùng lúc. Nếu chưa tạo khóa được yêu cầu để ký chứng chỉ trong 1 bước trước đó, cần tạo khóa cùng với chứng chỉ. Phần `rsa:2048` chỉ định tạo ra một khóa RSA với độ dài 2048 bit.
+ 
+  `-keyout /etc/ssl/private/apache-selfsigned.key`: nơi đặt file khóa riêng tư được tạo ra.
+  
+  -`out`: Dòng này cho OpenSSL biết nơi đặt chứng chỉ được tạo ra
+  
+-> Nhập tên miền hoặc địa chỉ IP công khai của server khi được yêu cầu**, nhập Common Name cần khớp chính xác với cách người dùng truy cập vào website 
+ 
+Output tương tự như sau,
+```
+Country Name (2 letter code) [XX]:US
+
+State or Province Name (full name) []:Example
+
+Locality Name (eg, city) [Default City]:Example 
+
+Organization Name (eg, company) [Default Company Ltd]:Example Inc
+
+Organizational Unit Name (eg, section) []:Example Dept
+
+Common Name (eg, your name or your server's hostname) []: [your_domain_or_ip]
+
+Email Address []: [webmaster@example.com]
+```
+
+- Khi sử dụng OpenSSL, bạn cũng nên tạo một nhóm Diffie-Hellman sử dụng trong việc đàm phán Forward Secrecy tuyệt đối với các client:
+```sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048```
+
+**Bước 3: Cấu hình Apache để sử dụng SSL**
+- **Trên Ubuntu:**
+    - Mở file cấu hình mặc định cho SSL:
+```
+sudo nano /etc/apache2/sites-available/default-ssl.conf
+```
+sửa lại như sau: 
+```
+<IfModule mod_ssl.c>
+<VirtualHost _default_:443>
+    ServerAdmin webmaster@localhost #thay bằng emai của quản trị viên hệ thống hoặc emai thật
+    DocumentRoot /var/www/html
+
+    SSLEngine on
+    SSLCertificateFile      /etc/ssl/certs/selfsigned.crt
+    SSLCertificateKeyFile   /etc/ssl/private/selfsigned.key
+</VirtualHost>
+</IfModule>
+```
+Kích hoạt cấu hình SSL:
+```
+sudo a2ensite default-ssl.conf
+sudo systemctl reload apache2
+```
+
+- **Trên Centos**:
+    - Mở file cấu hình ``` sudo nano  /etc/httpd/conf.d/ssl.conf ```
+    - Sửa các dòng tương ứng
+
+```
+ ServerName your_domain_or_ip
+
+    DocumentRoot /var/www/html
+
+    SSLEngine on
+
+    SSLCertificateFile /etc/ssl/certs/apache-selfsigned.crt
+
+    SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
+```
+Khởi động lại apache:
+`sudo systemctl restart httpd`
+
+**Bước 4: Mở cổng 443 (nếu có tường lửa)**
+
+
+
+
+
+
+-----
+
+## CÁC MODULE TRONG NGINX
+| Module                       | Mục đích                                          |
+| ---------------------------- | ------------------------------------------------- |
+| `ngx_http_ssl_module`        | Hỗ trợ HTTPS                                      |
+| `ngx_http_gzip_module`       | Nén dữ liệu khi gửi                               |
+| `ngx_http_rewrite_module`    | Viết lại URL bằng các rule logic                  |
+| `ngx_http_auth_basic_module` | Xác thực truy cập bằng user/pass                  |
+| `ngx_http_proxy_module`      | Chuyển tiếp request đến server khác (proxy\_pass) |
+
+
+
+### ngx_http_core_module 
+
+`ngx_http_core_module` là module lõi mặc định trong Nginx, chịu trách nhiệm chính trong việc xử lý request HTTP, quản lý location, thiết lập root, index, và nhiều chỉ thị (directive) quan trọng khác trong cấu hình của server.
+
+...
+
+### ngx_http_ssl_module
+- Cung cấp sự hỗ trợ cần thiết cho HTTPS. Module này yêu cầu thư viện OpenSSL 
+		- Gồm nhiều chỉ thị khác nhau nổi bật cần chú ý:  ssl_certificate, ssl_certificate_key, ssl_protocols phục vụ cấu hình SSL/TLS cơ bản 
+		- Ví dụ: Cấu hình Nginx để phục vụ nội dung qua HTTPS, bật mã hóa SSL.
+```
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+ssl_ciphers AES128-SHA:AES256-SHA:RC4-SHA:DES-CBC3-SHA:RC4-MD5;
+ssl_certificate /usr/local/nginx/conf/cert.pem;
+ssl_certificate_key /usr/local/nginx/conf/cert.key;
+```
 
 
 
