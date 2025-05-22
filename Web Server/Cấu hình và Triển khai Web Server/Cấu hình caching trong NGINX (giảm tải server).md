@@ -51,6 +51,10 @@
 - Phổ biến: Redis, Memcached.
 
 # 5.Cấu hình
+> **Mục đích:**
+> - Dùng Nginx caching để lưu tạm kết quả từ Apache.
+> - Nếu nội dung không đổi, Nginx sẽ trả về từ cache mà không cần gọi Apache lại.
+  
 - Tạo thư mục lưu cache:(nếu chưa có)
 ```
 sudo mkdir -p /var/cache/nginx
@@ -97,8 +101,30 @@ curl -I http://truongan12345.com/proxy.php
 >`127.0.0.1    truongan12345.com www.truongan12345.com`
 
 - Nếu kết quả trả về: `X-Cache-Status: HIT`
-![image](https://github.com/user-attachments/assets/5050180c-bfbe-46a3-9111-3b50dd121a74)
+  
+> MISS: yêu cầu được gửi tới Apache và kết quả được cache lại
+>
+> HIT: yêu cầu được phục vụ từ cache, không gọi lại Apache → giảm tải thành công
+
+
+![image](https://github.com/user-attachments/assets/075c786b-dd51-4209-bf6a-55d63e21e3d9)
+
 
 
 -->caching thành công
 
+---
+**Trong thực tế**, có thể kiểm tra đã caching thành công được hay chưa bằng cách:
+-  Kiểm tra log của Apache:
+```
+sudo tail -f /var/log/httpd/access_log
+```
+>Trước khi cache: Mỗi lần F5 trang là 1 dòng mới.
+>Sau khi cache: F5 nhiều lần → không thấy dòng mới → Nginx đã trả từ cache, không gửi request đến Apache.
+
+- Dùng công cụ monitoring / benchmark:
+    - Apache Bench (ab):
+    `ab -n 1000 -c 10 http://truongan12345.com/proxy.php
+`
+    - htop / top để xem CPU & RAM load.
+    - Grafana + Prometheus để vẽ biểu đồ (nếu triển khai thực tế lâu dài).
