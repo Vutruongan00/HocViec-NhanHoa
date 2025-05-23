@@ -124,7 +124,7 @@ sudo tail -f /var/log/httpd/access_log
 
 - Dùng công cụ monitoring / benchmark:
     - Apache Bench (ab):
-    `ab -n 1000 -c 10 http://truongan12345.com/proxy.php
+    `ab -n 1000 -c 100 http://truongan12345.com/proxy.php
 ` (tạo 100 kết nối đồng thời và gửi 1000 request đến url http://truongan12345.com/proxy.php)
     - htop / top để xem CPU & RAM load.
     - Grafana + Prometheus để vẽ biểu đồ (nếu triển khai thực tế lâu dài).
