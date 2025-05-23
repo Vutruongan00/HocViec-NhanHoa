@@ -1,18 +1,11 @@
-﻿**BÁO CÁO KẾT QUẢ CÔNG VIỆC**
 
-1. **NHỮNG VIỆC ĐƯỢC TRIỂN KHAI**
-1. **Tìm hiểu về Linux, Owner, Quyền và Người dùng**
-1. **Quản lý người dùng và nhóm trong Linux**
-1. **Các lệnh hữu ích trong Linux**
-1. **Logical Volume Manager (LVM)**
-1. **ĐÃ HOÀN THÀNH**
-1. **Tìm hiểu về Linux**
-1. **Tổng quan về Linux**
+# **Tìm hiểu về Linux**
+### 1. **Tổng quan về Linux**
 - Linux là một hệ điều hành mã nguồn mở, dựa trên Unix.
 - Được phát triển lần đầu bởi Linus Torvalds vào năm 1991.
 - Linux thường dùng cho máy chủ, hệ thống nhúng, thiết bị mạng, và cả desktop.
 - Hệ điều hành Linux được xây dựng dựa trên nhân Linux (Linux kernel)linh hoạt, có tích hợp nhiều tiện ích và phần mềm mã nguồn mở, cho phép doanh nghiệp quản lý tập tin, quản lý hệ thống, truy cập Internet, lập trình và thực hiện nhiều chức năng khác.
-1. **Kiến trúc hệ thống Linux**
+### 2. **Kiến trúc hệ thống Linux**
 - Về cơ bản thì kiến trúc của HĐH Linux chia làm 3 thành phần: **Kernel, Shell, Applications.**
 
 |**Thành phần**|**Mô tả**|
@@ -33,7 +26,7 @@
 |**Desktop Environment**|Giao diện người dùng (GNOME, KDE...), cung cấp công cụ quản lý tệp, ứng dụng, cài đặt|
 |**Applications**|Các phần mềm cụ thể người dùng chạy (Firefox, LibreOffice, VS Code...)|
 
-1. **Các bản phân phối (distro) Linux phổ biến**
+### 3. **Các bản phân phối (distro) Linux phổ biến**
 - **Ubuntu**: Thân thiện, dễ dùng, phổ biến nhất cho người mới.
 - **Debian**: Ổn định, thích hợp cho server.
 - **RedHat Enterprise Linux (RHEL):** An toàn, bảo mật cao, sẵn sàng đáp ứng khối lượng tính toán cường độ cao. RHEL được triển khai trong các cơ quan chính phủ, tài chính – ngân hàng
@@ -41,7 +34,7 @@
 - **Arch Linux**: Tùy biến cao, dành cho người dùng nâng cao.
 - **Kali Linux**: Dành cho pentest/an ninh mạng.
 
-1. **Ưu nhược điểm của hệ điều hành Linux** 
+### 4. **Ưu nhược điểm của hệ điều hành Linux** 
 - **Ưu điểm:**
 
 |**Ưu điểm**|**Mô tả**|
@@ -67,13 +60,13 @@
 
 
 
-1. **Quản lý người dùng và nhóm trong Linux**
-1. **Quản lý USER**
-   1. **User là gì?**
+# **Quản lý người dùng và nhóm trong Linux**
+### 1. **Quản lý USER**
+####   1.1. **User là gì?**
 - User là tài khoản mà người dùng được cung cấp để thao tác với hệ thống.
 - Mỗi tài khoản sẽ có quyền làm gì và không được làm gì.
 - Tài khoản có quyền cao nhất là root và root có quyền làm tất cả
-  1. **File “/etc/passwd”**
+####  1.2. **File “/etc/passwd”**
 - Là file văn bản chứa thông tin về các tài khoản user trên máy.
 - Mỗi user đều có thể đọc tập tin này nhưng chỉ có user root mới có quyền thay đổi.
 - Cấu trúc file: trong file /etc/passwd được chia làm 4 trường chính và mỗi trường cách nhau bởi dấu hai chấm.
@@ -91,7 +84,7 @@ Giải thích:
 - 5 - Tên mô tả người sử dụng ( comment )
 - 6 - Thư mục home của user ( thường là /home/user\_name )
 - 7 - Loại shell sẽ hoạt động khi user login , thường là /bin/bash
-  1. **Thêm, sửa, xóa user**
+####  1.3. **Thêm, sửa, xóa user**
 - Ta có thể tạo user mới bằng lệnh “useradd” :  
 ``` 
 useradd [options] [tên user] 
@@ -116,13 +109,13 @@ useradd [options] [tên user]
 - -U : mở khóa tài khoản
 - -s : thay đổi shell script cho user usermod -s /usr/bin/truongan truongan
 - Ta có thể tạo hoặc thay đổi password cho user bằng lệnh “passwd”. Chỉ có quyền root mới có thể thực hiện việc này:     passwd [user-name]
-  1. **Chuyển đổi user**
+#### 1.4. **Chuyển đổi user**
 - Khi ta muốn chuyển từ user này sang user khác ta có thể sử dụng lệnh “su” hoặc “sudo su”
 
   ``` sudo su [user-name] ```
 
-1. **Quản lý group trong Linux**
-   1. **Group là gì?**
+### 2. **Quản lý group trong Linux**
+#### 2.1. **Group là gì?**
 - Group là một nhóm tập hợp các user.
 - Mỗi group có 1 tên duy nhất và 1 mã định danh duy nhất (gid).
 - Khi tạo ra 1 user ( không dùng option -g ) thì mặc định 1 group mang tên user được tạo ra.
@@ -133,7 +126,7 @@ useradd [options] [tên user]
 
 ![](image/Aspose.Words.100f4d6a-f832-4608-96ea-b629fd8fad61.003.png)
 
-1. **Các lệnh quản lý Group**
+#### 2.2. **Các lệnh quản lý Group**
 - Tạo 1 group ta sử dụng lệnh “groupadd”:   groupadd  [group\_name]
 - Tạo mật khẩu cho group ta sử dụng lệnh “gpasswd”:   gpasswd [group\_name]
 - Để sửa lại thông tin về group ta sử dụng lệnh “groupmod”: 
@@ -145,11 +138,11 @@ useradd [options] [tên user]
     - n [group\_name] : sửa lại tên group
 - Để xóa group ta sử dụng lệnh “groupdel”: 	groupdel [group\_name]
 
-1. **Owner (Chủ sở hữu) trong Linux**
+### 2.3. **Owner (Chủ sở hữu) trong Linux**
 
 Trong Linux, **mỗi tệp / thư mục** đều gắn với một **chủ sở hữu (Owner)** và một **nhóm (group)**. Chủ sở hữu có quyền điều khiển trực tiếp tới tệp, bao gồm **đọc (read), ghi (write), thực thi (execute)**, tùy theo quyền đã được gán.
 
-1. **Các loại Ownership trong Linux**
+### **Các loại Ownership trong Linux**
 - Mỗi tệp hoặc thư mục có **3 loại phân quyền** dựa trên đối tượng:
 
 |**Đối tượng**|**Mô tả**|
@@ -160,7 +153,7 @@ Trong Linux, **mỗi tệp / thư mục** đều gắn với một **chủ sở 
 
 Trong đó, **user** chính là **owner** – người đã tạo ra tệp/thư mục hoặc được chỉ định làm chủ.
 
-1. **Xem chủ sở hữu của tệp/thư mục**
+### **Xem chủ sở hữu của tệp/thư mục**
 - Dùng lệnh:  ls –l 
 - Kết quả ví dụ : 	-rwxr-xr--  1  truongan  nhom1  1234  May 12 10:00 report.txt
   - Trong đó:  -   truongan -  là **owner** (người sở hữu) - có quyền rwx
@@ -169,16 +162,16 @@ Trong đó, **user** chính là **owner** – người đã tạo ra tệp/thư 
 
 `   		       `-  Other là quyền truy cập (chỉ đọc) r--
 
-1. **Thay đổi chủ sở hữu**
+### **Thay đổi chủ sở hữu**
 
 Chỉ **user root** hoặc người có quyền  sudo mới được thay đổi owner: 
 
 - Thay đổi chủ sở hữu:	sudo    chown   newuser   filename
 - Thay đổi chủ sở hữu và nhóm:  sudo chown newuser:newgroup filename
-1. **Quyền của chủ sở hữu**
+### **Quyền của chủ sở hữu**
 - Chủ sở hữu được gán **quyền truy cập** riêng biệt so với nhóm và người khác. Dạng quyền gồm:
 
-1. **Quyền truy cập (Permissions) trên file/folder**
+### **Quyền truy cập (Permissions) trên file/folder**
 - Permissions xác định quyền truy cập của người dùng đối với một tệp hay thư mục cụ thể.
 - **Ba loại quyền cơ bản**: Read (R), Write (W), và Execute (X).
 
@@ -201,9 +194,9 @@ Chỉ **user root** hoặc người có quyền  sudo mới được thay đổi
 
   Ví dụ: chmod u+rwx,g+rw,o+r myfile**  - Cho phép chủ sở hữu có quyền đọc, ghi và thực thi, nhóm có quyền đọc và ghi, người khác có quyền đọc.
 
-1. **Các lệnh hữu ích trên Linux**
-1. **Bộ soạn thảo trên linux: vi, nano**
-   1. **Nano** 
+# **Các lệnh hữu ích trên Linux**
+## 1. **Bộ soạn thảo trên linux: vi, nano**
+   ### **Nano** 
 - Nano là một trình soạn thảo văn bản dòng lệnh đơn giản được cài đặt theo mặc định trên hầu hết các hệ điều hành Linux. Nó là một công cụ tuyệt vời để tạo và chỉnh sửa các tệp văn bản, và nó cũng có thể được sử dụng để tạo các tệp cấu hình.
 - Để mở trình soạn thảo Nano, hãy chạy lệnh sau trong thiết bị đầu cuối:  nano tên\_file
 
@@ -236,7 +229,7 @@ Chỉ **user root** hoặc người có quyền  sudo mới được thay đổi
   - Ctrl+Y: Dán văn bản đã sao chép
   - Ctrl+K: Cắt dòng hiện tại
   - Ctrl+W: Xóa từ trước con trỏ
-  1. **Vi/Vim**
+  ### **Vi/Vim**
 - Vim là một trình soạn thảo văn bản dòng lệnh mạnh mẽ được cài đặt theo mặc định trên hầu hết các hệ điều hành Linux. Nó là một công cụ tuyệt vời để tạo và chỉnh sửa các tệp văn bản, và nó cũng có thể được sử dụng để tạo các tệp cấu hình.
 - Mở file tương tự như dùng nano:   vi  file\_name
 
@@ -269,12 +262,12 @@ Chỉ **user root** hoặc người có quyền  sudo mới được thay đổi
   - :w`: Lưu file
   - :wq`: Lưu và thoát
 
-1. **Process trong Linux**
+# **Process trong Linux**
 - Trong Linux, **process (tiến trình)** là một chương trình đang được thực thi. Mỗi tiến trình có **PID (Process ID)** duy nhất và có thể được quản lý bằng nhiều công cụ khác nhau. Dưới đây là kiến thức tổng quan và các lệnh phổ biến về quản lý tiến trình trong Linux
 
   **Các lệnh về Process:**
 
-  1. **ps - process status**
+###  **ps - process status**
 
 ![](image/Aspose.Words.100f4d6a-f832-4608-96ea-b629fd8fad61.004.png)
 
@@ -286,20 +279,21 @@ Chỉ **user root** hoặc người có quyền  sudo mới được thay đổi
   - -aux = -ef : hiển thị đầy đủ thông tin về tất cả các process
   - -u : hiển thị các process liên quan đến user hiện hành
   - -p PID : hiển thị thông tin process cụ thể
-  1. **Top**
+### **Top**
 - Ý nghĩa tương tự lệnh ps
 
 ![](image/Aspose.Words.100f4d6a-f832-4608-96ea-b629fd8fad61.005.png)
 
-1. **Kill**
+### **Kill**
 - Là lệnh tắt process đang chạy.
 - Khi sử dụng lệnh kill với một tiến trình con thì chỉ tiến trình đó được tắt nhưng nếu sử dụng kill với tiến trình cha thì toàn bộ con của nó cũng được tắt theo.
 - Cú pháp:	# kill [options] [pid]
 - Options:
   - -9 : kill toàn bộ các process liên quan
+---
 
-1. **Network trong Linux**
-   1. **Các lệnh cấu hình mạng Linux**
+# **Network trong Linux**
+   ### **Các lệnh cấu hình mạng Linux**
 
 |**Lệnh**|**Mô tả**|
 | :-: | :-: |
@@ -315,7 +309,7 @@ Chỉ **user root** hoặc người có quyền  sudo mới được thay đổi
 |dhclient|Tự động lấy địa chỉ IP và các thông tin cấu hình mạng khác từ một DHCP server.|
 
 
-1. **Các lệnh kết nối mạng**
+### **Các lệnh kết nối mạng**
 
 Dưới đây là các lệnh kết nối mạng dùng để quản lý và giám sát kết nối giữa các thiết bị. Các lệnh này cho phép bạn tạo và ngắt kết nối, kiểm tra hiệu suất và trạng thái các kết nối đã được thiết lập.
 
@@ -341,7 +335,7 @@ Dưới đây là các lệnh kết nối mạng dùng để quản lý và giá
 
 
 
-1. **Các lệnh DNS** 
+### **Các lệnh DNS** 
 
 Các lệnh sau dùng để quản lý và khắc phục sự cố liên quan đến phân giải tên miền ([DNS](https://vietnix.vn/dns-la-gi/)).
 
@@ -351,7 +345,7 @@ Các lệnh sau dùng để quản lý và khắc phục sự cố liên quan đ
 |host|Thực hiện tra cứu DNS để phân giải hostname hoặc địa chỉ IP.|
 |dig|Thực hiện tra cứu DNS để truy vấn thông tin về các máy chủ DNS.|
 
-1. **Các lệnh thông tin mạng**
+### **Các lệnh thông tin mạng**
 
 Dưới đây là một số lệnh mạng cơ bản giúp bạn thu thập thông tin về hệ thống từ xa, [tên miền](https://vietnix.vn/domain-la-gi/) và địa chỉ IP.
 
@@ -360,7 +354,7 @@ Dưới đây là một số lệnh mạng cơ bản giúp bạn thu thập thô
 |finger|Hiển thị thông tin đăng nhập của người dùng trên một hệ thống từ xa.|
 |jwhois|Lấy thông tin về quyền sở hữu tên miền từ các máy chủ [WHOIS](https://vietnix.vn/whois/).|
 
-1. **Các lệnh kiểm tra và giám sát mạng**
+### **Các lệnh kiểm tra và giám sát mạng**
 
 Bạn có thể sử dụng các lệnh dưới đây để thực hiện các tác vụ như đo [băng thông](https://vietnix.vn/bang-thong-la-gi/) mạng, giám sát lưu lượng mạng và khắc phục sự cố kết nối mạng.
 
@@ -376,7 +370,7 @@ Bạn có thể sử dụng các lệnh dưới đây để thực hiện các t
 |ss|Hiển thị các kết nối mạng đang hoạt động, thống kê [socket](https://vietnix.vn/socket-la-gi/) và các thông tin khác liên quan đến mạng.|
 |tracepath|Theo dõi đường đi của gói tin đến một máy chủ đích, phát hiện MTU (Maximum Transmission Unit) tối đa trên đường đi.|
 
-1. **Các lệnh phân tích và giám sát mạng**
+### **Các lệnh phân tích và giám sát mạng**
 
 Các lệnh trong dưới đây giúp bạn hiển thị thống kê mạng, bắt gói tin mạng và xác định các vấn đề về hiệu suất mạng.
 
@@ -392,7 +386,7 @@ Các lệnh trong dưới đây giúp bạn hiển thị thống kê mạng, b�
 |nethogs|Giám sát lưu lượng mạng theo từng tiến trình và hiển thị mức sử dụng băng thông.|
 |vnstat|Theo dõi lưu lượng mạng theo giờ, ngày và tháng cho các giao diện được chọn và hiển thị thống kê trên console.|
 
-1. **Các lệnh truy cập từ xa (Remote Access)**
+### **Các lệnh truy cập từ xa (Remote Access)**
 
 Các lệnh truy cập từ xa cho phép bạn kết nối một cách an toàn đến các máy chủ từ xa và quản lý từ xa từ một thiết bị cục bộ. Điều này đặc biệt quan trọng đối với các quản trị viên hệ thống, những người quản lý nhiều máy chủ từ xa và từ một vị trí duy nhất.
 
@@ -403,7 +397,7 @@ Các lệnh truy cập từ xa cho phép bạn kết nối một cách an toàn 
 |sftp|Chuyển file an toàn giữa các server bằng giao thức [SFTP](https://vietnix.vn/sftp/).|
 
 
-1. **Các lệnh bảo mật**
+### **Các lệnh bảo mật**
 
 Các lệnh bảo mật giúp bạn chủ động theo dõi và kiểm soát các yếu tố ảnh hưởng đến sự an toàn của hệ thống.
 
@@ -416,7 +410,7 @@ Các lệnh bảo mật giúp bạn chủ động theo dõi và kiểm soát cá
 
 Các lệnh bảo mật
 
-1. **Các lệnh tiện ích**
+### **Các lệnh tiện ích**
 
 Các lệnh tiện ích hỗ trợ thực hiện nhiều tác vụ như chuyển dữ liệu, download file và cấu hình giao diện mạng.
 
@@ -428,8 +422,8 @@ Các lệnh tiện ích hỗ trợ thực hiện nhiều tác vụ như chuyển
 |wget|Tiện ích dòng lệnh để tải file xuống từ web.|
 
 
-1. **Network File System (NFS)**
-   1. **Tìm hiểu NFD - Network File System**
+# **Network File System (NFS)**
+   ## **Tìm hiểu NFD - Network File System**
 - **NFS là gì**: NFS (Network File System) là giao thức chia sẻ tệp tin trong mạng nội bộ, giúp truy cập dữ liệu từ máy chủ NFS dễ dàng, liền mạch như trên ổ đĩa cục bộ, tối ưu hiệu quả lưu trữ.
 - **Cách hoạt động của NFS**: NFS hoạt động theo mô hình client-server, trong đó server chia sẻ tài nguyên qua mạng và client truy cập các tài nguyên này thông qua phần mềm NFS được cấu hình và kết nối mạng phù hợp.
 - **Ưu và nhược điểm của NFS**: NFS có chi phí thấp, dễ cài đặt và hỗ trợ quản lý tập trung, nhưng hạn chế về bảo mật, dễ bị giả mạo và hiệu suất giảm khi lưu lượng mạng lớn, phù hợp hơn trong mạng tin cậy sau tường lửa.
@@ -443,8 +437,9 @@ Các lệnh tiện ích hỗ trợ thực hiện nhiều tác vụ như chuyển
 - Giảm chi phí quản lý hệ thống và minh bạch hệ thống tập tin
 - Cung cấp tính nhất quán và độ tin cậy của dữ liệu vì tất cả người dùng đều có thể đọc cùng một bộ tệp
 - Có thể bảo mật với Firewalls và Kerberos
-  1. **Cài đặt và cấu hình NFS trên server Linux Ubuntu**
-
+  
+  ## **Cài đặt và cấu hình NFS trên server Linux Ubuntu**
+---
 **Bước 1: Trên máy host server (192.168.66.134)**
 
 - Cài các thành phần: 
@@ -484,6 +479,7 @@ Các lệnh tiện ích hỗ trợ thực hiện nhiều tác vụ như chuyển
 
 ![](image/Aspose.Words.100f4d6a-f832-4608-96ea-b629fd8fad61.009.png)
 
+---
 **Bước 2: Cài đặt trên Client Ubuntu (192.168.66.132)**
 
 - Cài đặt các gói: 
@@ -497,6 +493,8 @@ Các lệnh tiện ích hỗ trợ thực hiện nhiều tác vụ như chuyển
 - Mount thư mục cho client:
 
 ``` sudo mount -t nfs 192.168.66.134:/home/testshare /nfs/testshare```
+
+---
 
 **Bước 3:	Kiểm tra kết quả mount**
 
@@ -519,10 +517,11 @@ Các lệnh tiện ích hỗ trợ thực hiện nhiều tác vụ như chuyển
 
 `		Thành công!
 
+----
+----
 
-
-1. **Logical Volume Manager (LVM)**
-1. **Khái niệm**
+# **Logical Volume Manager (LVM)**
+### 1. **Khái niệm**
 - Logical Volume Manager (LVM) : LVM là kỹ thuật quản lý việc thay đổi kích thước lưu trữ của ổ cứng. Là một phương pháp ấn định không gian ổ đĩa thành những logicalvolume khiến cho việc thay đổi kích thước của một phân vùng trở nên dễ dàng. Điều này thật dễ dàng khi bạn muốn quản lý công việc của mình tại riêng một phân vùng mà muốn mở rộng nó ra lớn hơn.
 - Một số khái niệm liên quan:
   - Physical volume: là một đĩa cứng vật lý hoặc là partition
@@ -532,7 +531,7 @@ Các lệnh tiện ích hỗ trợ thực hiện nhiều tác vụ như chuyển
   - Lệnh **fdisk** : Dùng để quản lý việc phân vùng trong ổ cứng. Là một công cụ hữu dụng tron linux tìm hiểu thêm FDISK
   - Lệnh **mount** : Dùng để gắn một phân vùng vào thư mục root để có thể sử dụng được nó tìm hiểu thêm về mount
   - Lệnh **dd** : Dùng Sao lưu và hồi phục toàn bộ dữ liệu ổ cứng hoặc một partition và kiểm tra tốc độ đọc của kiểu lưu trữ dữ liệu trong LVM
-1. **Ưu điểm và Nhược điểm của LVM**
+### 2. **Ưu điểm và Nhược điểm của LVM**
 - **Ưu điểm:** 
   - Không để hệ thống bị gián đoạn hoạt động
   - Không làm hỏng dịch vụ
@@ -543,7 +542,7 @@ Các lệnh tiện ích hỗ trợ thực hiện nhiều tác vụ như chuyển
   - Càng gắn nhiều đĩa cứng và thiết lập càng nhiều LVM thì hệ thống khởi động càng lâu.
   - Khả năng mất dữ liệu cao khi một trong số các đĩa cứng bị hỏng.
   - Windows không thể nhận ra vùng dữ liệu của LVM. Nếu Dual-boot ,Windows sẽ không thể truy cập dữ liệu trong LVM.
-1. **Những thành phần trong LVM**
+### 3. **Những thành phần trong LVM**
 - HDD : là một thiết bị lưu trữ máy tính. Nó là loại bộ nhớ không thay đổi và không bị mất dữ liệu khi ta ngừng cung cấp nguồn điện cho chúng
 - Partition: là các phân vùng của ổ cứng. Mỗi một ổ cứng có 4 partition. Trong đó bao gồm 2 loại là primary partition và extended partition
   - primary partition: còn được gọi là phân vùng chính, có thể khởi động và mỗi ổ cứng chỉ có tối đa 4 phân vùng này
@@ -554,11 +553,11 @@ Các lệnh tiện ích hỗ trợ thực hiện nhiều tác vụ như chuyển
   - Physical volume : từ một partitions ta sẽ tạo ra được một physical
   - group volume : Ta sẽ ghép nhiều physical volume thành một group volume
   - Logical volume : Ta sẽ có thể tạo ra được logical volume
-1. **Hướng dẫn sử dụng LVM trên Centos7**
+## 4. **Hướng dẫn sử dụng LVM trên Centos7**
 
    **(Setting VM có 3 Disk, đã chia phân vùng và mout vào thư mục root)**
 
-   1. **Thao tác tạo**
+   ### **Thao tác tạo**
 - **Tạo physical volume:** Ta sử dụng lệnh pvcreate theo cú pháp
 
   ``` pvcreate /dev/(tên phân vùng) ```
@@ -583,7 +582,7 @@ Các lệnh tiện ích hỗ trợ thực hiện nhiều tác vụ như chuyển
 
 ![](image/Aspose.Words.100f4d6a-f832-4608-96ea-b629fd8fad61.015.png)
 
-1. Thay đổi dung lượng
+###  Thay đổi dung lượng
 - **Thay đổi dung lượng physical volume** ta sử dụng lệnh theo cú pháp:
 
   ``` lvextend -L (n) /dev/(tên group)/(tên logical) ```
@@ -600,6 +599,7 @@ Các lệnh tiện ích hỗ trợ thực hiện nhiều tác vụ như chuyển
 
 - kịch bản sẽ là việc thay đổi dung lượng. Đầu tiên  sẽ chọn ra Logical mà tôi muốn thay đổi sau đó tôi sẽ thay đổi nó rồi kiểm tra lại xem nó thay đổi hay là chưa. sau khi thay đổi về dung lượng thì ta cần phải mount vào để có thể sử dụng nó.
 - Muốn tăng dung lượng thì ta làm giống như với giảm dung lượng chỉ cần thay đổi lệnh  **lvreduce**  thành lệnh  **lvextend**
+
 - **Thay đổi dung lượng của một group volume:**
   - Khi thay đổi dung lượng của một group volume thì ta sẽ thêm hoặc xóa phân vùng thuộc group để có thể thay đổi dung lượng của nó.
   - Đầu tiên ta kiểm tra xem có phân vùng nào chưa thuộc group thì ta sẽ thêm phân vùng đó vào một group là cách để tăng kích thước cho group đó
@@ -614,7 +614,7 @@ Các lệnh tiện ích hỗ trợ thực hiện nhiều tác vụ như chuyển
 
 
 
-1. Thao tác xóa
+### Thao tác xóa
 - Xóa một logical ta sử dụng lệnh theo cú pháp
 
   ``` lvremove /dev/(ten\_group)/(tên\_logical) ```
