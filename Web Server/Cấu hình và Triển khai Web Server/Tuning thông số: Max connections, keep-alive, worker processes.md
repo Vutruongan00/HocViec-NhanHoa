@@ -134,7 +134,7 @@ MaxKeepAliveRequests 100
 KeepAliveTimeout 5
 ```
 
-# 3. Ưorker processes
+# 3. Worker processes
 **Worker Process** là một tiến trình con (child process) được tạo ra bởi tiến trình chính (master process) của một Web Server.
 - **Master Process (Tiến trình chính)**: Chịu trách nhiệm quản lý tổng thể. Nó khởi tạo các worker processes, giám sát trạng thái của chúng, và nếu một worker process bị lỗi, nó có thể khởi động lại một worker mới. Master process thường không xử lý các yêu cầu client trực tiếp.
 - **Worker Processes (Tiến trình worker)**: Các tiến trình này thực sự là những "người làm việc" nhận các yêu cầu kết nối đến server, đọc yêu cầu, xử lý nó (bằng cách phục vụ file tĩnh, chuyển tiếp yêu cầu đến ứng dụng backend như PHP-FPM, Node.js, v.v.), và gửi phản hồi lại cho client.
