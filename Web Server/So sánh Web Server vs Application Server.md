@@ -26,7 +26,7 @@
 
 # 3. Khi nào dùng Web Server (phục vụ file tĩnh)?
 
-Bạn nên sử dụng **Web Server** hoặc để nó đảm nhận vai trò chính trong các trường hợp sau:
+Sử dụng **Web Server** hoặc để nó đảm nhận vai trò chính trong các trường hợp sau:
 
 ####  Trang web hoàn toàn tĩnh (Static Websites)
 
@@ -71,9 +71,6 @@ Bạn nên sử dụng **Web Server** hoặc để nó đảm nhận vai trò ch
   - Giảm thiểu rủi ro và gánh nặng bảo mật cho hệ thống phía sau.
 
 # 4. Khi nào cần Application Server (xử lý logic như Node.js, Tomcat)?
-
-Bạn cần đến **Application Server** khi ứng dụng của bạn yêu cầu bất kỳ dạng xử lý nào ở phía server – tức là nội dung **không phải tĩnh**:
-
 ---
 
 #### Ứng dụng web động (Dynamic Web Applications)
