@@ -1,0 +1,82 @@
+# Các xu hướng hiện đại 
+
+## SERVERLESS (Điện toán phi máy chủ)
+
+### Serverless là gì?
+
+- **Serverless** là một mô hình thực thi đám mây, nơi nhà cung cấp dịch vụ đám mây (ví dụ: AWS, Google Cloud, Azure) chịu trách nhiệm quản lý toàn bộ cơ sở hạ tầng (máy chủ vật lý, hệ điều hành, mạng, tự động mở rộng quy mô, v.v.). Các deverloper chỉ cần tập trung vào việc viết code và triển khai nó
+- Trên thực tế Server less vẫn có hệ thống máy chủ server nằm ở phía sau, tuy nhiên trách nhiệm quản lý thuộc về nhà cung cấp dịch vụ cloud.
+- **Serverless** là một mô hình điện toán đám mây trong đó nhà phát triển không phải quản lý cơ sở hạ tầng máy chủ vật lý hay máy chủ ảo. Với kiến trúc điện toán phi máy chủ – thay vì phải lo lắng về việc cài đặt, bảo trì hoặc mở rộng máy chủ, nhà phát triển chỉ tập trung vào việc viết mã ứng dụng và triển khai nó.
+
+### Ưu điểm của Serverless:
+- **Không cần quản lý máy chủ**: Giúp giảm đáng kể gánh nặng vận hành (Operational Overhead), cho phép nhà phát triển tập trung vào logic nghiệp vụ cốt lõi.
+- **Tự động mở rộng quy mô (Automatic Scaling)**: Các hàm Serverless tự động mở rộng quy mô từ 0 lên hàng nghìn, thậm chí hàng triệu lần thực thi đồng thời để đáp ứng mọi lưu lượng truy cập mà không cần cấu hình thủ công.
+- **Tiết kiệm chi phí**: Mô hình thanh toán "pay-per-execution" rất hiệu quả cho các ứng dụng có lưu lượng truy cập không đều hoặc chỉ hoạt động trong thời gian ngắn. Bạn không trả tiền cho thời gian "nhàn rỗi" của máy chủ.
+- **Thời gian phát triển nhanh hơn**: Không cần cấu hình cơ sở hạ tầng, giúp đẩy nhanh quá trình triển khai và đưa sản phẩm ra thị trường.
+- **Tính sẵn sàng cao (High Availability)** theo mặc định: Nhà cung cấp đám mây tự động phân phối và nhân rộng các hàm của bạn trên nhiều vùng sẵn sàng (Availability Zones) để đảm bảo tính sẵn sàng cao.
+
+### Nhược điểm của Serverless:
+
+- "**Độ trễ - Cold Starts**": Khi một hàm Serverless không được gọi trong một khoảng thời gian, nó có thể bị "tắt" đi để tiết kiệm tài nguyên. Lần đầu tiên hàm được gọi sau một thời gian dài, sẽ có một **độ trễ** nhỏ (cold start) để hàm khởi tạo và sẵn sàng thực thi.
+- Giới hạn tài nguyên và thời gian thực thi: Các hàm Serverless có giới hạn về thời gian chạy (ví dụ: 15 phút trên AWS Lambda) và lượng bộ nhớ/CPU có thể sử dụng. Điều này không phù hợp cho các tác vụ tính toán nặng, dài hạn.
+- Khó gỡ lỗi và giám sát: Vì không có quyền truy cập vào máy chủ bên dưới, việc gỡ lỗi các vấn đề phức tạp hoặc giám sát hiệu suất chi tiết có thể khó khăn hơn.
+- Sự phụ thuộc vào nhà cung cấp (Vendor Lock-in): Code của bạn có thể sử dụng các API hoặc dịch vụ cụ thể của nhà cung cấp đám mây, khiến việc di chuyển sang nhà cung cấp khác trở nên phức tạp.
+- Quản lý trạng thái (Statelessness): Các hàm Serverless thường là vô trạng thái (stateless). Nếu ứng dụng cần duy trì trạng thái, bạn phải sử dụng các dịch vụ lưu trữ bên ngoài (như database, bộ nhớ cache) để quản lý
+
+### AWS Lambda
+- AWS Lambda là dịch vụ Function as a Service (FaaS) tiên phong và phổ biến nhất của Amazon Web Services (AWS).
+- **Cách hoạt động**:
+    - Người dùng tải mã nguồn lên AWS Lambda
+AWS Lambda sẽ tự động thực thi mã, đồng thời tự động mở rộng quy mô tài nguyên theo nhu cầu
+    - Đảm bảo hiệu suất và tính sẵn sàng của ứng dụng mà không cần can thiệp thủ công
+
+- **Ứng dụng**: Xây dựng các API backend cho ứng dụng di động/web, xử lý dữ liệu theo thời gian thực (ETL), xử lý ảnh/video, tạo chatbot, backend IoT, chạy các tác vụ định kỳ (cron jobs).
+- **Ưu điểm nổi bật**: Hệ sinh thái AWS rộng lớn, tích hợp sâu với hàng trăm dịch vụ AWS khác, khả năng mở rộng cực cao, trả phí theo số lần gọi và thời gian thực thi.
+    
+### Google Cloud Functions
+- Google Cloud Functions là dịch vụ FaaS của Google Cloud Platform (GCP), tương tự như AWS Lambda.
+- **Cách hoạt động**: Khi viết code (hỗ trợ Node.js, Python, Go, Java, .NET, Ruby, PHP) và triển khai nó lên Cloud Functions. Google Cloud sẽ quản lý môi trường chạy
+- **Ứng dụng**: Tương tự AWS Lambda: backend cho ứng dụng web/di động, xử lý sự kiện trong hệ sinh thái GCP, tự động hóa tác vụ, tạo API.
+- **Ưu điểm nổi bật**: Tích hợp chặt chẽ với hệ sinh thái Google Cloud, đặc biệt mạnh mẽ với các dịch vụ dữ liệu và học máy của Google. Tốc độ khởi động (cold start) thường được đánh giá là nhanh hơn so với Lambda trong một số trường hợp.
+
+---
+
+## Container hóa (Docker + Web Server)
+
+**Container hóa** là một phương pháp ảo hóa cấp hệ điều hành, cho phép đóng gói một ứng dụng và tất cả các phụ thuộc của nó (mã nguồn, thư viện, framework, tệp cấu hình) thành một đơn vị duy nhất gọi là container. Không giống như máy ảo (Virtual Machine - VM) cần một hệ điều hành khách riêng biệt cho mỗi VM, container chia sẻ nhân hệ điều hành của máy chủ vật lý hoặc máy chủ ảo (host), giúp chúng nhẹ hơn, khởi động nhanh hơn và sử dụng tài nguyên hiệu quả hơn.
+
+### Docker
+
+Là một nền tảng mã nguồn mở cung cấp các công cụ để xây dựng, chạy, phân phối và quản lý các container. Nó đã đơn giản hóa đáng kể quá trình làm việc với container, biến công nghệ này trở nên dễ tiếp cận với các nhà phát triển và đội ngũ vận hành.
+
+### Mô hình triển khai Web Server với Docker
+- **Dockerfile**: Đây là một tệp văn bản chứa các chỉ dẫn để Docker xây dựng một Docker Image. Trong trường hợp Web Server, Dockerfile sẽ định nghĩa base image
+- **Docker Image**: Sau khi xây dựng từ Dockerfile, Docker Image là một bản mẫu bất biến, có thể tái sử dụng. Nó chứa tất cả mọi thứ cần thiết để chạy Web Server, bao gồm cả hệ điều hành cơ bản (chỉ những phần cần thiết), Web Server software và cấu hình của nó
+- **Docker Container:** Khi một Docker Image được chạy, nó trở thành một Docker Container đang hoạt động. Container này là một môi trường thực thi được cách ly, nơi Web Server của bạn sẽ xử lý các yêu cầu HTTP/HTTPS.
+
+- Kết nối mạng: Container Web Server cần được cấu hình mạng để có thể nhận yêu cầu từ bên ngoài. Điều này thường được thực hiện bằng cách ánh xạ một cổng của container ra một cổng của máy chủ host (ví dụ: cổng 80 của container Nginx ra cổng 8080 của máy chủ host).
+
+- **Các Lệnh Docker**: Các lệnh Docker thiết yếu giúp đơn giản hóa quản lý container, đảm bảo quy trình phát triển và triển khai mượt mà. Một số lệnh phổ biến bao gồm:
+    - `docker run`: Khởi chạy container từ image, kèm tùy chọn và lệnh.
+    - `docker pull`: Tải image từ Docker Hub về máy cục bộ.
+    - `docker ps`: Hiển thị các container đang chạy với thông tin quan trọng.
+    - `docker stop`: Dừng container đang chạy một cách nhẹ nhàng.
+    - `docker start`: Khởi động lại container đã dừng.
+    - `docker login`: Đăng nhập vào kho lưu trữ docker để truy cập các kho riêng tư.
+
+---
+## Edge Computing
+- **Edge Computing** là một mô hình điện toán phân tán, nơi các hoạt động tính toán, lưu trữ dữ liệu và xử lý mạng được thực hiện ở "biên" của mạng, tức là tại hoặc gần nguồn tạo ra dữ liệu, thay vì gửi tất cả dữ liệu về một trung tâm dữ liệu tập trung hoặc đám mây từ xa. "Biên" ở đây có thể là các thiết bị IoT, cảm biến, thiết bị di động, hoặc các máy chủ nhỏ (mini data centers) đặt tại các vị trí gần người dùng như tháp viễn thông, nhà máy, cửa hàng bán lẻ.
+- **Mục tiêu chính của Edge Computing bao gồm**:
+    - Giảm độ trễ (Latency Reduction): Bằng cách xử lý dữ liệu gần nguồn hơn, Edge Computing giảm đáng kể thời gian cần thiết để dữ liệu di chuyển đến trung tâm dữ liệu và quay trở lại, từ đó cải thiện tốc độ phản hồi của ứng dụng và dịch vụ.
+    - Tiết kiệm băng thông (Bandwidth Conservation): Thay vì truyền toàn bộ dữ liệu thô về đám mây, chỉ những dữ liệu đã được xử lý, lọc bỏ hoặc tổng hợp tại biên mới được gửi đi. Điều này giúp giảm tải cho mạng truyền tải, đặc biệt quan trọng đối với các ứng dụng tạo ra lượng lớn dữ liệu (ví dụ: video giám sát, IoT công nghiệp).
+    - Tăng cường độ tin cậy (Increased Reliability): Khi một phần xử lý được thực hiện tại biên, các ứng dụng có thể tiếp tục hoạt động ngay cả khi kết nối với đám mây bị gián đoạn, mang lại khả năng hoạt động liên tục và ổn định hơn.
+    - Bảo mật dữ liệu (Data Security): Việc xử lý dữ liệu tại biên giúp giảm thiểu rủi ro dữ liệu bị chặn hoặc bị tấn công trong quá trình truyền tải qua mạng công cộng. Đồng thời, dữ liệu nhạy cảm có thể được xử lý và ẩn danh hóa ngay tại biên trước khi được gửi lên đám mây.
+    - Hỗ trợ các ứng dụng mới (Enabling New Applications): Edge Computing là yếu tố then chốt cho các ứng dụng đòi hỏi phản hồi tức thì như xe tự lái, thực tế ảo (VR)/thực tế tăng cường (AR), robot tự động hóa, giám sát công nghiệp thời gian thực và các hệ thống thành phố thông minh.
+
+- **Các thành phần trong Edge Computing**: 
+    - **Cloud Server**: Máy chủ đám mây có nhiệm vụ lưu trữ và chạy các ứng dụng để điều phối, quản lý các nút biên (Edge Node) khác nhau.
+    - **Edge Server**: Máy chủ biên được đặt tại các cơ sở hoạt động từ xa (nhà máy, trung tâm phân phối, cửa hàng bán lẻ,...), đảm bảo đường truyền luôn ổn định, không làm gián đoạn hoạt động truy xuất, chia sẻ thông tin.
+    - **Edge Device**: Edge Device, hay thiết bị biên được tích hợp khả năng tính toán dữ liệu và thường chỉ xử lý các tác vụ yêu cầu độ trễ thấp.
+    - **Edge Gateway**: Edge Gateway còn được gọi là cổng biên. Ngoài việc đánh giá, phân tích và xử lý dữ liệu như máy chủ biên, Edge Gateway còn biên dịch giao thức, bảo vệ tường lửa hoặc kết nối không dây.
+    - **Edge Node**: Đây là thuật ngữ dùng để chỉ máy chủ biên, cổng biên, hoặc thiết bị biên bất kỳ mà tại đó, tính toán biên có thể được thực hiện.
