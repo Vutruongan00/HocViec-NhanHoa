@@ -212,3 +212,10 @@ Plesk là một bảng điều khiển lưu trữ web dựa trên web (web-based
 ### Sao lưu và khôi phục (Backup, Restore)
 ### Thống kê và giám sát
 ## Ưu - Nhược điểm
+
+# Một số Panel Miễn phí
+- aaPanel
+- CyberPanel
+- CloudPanel
+-  Webmin / Virtualmin
+-  ISPConfig
