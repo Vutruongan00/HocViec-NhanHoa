@@ -3,7 +3,8 @@
 >**CHUẨN BỊ**:
 > - Tên miền thật: antvpro.io.vn
 > - Cấu hình DNS cho anvtpro.io.vn đã trỏ đúng IP VPS 
-![image](https://hackmd.io/_uploads/S1kwJTbfxx.png)
+![image](https://github.com/user-attachments/assets/00cfbec5-0c3b-478f-bf64-989b7eb8e766)
+
 
 ## APACHE
 
