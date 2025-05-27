@@ -5,7 +5,7 @@
 ### 2. Authenticated FTP (FTP được xác thực)
 ---
 ### 3. FTPS (FTP Secure)
----
+
 ####  Định nghĩa:
 FTPS là một **phần mở rộng bảo mật của giao thức FTP**, sử dụng **SSL/TLS** để **mã hóa kênh điều khiển và/hoặc kênh dữ liệu**.
 
