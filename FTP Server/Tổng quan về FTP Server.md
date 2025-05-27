@@ -57,8 +57,13 @@ Là các đường hầm thông tin giữa FTP client và FTP server, bao gồm 
             - **Client**: Mở kết nối từ một cổng ngẫu nhiên của nó đến cổng ngẫu nhiên mà server vừa cung cấp.
             - **Ưu điểm**: Client luôn là bên khởi tạo kết nối, giúp dễ dàng vượt qua firewall của client.
 
+## Các phương thức truyền dữ liệu trong FTP
+Quá trình truyền dữ liệu được thiết lập, dữ liệu sẽ được truyền từ máy Client đến máy Server và ngược lại. FTP có 3 phương thức truyền tải dữ liệu là stream mode, block mode và compressed mode.
 
-## 4. So sánh FTP với các giao thức khác (SFTP, FTPS, HTTP, SCP).
+- **Stream mode**: Phương thức này hoạt động dựa vào tính tin cậy trong việc truyền dữ liệu trên giao thức TCP. Dữ liệu được truyền đi dưới dạng các byte có cấu trúc không liên tiếp.
+- **Block mode:** Là phương thức truyền dữ liệu mang tính quy chuẩn. Dữ liệu được chia thành nhiều block nhỏ và đóng gói thành các FTP blocks.
+- **Compressed mode**: Là phương thức truyền dữ liệu kỹ thuật nén dữ liệu khá đơn giản run-length encoding. Các đoạn dữ liệu bị lặp sẽ được phát hiện và loại bỏ.
+## . So sánh FTP với các giao thức khác (SFTP, FTPS, HTTP, SCP).
 
 
 | **Tiêu chí**       | **FTP (File Transfer Protocol)**                                         | **SFTP (SSH File Transfer Protocol)**                                   | **FTPS (FTP Secure)**                                                  | **HTTP (Hypertext Transfer Protocol)**                                 | **SCP (Secure Copy Protocol)**                                         |
