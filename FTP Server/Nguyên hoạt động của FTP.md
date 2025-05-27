@@ -78,9 +78,9 @@ Khi một FTP client kết nối đến FTP server, bước đầu tiên thườ
   - Cung cấp phần mềm, tài liệu không yêu cầu xác thực
 
 - **Cách hoạt động:**
-  1. Client gửi username là `anonymous` hoặc `ftp`
-  2. Mật khẩu thường là địa chỉ email của người dùng (không được xác minh)
-  3. Server cấp quyền truy cập hạn chế, **chỉ cho phép đọc** và **tải xuống**, thường từ thư mục `/pub` hoặc tương tự
+  - Client gửi username là `anonymous` hoặc `ftp`
+  - Mật khẩu thường là địa chỉ email của người dùng (không được xác minh)
+  - Server cấp quyền truy cập hạn chế, **chỉ cho phép đọc** và **tải xuống**, thường từ thư mục `/pub` hoặc tương tự
 
 - **Ưu điểm:**
   - Truy cập dễ dàng, không cần quản lý tài khoản
@@ -97,9 +97,9 @@ Khi một FTP client kết nối đến FTP server, bước đầu tiên thườ
 - **Mục đích:** Cung cấp quyền truy cập cá nhân, được kiểm soát chặt chẽ tới các khu vực cụ thể trên server
 
 - **Cách hoạt động:**
-  1. Server yêu cầu `username` và `password` hợp lệ
-  2. Client gửi thông tin này qua **kênh điều khiển**
-  3. Server kiểm tra thông tin với cơ sở dữ liệu người dùng:
+  - Server yêu cầu `username` và `password` hợp lệ
+  - Client gửi thông tin này qua **kênh điều khiển**
+  - Server kiểm tra thông tin với cơ sở dữ liệu người dùng:
      - Có thể là tài khoản hệ thống
      - Hoặc từ cơ sở dữ liệu riêng của FTP server
   4. Nếu xác thực thành công, người dùng được cấp quyền truy cập dựa trên cấu hình:
