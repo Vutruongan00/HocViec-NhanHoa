@@ -115,7 +115,7 @@ Khi một FTP client kết nối đến FTP server, bước đầu tiên thườ
 
 ---
 
- **So sánh nhanh:**
+ **So sánh:**
 
 | Tiêu chí          | Anonymous FTP               | Authenticated Users           |
 |------------------|-----------------------------|-------------------------------|
