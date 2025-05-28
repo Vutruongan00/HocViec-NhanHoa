@@ -96,5 +96,6 @@ sudo systemctl status vsftpd
 - **Thử kết nối từ Client:**
 ![image](https://github.com/user-attachments/assets/68bd2182-d68a-4369-a694-417903c5f184)
 
+-->check lại từ Server
 ![image](https://github.com/user-attachments/assets/7159f8f1-b0c9-4b87-a79d-0cfbdbbb24ca)
 
