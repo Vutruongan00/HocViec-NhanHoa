@@ -19,7 +19,8 @@
 - Cài đặt: ` sudo apt install vsftpd -y`
 - Kiểm tra hoạt động: `sudo apt status vsftpd`
 
-![image](https://hackmd.io/_uploads/HJqWbENMel.png)
+![image](https://github.com/user-attachments/assets/5ebd90ed-f661-4341-88b9-9064088c91ae)
+
 
 ## Cấu hình
 - Tạo người dùng mới: `sudo adduser user2`
