@@ -141,6 +141,10 @@ sudo adduser antv
 ```
 sudo systemctl restart filezilla-server
 ```
+- Test kết nối trên FileZilla Client:
+  
+![image](https://github.com/user-attachments/assets/36406a09-77fe-4eb1-8097-5968e58f3e12)
+
 
 
 
