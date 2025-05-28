@@ -60,7 +60,7 @@ pasv_max_port=31000
 user_sub_token=$USER
 local_root=/home/$USER/files_user2
 
-# Nhật ký
+# Nhật ký (Log)
 xferlog_enable=YES
 xferlog_std_format=YES
 log_ftp_protocol=YES
