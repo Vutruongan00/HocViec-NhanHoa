@@ -166,4 +166,3 @@ sudo systemctl restart proftpd
 
 ![image](https://github.com/user-attachments/assets/5abf66f9-a7a6-4cab-929f-973c2255969f)
 
-
