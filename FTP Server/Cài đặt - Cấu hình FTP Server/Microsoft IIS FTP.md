@@ -206,6 +206,10 @@ netsh advfirewall firewall add rule name="FTP Passive Ports" dir=in action=allow
 
 ![image](https://github.com/user-attachments/assets/3c98e93c-0b06-43de-ae7d-61f5a2bfbfd4)
 
+#### Cấu hình giới hạn kết nối đồng thời tới FTP Server:
+
+![image](https://github.com/user-attachments/assets/ec562013-5d14-435c-bde5-6c9a9b049d08)
+
 
 ### RESTART lại dịch vụ FTP 
  - Chạy `Services.msc` trong run hoặc khung tìm kiếm
