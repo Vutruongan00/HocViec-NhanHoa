@@ -9,7 +9,8 @@
 
 - Kiểm tra hoạt động: ` sudo systemctl status proftpd `
 
-![image](https://hackmd.io/_uploads/S1VhBUVMgl.png)
+![image](https://github.com/user-attachments/assets/4ee19bd4-717e-4e36-a8f3-032f58efb498)
+
 
 ## Cấu hình
 - **Vị trí các file cấu hình chính:**
@@ -44,12 +45,14 @@ UseFtpUsers on
 >- `UseFtpUsers on` Kích hoạt việc sử dụng tệp /etc/ftpusers để kiểm soát quyền truy cập FTP của các tài khoản người dùng hệ thống. Tệp /etc/ftpusers thường chứa danh sách các tài khoản người dùng hệ thống bị cấm đăng nhập vào FTP server.
 
 - Tùy chỉnh cổng (cũng trong file cấu hình này):
-![image](https://hackmd.io/_uploads/Hy4AF84flx.png)
+![image](https://github.com/user-attachments/assets/cefff6e9-c02d-4587-94dd-7e334526445d)
+
 
 - Thiết lập Passive Mode:
 
 
-![image](https://hackmd.io/_uploads/B1p6gvEGlx.png)
+![image](https://github.com/user-attachments/assets/9bf66f66-e532-4a05-85fb-557f8441c5cf)
+
 
 - Mở port trên UFW (nếu bật tường lửa):
 ```
@@ -82,14 +85,16 @@ IfModule mod_shaper.c>
 
 - Cấu hình Log:
 
-![image](https://hackmd.io/_uploads/SkU4HwNzgl.png)
+![image](https://github.com/user-attachments/assets/64c2e83e-b637-4260-a9b2-6118de1fafba)
+
 
 - test kết nối từ client
 
-![image](https://hackmd.io/_uploads/HkKRIPVflg.png)
+![image](https://github.com/user-attachments/assets/c6f9f763-b295-4083-9eea-8f134ff92269)
+
 
 
 - Check log trong server 
 
-![image](https://hackmd.io/_uploads/B1qXPDNGxe.png)
+![image](https://github.com/user-attachments/assets/678783a2-99e7-4f84-ab22-ab40a69622da)
 
