@@ -70,6 +70,11 @@ Server -> Configurations -> Logging
 
 ![image](https://github.com/user-attachments/assets/68132752-81fa-4ded-84f6-e6983ba7ae0d)
 
+- Cấu hình Passive Mode
+
+![image](https://github.com/user-attachments/assets/7e752e75-da29-41cf-b8c0-ef60c6be72ec)
+
+
 
 ---
 **Bước 3: Cài đặt Client**
@@ -135,6 +140,10 @@ sudo adduser antv
 
     ![image](https://github.com/user-attachments/assets/23e030ef-8685-45a2-9df2-b59bc36ae1b0)
 
+
+- Cấu hình Passive Mode
+
+![image](https://github.com/user-attachments/assets/7e752e75-da29-41cf-b8c0-ef60c6be72ec)
 
 
 - Cấu hình xong khởi chạy lại FileZilla Server để áp dụng cấu hình
