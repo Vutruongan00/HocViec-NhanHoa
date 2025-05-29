@@ -98,3 +98,72 @@ IfModule mod_shaper.c>
 
 ![image](https://github.com/user-attachments/assets/678783a2-99e7-4f84-ab22-ab40a69622da)
 
+
+---
+
+## Cấu hình FTPS - SSL/TLS trong proFTPD
+
+- Cài đặt module mod_tls (nếu chưa có)
+
+```bash!
+sudo apt install proftpd-mod-crypto
+```
+
+- Bật Bật mod_tls trong file cấu hình /etc/proftpd/modules.conf
+
+```bash!
+sudo nano /etc/proftpd/modules.conf
+```
+
+- Thêm hoặc bỏ comment (#) dòng sau:
+```
+LoadModule mod_tls.c
+```
+
+- Tạo chứng chỉ tự ký:
+```bash!
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+ -keyout /etc/ssl/private/proftpd.key \
+ -out /etc/ssl/certs/proftpd.crt
+```
+
+**- Cấu hình TLS trong `proftpd.conf`**
+
+`sudo nano /etc/proftpd/proftpd.conf`
+
+Thêm cấu hình sau vào cuối file (hoặc chỉnh nếu đã có)
+```bash!
+<IfModule mod_tls.c>
+  TLSEngine                   on
+  TLSLog                     /var/log/proftpd/tls.log
+  TLSProtocol                TLSv1.2
+  TLSRSACertificateFile      /etc/ssl/certs/proftpd.crt
+  TLSRSACertificateKeyFile   /etc/ssl/private/proftpd.key
+  TLSOptions                 NoCertRequest
+  TLSVerifyClient            off
+  TLSRequired                on
+</IfModule>
+```
+- Khởi động lại ProFTPD
+
+```bash!
+sudo systemctl restart proftpd
+
+```
+
+### Thử kết nối lại từ FileZilla
+- Dùng Site Manager
+
+- Chọn:
+
+    - **Protocol**: `FTP`
+
+    - **Encryption**: `Require explicit FTP over TLS`
+
+
+![image](https://github.com/user-attachments/assets/6c210915-08f7-4f4d-9fbb-6b40dca45225)
+
+
+![image](https://github.com/user-attachments/assets/5abf66f9-a7a6-4cab-929f-973c2255969f)
+
+
