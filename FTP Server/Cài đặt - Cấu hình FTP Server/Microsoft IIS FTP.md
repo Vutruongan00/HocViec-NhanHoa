@@ -197,6 +197,15 @@ Chạy lệnh PowerShell hoặc Command Prompt dưới quyền admin:
 ```powershell!
 netsh advfirewall firewall add rule name="FTP Passive Ports" dir=in action=allow protocol=TCP localport=5501-5600
 ```
+#### Cấu hình bản ghi nhật ký (log)
+- (IIS) Manager, click vào site cần cấu hình và chọn **FTP Logging**
+![image](https://github.com/user-attachments/assets/c611eab1-8329-4df6-a172-62ab4e66f5ec)
+
+
+- Cấu hình nơi lưu log(để mặc định)
+
+![image](https://github.com/user-attachments/assets/3c98e93c-0b06-43de-ae7d-61f5a2bfbfd4)
+
 
 ### RESTART lại dịch vụ FTP 
  - Chạy `Services.msc` trong run hoặc khung tìm kiếm
@@ -217,4 +226,9 @@ Restart-Service ftpsvc
 ### Kết nối đến FTP Server từ FileZilla client
 ![image](https://github.com/user-attachments/assets/d6526c29-ed88-4515-b4e6-d849e0fb8e08)
 
+- user1 không thể truy cập vào thư mục của user2
+![image](https://github.com/user-attachments/assets/d5d6b72d-2a6c-40f5-adc6-b0dbfa785957)
+
+- user2 cũng không thể truy cập vào thư mục của user1
+![image](https://github.com/user-attachments/assets/905d27cd-566d-4530-9839-624e3af3a3db)
 
