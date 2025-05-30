@@ -59,7 +59,7 @@ UseFtpUsers on
 sudo ufw allow 49152:49200/tcp
 ```
 - Giới hạn băng thông: 
-Thêm vào cuối file /etc/proftpd/proftpd.conf:
+Thêm vào cuối file `/etc/proftpd/proftpd.conf`
 ```apache!
 IfModule mod_shaper.c>
    ShaperEngine on
