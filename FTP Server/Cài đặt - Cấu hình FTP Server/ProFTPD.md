@@ -109,13 +109,13 @@ IfModule mod_shaper.c>
 sudo apt install proftpd-mod-crypto
 ```
 
-- Bật Bật mod_tls trong file cấu hình /etc/proftpd/modules.conf
+- Bật `mod_tls` trong file cấu hình `/etc/proftpd/modules.conf`
 
 ```bash!
 sudo nano /etc/proftpd/modules.conf
 ```
 
-- Thêm hoặc bỏ comment (#) dòng sau:
+ - Thêm hoặc bỏ comment (#) dòng sau:
 ```
 LoadModule mod_tls.c
 ```
@@ -126,6 +126,17 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
  -keyout /etc/ssl/private/proftpd.key \
  -out /etc/ssl/certs/proftpd.crt
 ```
+
+---
+hoặc **Cài đặt Certbot để lấy chứng chỉ Let's Encrypt** - nếu có tên miền đã trỏ vào FTP Server
+```bash!
+sudo apt install certbot -y
+```
+ - Lấy chứng chỉ SSL cho ftp.antvpro.io.vn
+   ```
+   sudo certbot certonly --standalone -d ftp.antvpro.io.vn
+   ```
+---
 
 **- Cấu hình TLS trong `proftpd.conf`**
 
