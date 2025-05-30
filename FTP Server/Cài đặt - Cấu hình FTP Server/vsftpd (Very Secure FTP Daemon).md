@@ -84,9 +84,10 @@ sudo chmod 755 /home/user2
 
 **Cấu hình tường lửa (UFW)**
 - Mở port 21 và dải port 30000:31000
+```
 sudo ufw allow 21/tcp
 sudo ufw allow 30000:31000/tcp
-
+```
 - Khởi động lại dịch vụ;
 ```
 sudo systemctl restart vsftpd
