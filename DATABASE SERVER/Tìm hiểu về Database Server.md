@@ -11,7 +11,7 @@ Cơ sở dữ liệu thường được quản lý thông qua một phần mềm
 - **Database server** sử dụng mô hình **Client-server**, trong đó các ứng dụng khách gửi yêu cầu đến máy chủ để xử lý yêu cầu, giúp phân chia công việc và tối ưu hóa hiệu suất.
     - **Client**: Là các ứng dụng (giao diện web, phần mềm desktop, hệ thống ERP...) gửi yêu cầu (query) đến server.
 
-    -**Database Server**: Là máy chủ xử lý yêu cầu, thực hiện truy vấn dữ liệu và trả kết quả về cho client.
+    - **Database Server**: Là máy chủ xử lý yêu cầu, thực hiện truy vấn dữ liệu và trả kết quả về cho client.
 - **Database server** và **Client** tiếp với nhau qua giao thức TCP/IP, đảm bảo rằng dữ liệu được truyền tải chính xác và an toàn.
 
 ## 2. Các thành phần của Database Server
