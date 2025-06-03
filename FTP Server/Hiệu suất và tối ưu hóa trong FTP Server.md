@@ -107,7 +107,11 @@ Chọn user -> trong tab **General** -> tích chọn **Concurrent session limit*
       
     - Kiểm tra log:
       ```
-      tail -f /var/log/vsftpd.log` hoặc `grep "FAIL" /var/log/vsftpd.log
+      tail -f /var/log/vsftpd.log
+      ```
+      hoặc
+      ```
+      grep "FAIL" /var/log/vsftpd.log
       ```
     - Công cụ hệ thống: `top`, `htop` (để xem tài nguyên CPU/RAM), `netstat -putan | grep :21` hoặc `ss -putan | grep :21` (để xem kết nối)
    
