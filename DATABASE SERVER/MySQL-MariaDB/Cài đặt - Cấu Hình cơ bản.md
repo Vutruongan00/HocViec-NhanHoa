@@ -7,7 +7,7 @@
     - **RAM**: 2-4 GB
     - **Disk**: 10-20 GB trống
 
--**Hệ điều hành**: Windows Server 2016+, Ubuntu 20.04+, CentOS 7+/8.
+- **Hệ điều hành**: Windows Server 2016+, Ubuntu 20.04+, CentOS 7+/8.
 
 ## 2. Cài đặt 
 
