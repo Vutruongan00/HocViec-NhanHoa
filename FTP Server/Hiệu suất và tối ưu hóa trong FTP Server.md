@@ -101,17 +101,24 @@ Chọn user -> trong tab **General** -> tích chọn **Concurrent session limit*
 - Mục tiêu: Theo dõi hoạt động của server, phát hiện và giải quyết các vấn đề như kết nối chậm, ngắt kết nối hoặc lỗi.
 
 ### a. vsftpd (Ubuntu/Linux)
--**Giám sát:**
-    - File nhật ký: `xferlog_enable=YES`, `xferlog_file=/var/log/vsftpd.log`, `log_ftp_protocol=YES`.
-    - Kiểm tra log: `tail -f /var/log/vsftpd.log` hoặc `grep "FAIL" /var/log/vsftpd.log`
-    - Công cụ hệ thống: `top`, `htop` (để xem tài nguyên CPU/RAM), `netstat -putan | grep :21` hoặc `ss -putan | grep :21` (để xem kết nối).
+- **Giám sát:**
+  
+    - Cấu hình File nhật ký: `xferlog_enable=YES`, `xferlog_file=/var/log/vsftpd.log`, `log_ftp_protocol=YES`.
+      
+    - Kiểm tra log:
+      ```
+      tail -f /var/log/vsftpd.log` hoặc `grep "FAIL" /var/log/vsftpd.log
+      ```
+    - Công cụ hệ thống: `top`, `htop` (để xem tài nguyên CPU/RAM), `netstat -putan | grep :21` hoặc `ss -putan | grep :21` (để xem kết nối)
+   
 - **Khắc phục sự cố (Troubleshooting):**
+  
     - **Kiểm tra dịch vụ**: `sudo systemctl status vsftpd`
     - **Kiểm tra log dịch vụ**: `sudo journalctl -xeu vsftpd`
     - **Firewall (UFW)**: Đảm bảo cổng 21 và dải cổng passive mode (ví dụ 20000-21000) được mở: `sudo ufw status`
 
 ### b. ProFTPD (Ubuntu/Linux)
--**Giám sát:**
+- **Giám sát:**
     - File nhật ký: ProFTPD có các loại log khác nhau: `TransferLog` (ghi lại các phiên truyền file), `SystemLog` (ghi lại các sự kiện của server), `ExtendedLog` (log chi tiết hơn).
 - Ví dụ cấu hình ghi log trong `/etc/proftpd/proftpd.conf`, bỏ comment hoặc thêm dòng sau:
 
@@ -119,4 +126,7 @@ Chọn user -> trong tab **General** -> tích chọn **Concurrent session limit*
 TransferLog /var/log/proftpd/xferlog.log
 SystemLog /var/log/proftpd/proftpd.log
 ```
-- Kiểm tra log: `tail -f /var/log/proftpd/proftpd.log`
+- Kiểm tra log:
+```
+tail -f /var/log/proftpd/proftpd.log
+```
