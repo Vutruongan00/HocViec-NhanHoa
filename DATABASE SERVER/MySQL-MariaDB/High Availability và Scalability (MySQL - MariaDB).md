@@ -66,7 +66,8 @@ bind-address          = 35.240.156.172  #(IP của master)
 SHOW MASTER STATUS;
 ```
 
-![image](https://hackmd.io/_uploads/S14UT3aGel.png)
+![image](https://github.com/user-attachments/assets/335e1a58-736f-4104-976d-6e7c643ca494)
+
 
 
 
@@ -109,7 +110,8 @@ START SLAVE;
 SHOW SLAVE STATUS\G;
 ```
 
-![image](https://hackmd.io/_uploads/rJ6ua3pGel.png)
+![image](https://github.com/user-attachments/assets/cb9dd017-8e61-48a2-a270-dbf7ed6c5f73)
+
 
 ### Kiểm chứng kết quả
 
