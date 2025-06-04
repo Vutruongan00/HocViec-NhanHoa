@@ -53,7 +53,7 @@ FLUSH PRIVILEGES;
 #REPICA
 server-id             = 1
 log_bin               = /var/log/mysql/mysql-bin.log
-binlog_do_db          = test1
+binlog_do_db          = test1 #hoặc bỏ dòng này nếu muốn Slave Replica tất cả DB
 general_log_file      = /var/log/mysql/mysql.log
 
 bind-address          = 35.240.156.172  #(IP của master)
@@ -114,4 +114,9 @@ SHOW SLAVE STATUS\G;
 
 
 ### Kiểm chứng kết quả
+- Tạp thêm bảng mới trong database `test1` tên `demo` trên Master
+![image](https://github.com/user-attachments/assets/9b7eadde-4c94-4a49-9542-851ccc8c1cd1)
+
+- Kiểm tra trên Slave:
+![image](https://github.com/user-attachments/assets/bb62d220-8969-4081-b8f8-084d6b52e916)
 
