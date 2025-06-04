@@ -90,9 +90,9 @@ sudo systemctl enable mariadb
 
 ## 3. Cấu hình tối ưu hiệu năng
 
-- File cấu hình:
-    - **MySQL**: `/etc/mysql/my.cnf`
-    - **MariaDB**: `/etc/my.cnf`
+- **File cấu hình:**
+    - **MySQL**: `/etc/mysql/mysql.conf.d/mysqld.cnf`
+    - **MariaDB**: `/etc/my.cnf.d/mariadb-server.cnf`
 #### Linux:
 - Thêm vào trong file cấu hình:
 
