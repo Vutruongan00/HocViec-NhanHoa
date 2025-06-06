@@ -56,7 +56,7 @@ Mã hóa là biện pháp bảo vệ dữ liệu khi **lưu trữ (at rest)** v�
 > sudo apt install openssl
 > ```
 
-### Mã hóa khi truyền tải (Encryption In Transit - SSL/TLS)
+### 2.1 Mã hóa khi truyền tải (Encryption In Transit - SSL/TLS)
 
 #### Mục tiêu:
 - Bảo vệ dữ liệu truyền giữa **client** và **database server**.
@@ -189,6 +189,8 @@ mysql -h 35.240.156.172 -u ssluser -p ^
 ![image](https://github.com/user-attachments/assets/1cc70f26-c974-4fbf-a6d8-280395b2cb8e)
 
 
+
+### 2.2 Mã hóa dữ liệu ở mức lưu trữ (TDE – Transparent Data Encryption)
 ----
 ## 3. Audit và theo dõi truy cập
 
