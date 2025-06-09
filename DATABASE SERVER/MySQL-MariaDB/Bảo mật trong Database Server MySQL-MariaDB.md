@@ -46,7 +46,7 @@ Hiểu rõ các mối đe dọa giúp chúng ta xây dựng các biện pháp ph
 
 
 
-## 2. Mã hóa dữ liệu (Encryption) SSL/TLS
+## 2. Mã hóa dữ liệu (Encryption)
 
 Mã hóa là biện pháp bảo vệ dữ liệu khi **lưu trữ (at rest)** và **truyền tải (in transit)**.
 
