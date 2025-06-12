@@ -1,5 +1,43 @@
 > # Quản Trị Database Server
+### Các lệnh và thao tác cơ bản trong MongoDB
 
+- **Quản lý Cơ sở dữ liệu (Database):**
+| Hành động                | Câu lệnh            |
+| ------------------------ | ------------------- |
+| Hiển thị tất cả database | `show dbs`          |
+| Sử dụng database         | `use mydb`          |
+| Xóa database hiện tại    | `db.dropDatabase()` |
+
+
+- **Thêm dữ liệu:**
+```javascript=
+//thêm 1 hoặc nhiều dữ liệu//
+db.students.insertOne({ name: "An", age: 20 }) 
+
+db.students.insertMany([
+  { name: "Bình", age: 21 },
+  { name: "Chi", age: 19 }
+])
+```
+- Cập nhật dữ liệu:
+```javascript=
+db.students.updateOne(
+  { name: "An" },
+  { $set: { age: 22 } }
+)
+
+db.students.updateMany(
+  { age: { $lt: 20 } },
+  { $inc: { age: 1 } }
+)
+```
+
+- Xóa dữ liệu:
+```javascript=
+db.students.deleteOne({ name: "Chi" })
+db.students.deleteMany({ age: { $gt: 25 } })
+```
+---
 # 1. User và quản lý quyền truy cập (Users and Access Control)
 ### 1.1 Tạo User `root`
 - Để quản lý người dùng và quyền truy cập, trước hết cần **Kích hoạt xác thực Authentication** trong file cấu hình và **tạo user quản trị (root)** trong MongoDB `/etc/mongod.conf`.
