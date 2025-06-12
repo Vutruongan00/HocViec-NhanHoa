@@ -26,7 +26,8 @@ sudo apt install postgresql postgresql-contrib -y
 ```bash=
 sudo systemctl status postgresql
 ```
-![image](https://hackmd.io/_uploads/BkZp43w7ll.png)
+![image](https://github.com/user-attachments/assets/30b3ef28-2c37-4d98-97ea-be51219d14a2)
+
 
 - Đăng nhập vào PostgreSQL
 ```bash=
