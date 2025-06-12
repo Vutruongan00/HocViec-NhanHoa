@@ -1,7 +1,10 @@
 > # Triển khai Postgresql High Availability (HA)
+>
 > note1: `34.92.221.58`  -	**master**
-> note2: `34.92.129.179` -	**slave_1**
-> note3: `34.124.212.78` -	**slave_2**
+>
+>  note2: `34.92.129.179` -	**slave_1**
+>
+>  note3: `34.124.212.78` -	**slave_2**
 
 # Cấu Hình
 ## Bước 1: **Thực hiện cấu hình trên cả 3 note:**
