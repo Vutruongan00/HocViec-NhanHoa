@@ -140,4 +140,9 @@ host    all             all             <IP_CLIENT>/32          md5
 
 
 **Đổi mật khẩu user postgres:**
-**Tạp user và database riêng biệt**
+```bash!
+sudo -u postgres psql
+\password postgres
+```
+
+**Tạp user và database riêng biệt** (phần sau)
