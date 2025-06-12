@@ -12,7 +12,7 @@
 - Cấu hình admin và mật khẩu
 - Port 5432 (mặc định)...
 - --> Next...
-![image](https://github.com/user-attachments/assets/3652e934-4db5-43b8-af84-373341b09ee8)
+![image](https://github.com/user-attachments/assets/3652e934-4db5-43b8-af84-373341b09ee8an)
 
 
 ## Linux (Ubuntu)
