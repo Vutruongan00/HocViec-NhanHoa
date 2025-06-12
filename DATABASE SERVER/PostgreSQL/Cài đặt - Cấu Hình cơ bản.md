@@ -48,27 +48,27 @@ sudo -u postgres psql
 
 - **Quản lý Bảng (Tables:**
     - Hiển thị bảng:  **`\dt`**
-    - Tạo bảng: `user`
+    - Tạo bảng: `bang1`
     ```sql!
-    CREATE TABLE users (	
+    CREATE TABLE bang1 (	
     id SERIAL PRIMARY KEY,	
     name TEXT,	
     age INT	
     );
     ```
     
-    - Xóa bảng: `DROP TABLE users;`
-    - Xem cấu trúc bảng: `\d users`
+    - Xóa bảng: `DROP TABLE bang1;`
+    - Xem cấu trúc bảng: `\d bang1`
 
 - **Thao tác Dữ liệu (Data)**
     - Thêm dữ liệu: dùng `INSERT`
     ```sql
-    INSERT INTO users (name, age) VALUES ('An', 25);
+    INSERT INTO bang1 (name, age) VALUES ('An', 25);
     ```
     - Truy vấn dữ liệu: `SELECT`
     ```sql
-    SELECT * FROM users;
-    SELECT * FROM users WHERE age > 20;
+    SELECT * FROM bang1;
+    SELECT * FROM bang1 WHERE age > 20;
     ```
     - Cập nhạt dữ liệu: `UPDATE`
     ```sql
@@ -78,7 +78,16 @@ sudo -u postgres psql
     ```sql
     DELETE FROM users WHERE name = 'An';
     ```
-    
+    - Một số tiện ích:
+    | Lệnh           | Tác dụng          |
+| -------------- | ----------------- |
+| `\l`           | Liệt kê database  |
+| `\c dbname`    | Kết nối database  |
+| `\dt`          | Liệt kê bảng      |
+| `\d tablename` | Xem cấu trúc bảng |
+| `\du`          | Liệt kê user/role |
+| `\q`           | Thoát khỏi `psql` |
+
     
 # 2. Cấu hình tối ưu hiệu năng cơ bản
 - Tệp cấu hình:
@@ -103,6 +112,13 @@ sudo systemctl restart postgresql
 
 ---
 # 3. Cấu hình bảo mật cơ bản
+- Thay đổi phương thức xác thực:
+`nano /etc/postgresql/14/main/pg_hba.conf`
+    - Sửa các dòng `local`/`host` thành:
+      ```css!
+      local   all             all                                     md5
+      host    all             all             127.0.0.1/32            md5
+      ```
 
  **Chỉ cho phép truy cập từ localhost:**
 - Mở tệp cấu hình PostgreSQL:
