@@ -169,3 +169,184 @@ CREATE TABLE employees (
 
 >Đây là cách kích hoạt thủ công Failover
 
+---
+
+## Cluster-Failover with `Patroni` + `Etcd`
+> - Mở Firewall trước cho chắc đỡ quên:
+> ```bash!
+> sudo ufw status
+> sudo ufw allow 2379/tcp
+> sudo ufw allow 2380/tcp
+> sudo ufw reload
+> ```
+
+### Triển khai Patroni + Etcd trên từng node
+
+- **Cài đặt Patroni và Etcd**
+```bash=
+sudo apt update
+sudo apt install -y python3-pip python3 psycopg2 python3-yaml python3-click python3 etcd postgresql
+sudo pip3 install patroni[etcd]
+sudo apt install etcd-server
+```
+
+- **Cấu hình Etcd (trên mỗi node)**
+    - Tạo file cấu hình `nano /etc/etcd/etcd.conf.yml` như sau:
+```yaml
+name: node1  # thay bằng node2 hoặc node3 tương ứng
+data-dir: /var/lib/etcd
+listen-peer-urls: http://<local_ip>:2380
+listen-client-urls: http://<local_ip>:2379
+initial-advertise-peer-urls: http://<local_ip>:2380
+advertise-client-urls: http://<local_ip>:2379
+initial-cluster: node1=http://IP1:2380,node2=http://IP2:2380,node3=http://IP3:2380
+initial-cluster-state: new
+initial-cluster-token: patroni-cluster
+```
+node1:
+![image](https://github.com/user-attachments/assets/1c7d86a9-5fc7-4e04-8d28-28f4ebc43291)
+
+node2
+![image](https://github.com/user-attachments/assets/b5c34f41-b986-49c8-9830-3c0e82f9d6dd)
+node3
+![image](https://github.com/user-attachments/assets/21312270-a649-4977-b3e0-1a5f02cdc32a)
+
+- **Chạy etcd bằng systemd hoặc screen:**
+```bash!
+etcd --config-file /etc/etcd/etcd.conf.yml
+```
+
+### Cấu hình Patroni trên mỗi node
+
+- **Tạo file `nano /etc/patroni.yml` trên mỗi node:**
+
+```yaml!
+scope: postgres_cluster
+namespace: /db/
+name: node1   	#đổi node2/node3 cho phù hợp
+
+restapi:
+  listen: 0.0.0.0:8008
+  connect_address: 10.170.0.3:8008
+
+etcd:
+  hosts:
+    - 10.170.0.3:2379
+    - 10.170.0.2:2379
+    - 10.148.0.7:2379
+
+
+bootstrap:
+  dcs:
+    ttl: 30
+    loop_wait: 10
+    retry_timeout: 10
+    maximum_lag_on_failover: 1048576
+    postgresql:
+      use_pg_rewind: true
+      parameters:
+        wal_level: replica
+        hot_standby: "on"
+        max_wal_senders: 10
+        max_replication_slots: 10
+        wal_keep_size: 64
+
+  initdb:
+    - encoding: UTF8
+    - data-checksums
+
+  users:
+    replicator:
+      password: Qwerty123@
+      options:
+        - replication
+
+postgresql:
+  listen: 0.0.0.0:5432
+  connect_address: 10.148.0.7:5432
+  data_dir: /var/lib/postgresql/14/main
+  config_dir: /etc/postgresql/14/main       # <-- thêm dòng này để tránh lỗi
+  bin_dir: /usr/lib/postgresql/14/bin
+  authentication:
+    replication:
+      username: replicator
+      password: Qwerty123@
+    superuser:
+      username: postgres
+      password: Qwerty123@
+  parameters:
+    unix_socket_directories: '/var/run/postgresql'
+
+tags:
+  nofailover: false
+  noloadbalance: false
+  clonefrom: false
+```
+
+### Cấu hình Patroni kết nối đến PostgreSQL  
+
+- Mở file cấu hình: 
+```bash!
+nano /etc/postgresql/14/main/pg_hba.conf
+```
+
+- Thêm(/sửa) những dòng sau vào cuối file:
+```conf!
+# Cho phép postgres kết nối từ localhost
+host    all             postgres        127.0.0.1/32            trust
+# Cho phép các kết nối replication từ các node standby.
+host    replication     replicator      10.170.0.2/32           md5     
+host    replication     replicator      10.148.0.7/32           md5
+```
+- Lưu file và tải lại cấu hình PostgreSQL trên Primary (node1)
+```bash!
+sudo systemctl reload postgresql
+```
+
+- **Khởi động Patroni (chạy trên mỗi node):**
+    - Đăng nhập user postgres: `sudo -u postgres`
+    ```
+    patroni /etc/patroni.yml
+    ```
+- **// Hoặc chạy patroni dưới dạng một dịch vụ Systemd:**
+    - Tạo hoặc chỉnh file unit dịch vụ Systemd cho Patroni: `nano /etc/systemd/system/patroni.service`
+    ```ini
+    [Unit]
+    Description=Patroni PostgreSQL high-availability
+    After=network.target etcd.service 
+
+    [Service]
+    Type=simple
+    User=postgres     
+    Group=postgres    
+    ExecStart=/usr/local/bin/patroni /etc/patroni.yml
+    Restart=on-failure
+    LimitNOFILE=100000
+    LimitNPROC=100000
+
+    [Install]
+    WantedBy=multi-user.target
+    ```
+    
+- Tải lại cấu hình Systemd: 
+`sudo systemctl daemon-reload`
+- Khởi động dịch vụ Patroni:
+`sudo systemctl start patroni`  
+    
+### **Kiểm tra trạng thái cluster Patroni từ node1 (Primary):**
+```bash!
+patronictl -c /etc/patroni.yml list postgres_cluster
+```
+![image](https://github.com/user-attachments/assets/e5e09c64-674f-4b8a-b7e2-4944c0d5d742)
+
+
+### Kiểm tra hoạt động của FAILOVER
+
+- Thử dừng patroni trên node1 (Primary) - điều này sẽ khiến PostgreSQL trên node1 cũng dừng lại:
+```bash!
+sudo systemctl stop patroni
+```
+- Lúc này `node2` tự động trở thành `Leader`, 
+`node1` trở thành `replica`
+![image](https://github.com/user-attachments/assets/90f052e3-a421-42c1-b121-b3e9b9958465)
+
