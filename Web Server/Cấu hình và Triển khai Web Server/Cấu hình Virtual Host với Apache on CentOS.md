@@ -32,6 +32,10 @@ sudo mkdir -p /var/www/site2.com/public_html
 ```bash!
 sudo chown -R $USER:$USER /var/www/site1.com/public_html
 sudo chown -R $USER:$USER /var/www/site2.com/public_html
+sudo chown -R apache:apache /var/www/site1.com
+sudo chown -R apache:apache /var/www/site2.com
+sudo chmod -R 755 /var/www/site1.com
+sudo chmod -R 755 /var/www/site2.com
 ```
 
 - Tạo file index.html để kiểm tra:
@@ -90,3 +94,5 @@ sudo systemctl restart httpd
 ### Truy cập thử nghiệm
 
 - Từ trình duyệt máy Client, truy cập `http://site1.com` hoặc `http://site2.com`
+![image](https://github.com/user-attachments/assets/c5c862c1-a5e6-41ee-9fe4-d89449d294df)
+
