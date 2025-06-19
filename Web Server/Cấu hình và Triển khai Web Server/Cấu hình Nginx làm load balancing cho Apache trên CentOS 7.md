@@ -44,10 +44,12 @@ sudo yum install nginx -y
 sudo systemctl start nginx
 sudo systemctl enable nginx
 ```
-- ** Cấu hình Nginx làm Load Balancer:**
+- **Cấu hình Nginx làm Load Balancer:**
 
-    - Sửa file cấu hình: `sudo vi /etc/nginx/nginx.conf
-`
+    - Sửa file cấu hình:
+  ```bash!
+  sudo vi /etc/nginx/nginx.conf
+  ```
     - Thêm đoạn sau vào phần `http { ... }`:
 
 ```bash!
