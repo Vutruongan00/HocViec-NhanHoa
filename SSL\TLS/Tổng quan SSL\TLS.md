@@ -109,14 +109,14 @@ SSL/TLS sử dụng kết hợp hai loại mã hóa chính: mã hóa bất đố
 - Dữ liệu được mã hóa bằng khóa công khai chỉ có thể được giải mã bằng khóa bí mật tương ứng (và ngược lại).
 - **Ứng dụng trong SSL/TLS:** Chủ yếu dùng trong giai đoạn bắt tay (handshake) để trao đổi khóa phiên (session key) và xác thực danh tính.
 
-![image](https://hackmd.io/_uploads/HyiHdJdVeg.png)
+![image](https://github.com/user-attachments/assets/d5fb5707-bf81-4ef2-8ada-9a72836ff00a)
 
 ### Mã hóa đối xứng (Symmetric-key cryptography)
 - Sử dụng một khóa duy nhất (khóa phiên - session key) cho cả mã hóa và giải mã.
 - Nhanh và hiệu quả hơn so với mã hóa bất đối xứng.
 - **Ứng dụng trong SSL/TLS:** Dùng để mã hóa toàn bộ dữ liệu sau khi handshake hoàn tất.
 
-![image](https://hackmd.io/_uploads/H1EwOJONgx.png)
+![image](https://github.com/user-attachments/assets/2d12cdc1-9eec-4fc9-9702-4a37fdb757c0)
 
 ### Quy trình tổng thể
 1. **Trao đổi khóa phiên:**  Sử dụng mã hóa bất đối xứng để thiết lập một khóa phiên đối xứng duy nhất giữa máy khách và máy chủ một cách an toàn (trong giai đoạn handshake).
@@ -126,7 +126,7 @@ SSL/TLS sử dụng kết hợp hai loại mã hóa chính: mã hóa bất đố
 
 ## 2.2. Handshake SSL/TLS: Cách thiết lập kết nối an toàn
 
-![image](https://hackmd.io/_uploads/r12t_kuExe.png)
+![image](https://github.com/user-attachments/assets/43e679df-7086-4db7-9588-4ba7c33a7fe3)
 
 Dưới đây là quy trình TLS 1.2 handshake (TLS 1.3 có khác biệt nhưng tương tự về nguyên tắc):
 
