@@ -124,37 +124,75 @@ sudo systemctl reload nginx
 
 ## Cài đặt SSL trên IIS (Windows Server)
 
-- **Bước 1: Mở IIS Manager:** Mở `Server Manager` -> `Tools` -> `Internet Information Services (IIS) Manager`.
-- **Bước 2: Tạo CSR (Nếu chưa có):**
-   - Chọn tên máy chủ của bạn trong khung bên trái.
+### **Bước 1: Mở IIS Manager:** 
+- Mở `Server Manager` -> `Tools` -> `Internet Information Services (IIS) Manager`.
+
+### **Bước 2: Tạo CSR (Nếu chưa có):**
+   - Chọn tên máy chủ trong khung bên trái.
    - Trong khung giữa, click chọn `Server Certificates`.
+![image](https://github.com/user-attachments/assets/8219f88c-2f66-4e9c-b0f7-722d7aaad816)
+
    - Trong khung `Actions` bên phải, nhấp vào `Create Certificate Request...`.
    - Điền thông tin yêu cầu và chọn độ dài khóa (thường là 2048-bit trở lên) và thuật toán mã hóa (SHA256).
+![image](https://github.com/user-attachments/assets/64c118a3-072d-4b6a-a1d6-5a0139a0fb02)
+
+![image](https://github.com/user-attachments/assets/71a822a1-1bef-48b8-bd69-a77193a8dad9)
+
    - Lưu CSR vào một tệp văn bản.
-- **Bước 3: Hoàn tất Yêu cầu Chứng chỉ:**
+
+
+### **Bước 3: Hoàn tất Yêu cầu Chứng chỉ:**
    - Sau khi CA cấp chứng chỉ (thường là tệp `.cer` hoặc `.crt`), trở lại `Server Certificates`.
    - Trong khung `Actions`, nhấp vào `Complete Certificate Request...`.
-   - Duyệt đến tệp chứng chỉ bạn đã nhận từ CA.
+   - Duyệt đến tệp chứng chỉ đã nhận từ CA.
    - Cung cấp một tên thân thiện (Friendly name) cho chứng chỉ để dễ quản lý.
    - Chứng chỉ sẽ được nhập vào kho lưu trữ chứng chỉ của máy chủ.
-- **Bước4: Gán chứng chỉ cho trang web:**
-   - Trong khung bên trái, điều hướng đến `Sites` và chọn trang web của bạn.
+ 
+ 
+> - Nếu có file `.crt` rồi, cần convert sang định dạng file `.PFX`. Sử dụng **Openssl**  hoặc convert online:
+>     - chạy lệnh sau bằng `cmd` trong thư mục chứa file cert
+> ```
+> openssl pkcs12 -export -out certificate.pfx -inkey antvpro.key -in certificate.crt -certfile ca_bundle.crt
+> ```
+> - Sau khi conver file có định dạng như sau
+![image](https://github.com/user-attachments/assets/942a8284-2f96-4ddf-bf77-4686f2458b16)
+>
+>- Import chứng chỉ vào máy chủ
+![image](https://github.com/user-attachments/assets/2ef4fd8f-e4a3-4fda-b2a6-8d5ae81da365)
+
+
+
+### **Bước 4: Gán chứng chỉ cho trang web:**
+   - Trong khung bên trái, điều hướng đến `Sites` và chọn trang web cần cấu hình.
    - Trong khung `Actions` bên phải, nhấp vào `Bindings...`.
    - Trong hộp thoại `Site Bindings`, nhấp vào `Add...`.
    - Chọn `Type` là `https`.
-   - Đặt `IP address` là `All Unassigned` hoặc địa chỉ IP cụ thể của bạn.
+   - Đặt `IP address` là `All Unassigned` hoặc địa chỉ IP cụ thể.
    - Đặt `Port` là `443`.
-   - Trong `SSL certificate`, chọn chứng chỉ bạn vừa nhập bằng `Friendly name` của nó.
-   - (Tùy chọn) Chọn `Require Server Name Indication (SNI)` nếu bạn có nhiều trang web HTTPS trên cùng một địa chỉ IP.
+   - Trong `SSL certificate`, chọn chứng chỉ vừa nhập bằng `Friendly name` của nó.
+   - (Tùy chọn) Chọn `Require Server Name Indication (SNI)` nếu có nhiều trang web HTTPS trên cùng một địa chỉ IP.
+
+![image](https://github.com/user-attachments/assets/94b4a643-ec2a-4920-b074-165b6ec4f028)
+
    - Nhấp `OK` và sau đó `Close`.
-- **Bước5: Chuyển hướng HTTP sang HTTPS (Tùy chọn):**
-   - Cài đặt module URL Rewrite (nếu chưa có).
-   - Chọn trang web của bạn trong IIS Manager.
-   - Trong khung giữa, click chọn `URL Rewrite`.
-   - Trong khung `Actions`, nhấp vào `Add Rule(s)...` và chọn `Blank Rule` cho `Inbound Rules`.
-   - Cấu hình rule:
-     - `Name`: `HTTP to HTTPS Redirect`
-     - `Match URL`:
+ 
+![image](https://github.com/user-attachments/assets/af95fded-ea8f-415b-9ade-04954f9687ef)
+
+### **Bước5: Chuyển hướng HTTP sang HTTPS (Tùy chọn):**
+
+>Dùng HSTS:
+
+![image](https://github.com/user-attachments/assets/0cbb2d75-4d0f-42ea-946f-ab0444542974)
+
+>Hoặc dùng module URL Rewrite
+- Cài đặt module URL Rewrite (nếu chưa có).
+- Chọn trang web cần cấu hình trong IIS Manager.
+- Trong khung giữa, click chọn `URL Rewrite`.
+- Trong khung `Actions`, nhấp vào `Add Rule(s)...` và chọn `Blank Rule` cho `Inbound Rules`.
+
+- Cấu hình rule:
+    - `Name`: `HTTP to HTTPS Redirect`
+    - `Match URL`:
        - `Requested URL`: `Matches the Pattern`
        - `Using`: `Regular Expressions`
        - `Pattern`: `(.*)`
@@ -166,6 +204,7 @@ sudo systemctl reload nginx
        - `Redirect type`: `Permanent (301)`
    - Nhấp `Apply`.
 
+---
 ---
 
 ---
