@@ -13,28 +13,37 @@
   - **Toàn vẹn dữ liệu:** Đảm bảo dữ liệu không bị thay đổi trong quá trình truyền tải.
 - **Tầm quan trọng:** HTTPS đã trở thành tiêu chuẩn bắt buộc cho mọi trang web hiện đại. Các trình duyệt hiện nay sẽ cảnh báo người dùng về các trang HTTP không an toàn, và Google cũng ưu tiên HTTPS trong xếp hạng tìm kiếm.
 
-## 9.2. Ứng dụng SSL/TLS trong Email và các giao thức khác
+## 2. Ứng dụng SSL/TLS trong Email và các giao thức khác (SMTPS, IMAPS, POP3S)
 
 SSL/TLS không chỉ giới hạn ở giao tiếp web. Nó là nền tảng cho nhiều giao thức ứng dụng khác cần bảo mật dữ liệu.
 
-- **SMTPS (Simple Mail Transfer Protocol Secure):**
+### SMTPS (Simple Mail Transfer Protocol Secure):
   - **Khái niệm:** SMTPS là giao thức **SMTP** được bảo mật bằng SSL/TLS. SMTP dùng để gửi email đi.
   - **Cổng mặc định:** Thường là cổng **465** (Implicit TLS) hoặc cổng **587** (Explicit TLS/STARTTLS).
   - **Mục đích:** Mã hóa quá trình gửi email từ máy khách email đến máy chủ email, hoặc giữa các máy chủ email với nhau, bảo vệ nội dung email và thông tin đăng nhập.
-- **IMAPS (Internet Message Access Protocol Secure):**
+
+### IMAPS (Internet Message Access Protocol Secure):
   - **Khái niệm:** IMAPS là giao thức **IMAP** được bảo mật bằng SSL/TLS. IMAP dùng để truy cập và quản lý email trên máy chủ.
   - **Cổng mặc định:** Thường là cổng **993**.
   - **Mục đích:** Mã hóa quá trình truy cập hộp thư đến, đọc, xóa, sắp xếp email trên máy chủ, bảo vệ nội dung email và thông tin đăng nhập.
+
 - **POP3S (Post Office Protocol 3 Secure):**
   - **Khái niệm:** POP3S là giao thức **POP3** được bảo mật bằng SSL/TLS. POP3 dùng để tải email từ máy chủ về máy khách và xóa chúng trên máy chủ.
   - **Cổng mặc định:** Thường là cổng **995**.
   - **Mục đích:** Mã hóa quá trình tải email về máy tính, bảo vệ nội dung email và thông tin đăng nhập.
-- **Các ứng dụng khác:** SSL/TLS cũng được sử dụng để bảo mật nhiều giao thức khác như:
+  - 
+### Các ứng dụng khác: SSL/TLS cũng được sử dụng để bảo mật nhiều giao thức khác như:
   - **FTPS (File Transfer Protocol Secure):** FTP qua SSL/TLS để truyền tệp an toàn (cổng 990 hoặc cổng 21 với FTPS Explicit).
   - **LDAPS (Lightweight Directory Access Protocol Secure):** LDAP qua SSL/TLS để truy cập dịch vụ thư mục (cổng 636).
   - **VPN (Virtual Private Network):** Một số giải pháp VPN sử dụng TLS để tạo đường hầm an toàn.
+### 
+| Giao thức | Vai trò chính               | Cổng mặc định | Mã hóa khởi đầu | Giao thức nền | Cơ chế bảo mật    | Mức độ phổ biến |
+| --------- | --------------------------- | ------------- | --------------- | ------------- | ----------------- | --------------- |
+| **SMTPS** | Gửi email (SMTP bảo mật)    | 465           | TLS ngầm định   | SMTP          | Mã hóa toàn phiên | Rất phổ biến    |
+| **IMAPS** | Nhận email (truy cập từ xa) | 993           | TLS ngầm định   | IMAP          | Mã hóa toàn phiên | Rất phổ biến    |
+| **POP3S** | Tải email về client         | 995           | TLS ngầm định   | POP3          | Mã hóa toàn phiên | Trung bình      |
 
-## 9.3. TLS Versions và Security Policy (Ví dụ: Tắt TLS 1.0/1.1)
+## 3. TLS Versions và Security Policy (Ví dụ: Tắt TLS 1.0/1.1)
 
 Phiên bản của giao thức TLS được sử dụng là một yếu tố cực kỳ quan trọng đối với bảo mật. Các phiên bản cũ hơn có thể chứa lỗ hổng bảo mật đã biết.
 
