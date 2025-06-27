@@ -103,5 +103,5 @@ sudo ufw allow 8080
 ![image](https://github.com/user-attachments/assets/aa51e712-f0e4-40e8-a938-1b735e07d7da)
 
 
-## Cấu Hình SSL trên TOMCAT
+
 
