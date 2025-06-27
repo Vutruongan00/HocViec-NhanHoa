@@ -102,6 +102,47 @@ sudo ufw allow 8080
 
 ![image](https://github.com/user-attachments/assets/aa51e712-f0e4-40e8-a938-1b735e07d7da)
 
+---
+
+## Cấu Hình SSL trên TOMCAT
+
+### **Bước 1: Chuẩn bị chứng chỉ SSL**
+
+- Có 3 file sau từ nhà cung cấp chứng chỉ (CA):
+    - `certificate.crt`: chứng chỉ chính
+    - `private.key`: khóa riêng
+    - `ca_bundle.crt`: chuỗi chứng chỉ trung gian (intermediate CA)
+
+### Bước 2: Gộp các file chứng chỉ `.crt` và file private `.key` thành `.pfx` (PKCS#12)
+
+```bash!
+openssl pkcs12 -export -out certificate.pfx -inkey antvpro.key -in certificate.crt -certfile ca_bundle.crt
+```
+### Bước 3: Cấu hình SSL trong `server.xml`
+    - Mở file `conf/server.xml` tìm đến đoạn `<Connector>` có `port="8443"` hoặc thêm mới:
+```xml!
+<Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+               SSLEnabled="true"
+               maxThreads="150"
+               scheme="https" secure="true"
+               sslProtocol="TLSv1.2+TLSv1.3">
+        <SSLHostConfig hostName="_default_">
+            <Certificate certificateKeystoreFile="/etc/ssl/certificate.pfx"
+                         certificateKeystorePassword="123456"
+                         type="RSA" />
+        </SSLHostConfig>
+    </Connector>
+```
+
+> Nếu chưa dùng cổng 443, có thể để port="8443" và truy cập bằng https://yourdomain.com:8443.
+
+![image](https://hackmd.io/_uploads/rJ46RlhVgx.png)
+
+
+### Bước 4: Khởi động lại Tomcat
+sudo systemctl restart tomcat
+
+![image](https://hackmd.io/_uploads/BJXmLz2Nlx.png)
 
 
 
