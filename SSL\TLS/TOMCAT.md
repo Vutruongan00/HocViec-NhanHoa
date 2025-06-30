@@ -136,13 +136,13 @@ openssl pkcs12 -export -out certificate.pfx -inkey antvpro.key -in certificate.c
 
 > Nếu chưa dùng cổng 443, có thể để port="8443" và truy cập bằng https://yourdomain.com:8443.
 
-![image](https://hackmd.io/_uploads/rJ46RlhVgx.png)
+![image](https://github.com/user-attachments/assets/9931f06c-42bd-4893-9282-26c6c5265038)
 
 
 ### Bước 4: Khởi động lại Tomcat
 sudo systemctl restart tomcat
 
-![image](https://hackmd.io/_uploads/BJXmLz2Nlx.png)
+![image](https://github.com/user-attachments/assets/09014887-0a59-4dc2-87b4-454d9282ce0e)
 
 
 
