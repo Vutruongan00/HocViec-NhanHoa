@@ -128,7 +128,8 @@ add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; prelo
 ### d. Apache Tomcat:
 
 - Tomcat cung cấp bộ lọc có tên HttpHeaderSecurityFilter, cho phép thêm các tiêu đề HTTP bảo mật như Strict-Transport-Security, X-Frame-Options và X-Content-Type-Options vào phản hồi.
-- Bộ lọc này có thể được thêm và cấu hình như các bộ lọc khác thông qua tệp web.xml. Ví dụ cấu hình trong tệp conf/web.xml.
+- Bộ lọc này có thể được thêm và cấu hình như các bộ lọc khác thông qua tệp web.xml.
+- Ví dụ cấu hình trong tệp `conf/web.xml`.
 
 
 XML
