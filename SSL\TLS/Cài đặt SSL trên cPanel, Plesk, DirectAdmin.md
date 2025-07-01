@@ -63,21 +63,21 @@ Cài đặt Plesk [Tham khảo tại đây](https://kdata.vn/cam-nang/cai-dat-pl
 
 - Đăng nhập trang quản trị Plesk bằng tài khoản Admin:
 
-![image](https://hackmd.io/_uploads/S1mkkCkBex.png)
+![image](https://github.com/user-attachments/assets/66e9b03e-574d-4a05-a648-10c8ccfe181a)
 
 - Add Customer:
-![image](https://hackmd.io/_uploads/BycZeC1Slx.png)
+![image](https://github.com/user-attachments/assets/c8a55ec6-c7e4-43d2-8ce2-1b6e03ea0fb3)
 
 - Điền thông tin của khách hàng: (thông tin liên lạc, thông tin đăng nhập, và tên domain của khách,...)
 - Chọn Service plan (cấu hình Service plan
 tùy thuộc vào nhu cầu của Customer hoặc Reseller)
 
-![image](https://hackmd.io/_uploads/By6EZAySgx.png)
+![image](https://github.com/user-attachments/assets/7b93e48e-ab71-444e-9779-1a365d074216)
 
-![image](https://hackmd.io/_uploads/HyADxRkHel.png)
+![image](https://github.com/user-attachments/assets/75a54844-0e8a-40dd-9237-5bdf10ba4a7d)
 
 - Đăng nhập bằng user1 để quản trị tên miền (Hoặc truy câp thẳng từ admin)
-![image](https://hackmd.io/_uploads/B1UszA1rle.png)
+![image](https://github.com/user-attachments/assets/0c0e56f6-2ead-4b4f-9425-d826dcaf38ae)
 
 
 - Cuộn xuống dưới và chọn 1 trong 3 cách để cài chứng chỉ SSL cho domain
@@ -85,7 +85,7 @@ tùy thuộc vào nhu cầu của Customer hoặc Reseller)
     - certificate.crt
     - ca_bundle.crt
     - antvpro.key
-    ![image](https://hackmd.io/_uploads/rye0kB01Bel.png)
+![image](https://github.com/user-attachments/assets/ab737731-82f1-45c5-b2ab-27190804838b)
 
 - Gộp 3 file thành 1 file `fullchain.pem`
 ```bash!
@@ -97,7 +97,7 @@ cat antvpro.key certificate.crt ca_bundle.crt > fullchain.pem
 ```
 -  Chọn **`Upload .pem file`** 
 - Kiểm tra 
-![image](https://hackmd.io/_uploads/r1V_v01rgg.png)
+![image](https://github.com/user-attachments/assets/503c8823-e611-42fe-a175-e9981507d5d1)
 
 
 
