@@ -17,12 +17,12 @@
   - Bảo vệ trước nhiều lỗ hổng hơn.
 
 ### So sánh SSL và TLS:
-| Tiêu chí            | SSL                     | TLS                          |
-|---------------------|--------------------------|-------------------------------|
-| Kế thừa             | Giao thức gốc            | Kế nhiệm SSL, phiên bản mới  |
-| Thuật toán          | Yếu hơn                  | Mạnh và hiện đại hơn          |
-| Bảo mật             | Ít an toàn hơn           | An toàn hơn (loại bỏ lỗ hổng) |
-| Tên gọi             | "SSL" phổ biến            | Thực tế hiện nay dùng TLS     |
+| Tiêu chí       | SSL               | TLS                          |
+|----------------|-------------------|-------------------------------|
+| Kế thừa        | Giao thức gốc     | Kế nhiệm SSL, phiên bản mới   |
+| Thuật toán     | Yếu hơn           | Mạnh và hiện đại hơn          |
+| Bảo mật        | Ít an toàn hơn    | An toàn hơn (loại bỏ lỗ hổng) |
+| Tên gọi        | "SSL" phổ biến    | Thực tế hiện nay dùng TLS     |
 
 
 
