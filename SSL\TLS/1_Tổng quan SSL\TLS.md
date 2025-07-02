@@ -206,19 +206,19 @@ Chứng chỉ SSL/TLS là xương sống của bảo mật web, đóng vai trò 
 
 Các loại chứng chỉ SSL/TLS được phân loại dựa trên mức độ xác minh danh tính của chủ thể chứng chỉ mà CA thực hiện. Mức độ xác minh càng cao thì độ tin cậy càng lớn.
 
-- **DV (Domain Validation - Xác thực tên miền):**
+### **DV (Domain Validation - Xác thực tên miền):**
   - **Mức độ xác minh:** Thấp nhất.
   - **Quy trình xác minh:** CA chỉ xác minh quyền sở hữu tên miền của người đăng ký. Điều này thường được thực hiện thông qua email xác nhận gửi đến địa chỉ email quản trị của tên miền, bằng cách tạo một bản ghi DNS cụ thể, hoặc đặt một tệp tin trên máy chủ web.
   - **Thời gian cấp phát:** Nhanh chóng, thường chỉ vài phút đến vài giờ.
   - **Độ tin cậy:** Phù hợp cho các blog cá nhân, trang web nhỏ, hoặc các trang web không xử lý thông tin nhạy cảm. Người dùng chỉ thấy "HTTPS" và biểu tượng khóa.
   
-- **OV (Organization Validation - Xác thực tổ chức):**
+### **OV (Organization Validation - Xác thực tổ chức):**
   - **Mức độ xác minh:** Trung bình.
   - **Quy trình xác minh:** Ngoài việc xác minh quyền sở hữu tên miền, CA còn xác minh sự tồn tại hợp pháp của tổ chức/doanh nghiệp đăng ký chứng chỉ. Quá trình này bao gồm kiểm tra thông tin đăng ký kinh doanh, số điện thoại, địa chỉ vật lý, và các nguồn dữ liệu đáng tin cậy khác.
   - **Thời gian cấp phát:** Vài ngày làm việc, do có bước kiểm tra thủ công.
   - **Độ tin cậy:** Cao hơn DV, phù hợp cho các trang web thương mại điện tử, doanh nghiệp vừa và nhỏ, nơi cần thể hiện mức độ tin cậy nhất định.
   
-- **EV (Extended Validation - Xác thực mở rộng):**
+### **EV (Extended Validation - Xác thực mở rộng):**
   - **Mức độ xác minh:** Cao nhất.
   - **Quy trình xác minh:** CA tiến hành một quy trình xác minh cực kỳ nghiêm ngặt và toàn diện, bao gồm xác minh vật lý, pháp lý và hoạt động của tổ chức. Quy trình này tuân thủ các nguyên tắc do Diễn đàn CA/Browser Forum đặt ra.
   - **Thời gian cấp phát:** Vài ngày đến vài tuần, do quy trình xác minh chặt chẽ.
