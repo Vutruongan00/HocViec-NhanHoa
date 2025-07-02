@@ -382,19 +382,19 @@ Let's Encrypt đã thay đổi cuộc chơi trong thế giới SSL/TLS bằng c�
 
 Để cấp chứng chỉ DV, CA cần xác minh rằng người yêu cầu thực sự sở hữu hoặc có quyền kiểm soát tên miền mà họ đang yêu cầu chứng chỉ. Dưới đây là các phương pháp xác minh phổ biến:
 
-- **Xác minh DNS (DNS-01 Challenge):**
+### Xác minh DNS (DNS-01 Challenge):
   - **Cách thức:** CA sẽ yêu cầu tạo một bản ghi **TXT record** đặc biệt trong cấu hình DNS của tên miền của. Bản ghi này thường chứa một chuỗi mã hóa duy nhất do CA cung cấp.
   - **Ưu điểm:** Có thể tự động hóa hoàn toàn, không yêu cầu truy cập máy chủ web. Phù hợp cho các trang web đang chạy trên một máy chủ không thể truy cập HTTP hoặc khi muốn cấp chứng chỉ Wildcard.
   - **Nhược điểm:** Yêu cầu quyền truy cập vào cài đặt DNS của tên miền. Thời gian cập nhật bản ghi DNS có thể mất một chút thời gian.
-- **Xác minh Email (Email Validation):**
+### Xác minh Email (Email Validation):
   - **Cách thức:** CA gửi một email xác nhận đến một địa chỉ email quản trị cụ thể (ví dụ: `admin@yourdomain.com`, `hostmaster@yourdomain.com`, `webmaster@yourdomain.com`, hoặc địa chỉ email trong bản ghi WHOIS của tên miền).
   - **Ưu điểm:** Đơn giản và dễ thực hiện cho người dùng không am hiểu kỹ thuật.
   - **Nhược điểm:** Yêu cầu có quyền truy cập vào các tài khoản email quản trị đó. Có thể không tự động hóa được hoàn toàn cho tất cả các CA.
-- **Xác minh HTTP (HTTP-01 Challenge):**
+### Xác minh HTTP (HTTP-01 Challenge):
   - **Cách thức:** CA yêu cầu tạo một tệp tin đặc biệt với nội dung cụ thể và đặt nó vào một thư mục cụ thể (thường là `.well-known/acme-challenge/`) trên máy chủ web. CA sau đó sẽ truy cập URL đó để xác minh.
   - **Ưu điểm:** Dễ dàng tự động hóa với các công cụ như Certbot, không yêu cầu thay đổi DNS.
   - **Nhược điểm:** Yêu cầu máy chủ web phải có thể truy cập công khai qua HTTP. Không hoạt động được cho chứng chỉ Wildcard (vì Wildcard không gắn với một host cụ thể).
-- **CAA Record (Certificate Authority Authorization Record):**
+### CAA Record (Certificate Authority Authorization Record):
   - **Khái niệm:** Một loại bản ghi DNS cho phép chủ sở hữu tên miền chỉ định CA nào được phép cấp chứng chỉ cho tên miền của họ.
   - **Mục đích:** Tăng cường bảo mật bằng cách ngăn chặn các CA không được phép cấp chứng chỉ sai cho tên miền. Nếu một CA nhận được yêu cầu cấp chứng chỉ cho tên miền có bản ghi CAA không cho phép họ, họ phải từ chối yêu cầu đó.
   - **Vai trò trong xác minh:** Mặc dù CAA không phải là một phương pháp xác minh trực tiếp quyền sở hữu tên miền, nó là một kiểm tra bổ sung mà CA phải thực hiện trước khi cấp chứng chỉ. Nó giúp CA biết liệu họ có được phép cấp chứng chỉ cho tên miền đó hay không.
@@ -428,7 +428,7 @@ Let's Encrypt đã thay đổi cuộc chơi trong thế giới SSL/TLS bằng c�
 
 ## 5.1. Public Key – Private Key (Khóa công khai – Khóa bí mật)
 
-- **L**à một cặp khóa toán học được tạo ra đồng thời. Chúng có mối quan hệ đặc biệt:
+- **Là một cặp khóa toán học được tạo ra đồng thời. Chúng có mối quan hệ đặc biệt:**
   - Thông tin được mã hóa bằng một khóa chỉ có thể được giải mã bằng khóa kia trong cùng cặp.
   - Dữ liệu được ký bằng một khóa có thể được xác minh bằng khóa kia.
 - **Public Key (Khóa công khai):**
