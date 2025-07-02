@@ -24,24 +24,19 @@
 [tên miền] IN SOA [tên-server-dns] [địa-chỉ-email] (serial number; refresh number; retry number; expire number; time-to-live number)
 
 - Ví dụ cú pháp:
-
+```
 vutruongan.com. IN  SOA  ns1.zonedns.com.  dnsadmin.vutruongan.com. (
+       	  2025042601 ; Serial
+          3600       ; Refresh
+          1800       ; Retry
+          1209600    ; Expire
+          86400 )    ; Minimum TTL
+```
+Trong đó: 
 
-`       	 `2025042601 ; Serial
-
-`            `3600       ; Refresh
-
-`            `1800       ; Retry
-
-`            `1209600    ; Expire
-
-`            `86400 )    ; Minimum TTL
-
-`	`Trong đó: 
-
-- vutruongan.com.  -  Là tên miền của tôi cần khai báo SOA
-- ns1.zonedns.com. -  **Primary name server -NS:** giá trị DNS chính của tên miền hoặc máy chủ
-- dnsadmin.vutruongan.com.  - Là email của quản trị DNS của tên miền  (viết dạng DNS, tức là  <dnsadmin@vutruongan.com>)
+- `vutruongan.com.`  -  Là tên miền của tôi cần khai báo SOA
+- `ns1.zonedns.com.` -  **Primary name server -NS:** giá trị DNS chính của tên miền hoặc máy chủ
+- `dnsadmin.vutruongan.com.`  - Là email của quản trị DNS của tên miền  (viết dạng DNS, tức là  <dnsadmin@vutruongan.com>)
 - **Serial**: [2025042601] -  Mã phiên bản cấu hình DNS (dạng: YYYYMMDDNN), giúp các DNS phụ biết khi nào cần cập nhật
 - **Refresh**: [3600] - Sau 3600 giây (1 tiếng), các DNS phụ sẽ hỏi máy chính xem bản ghi có thay đổi không
 - **Retry**: [1800] -  Nếu hỏi thất bại, sẽ thử lại sau 1800 giây (30 phút)
