@@ -332,3 +332,25 @@ Domain | Document Root | FTP | Database | PHP Version
 
         - Ghi log phản hồi từ web server.
         - Hữu ích để gỡ lỗi khi gặp lỗi 404, 500, rewrite sai, hoặc tấn công từ client.
+---
+
+### Node Project
+`Node Project`  là chức năng dùng để tạo và quản lý các ứng dụng web chạy bằng Node.js, tương tự như `PHP Project` để chạy trang web viết bằng PHP.
+
+---
+### Proxy Project 
+- Tạo trang web đóng vai trò proxy để chuyển tiếp request đến máy chủ khác.
+- Nói cách khác: domain bạn cấu hình sẽ trỏ đến backend khác, thay vì host nội dung tại máy chủ aaPanel.
+![image](https://github.com/user-attachments/assets/a129ccae-d5db-4683-ab92-de4cc291c50d)
+
+| **Chức năng===**      | **Mô tả**                                                                                                           |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **Domain**        | Tên miền được gán cho site proxy. Nhấn vào tên site để cấu hình hoặc chỉnh sửa.                                           |
+| **Proxy Address** | Địa chỉ đích (target) mà proxy sẽ chuyển tiếp request đến. Ví dụ: `http://127.0.0.1:3000`                                 |
+| **SSL**           | Trạng thái SSL của site proxy. Nhấn vào để thêm hoặc cấu hình chứng chỉ SSL cho domain này (Let’s Encrypt hoặc thủ công). |
+| **Note**          | Ghi chú nội dung liên quan đến site hiện tại, giúp quản trị viên dễ nhớ vai trò hoặc mục đích.                            |
+| **Stats**         | Hiển thị thống kê lưu lượng, kết nối, v.v. thông qua plugin **Website statistics-v2** *(cần plugin Pro)*                  |
+| **WAF**           | Thiết lập và quản lý cấu hình **Tường lửa ứng dụng web (Web Application Firewall)** cho site hiện tại.                    |
+| **Modify**        | Mở giao diện chỉnh sửa cấu hình chi tiết của site: địa chỉ đích, SSL, rewrite rule, redirect…                             |
+| **Delete**        | Xoá hoàn toàn site proxy này khỏi aaPanel (cấu hình sẽ mất,                                                               |
+
