@@ -246,4 +246,89 @@ Domain | Document Root | FTP | Database | PHP Version
 #### Back up
 ![image](https://github.com/user-attachments/assets/3da6c6d7-9b7d-4800-9108-98d835eee8af)
 
-#### Ví dụ sử dụng:
+#### Ví dụ sử dụng
+
+- Add site 
+![image](https://github.com/user-attachments/assets/f0b102b5-bf81-4281-9baa-52065abca17e)
+
+- Up load source code lên tên miền vừa tạo:
+    - **Bước 1**: Trong danh sách tên miền, bạn nhấp vào đường dẫn Document root
+     ![image](https://github.com/user-attachments/assets/cd4e3676-b380-4b4a-94f8-87bc8fa98383)
+
+    - **Bước 2:** Xóa file `index.html` mặc định và chọn `Upload` để tải source code lên:
+    ![image](https://github.com/user-attachments/assets/272f4cda-9f7a-42e8-b1be-11ec8427a3a8)
+
+    ![image](https://github.com/user-attachments/assets/6258947a-a243-466f-8d80-b5a9e7210b24)
+
+- **Quản lý site**: Click chọn **Site name** hoặc **Conf**
+    ![image](https://github.com/user-attachments/assets/2eb50d85-eae6-4ef2-bc92-7bed8d34c87d)
+
+    - **Domain Manager:** 
+        ![image](https://github.com/user-attachments/assets/69d77490-1414-41ec-98d4-4029225be94e)
+        - Quản lý domain/subdomain của website.
+        - Bạn có thể thêm nhiều domain (VD: www.domain.com, test.domain.com).
+        - Hỗ trợ thêm port tùy chỉnh (VD: domain.com:88).
+        - Có thể xóa domain khỏi site bằng checkbox và nút Del.
+        
+    - **Subdirectory Binding:**
+    ![image](https://github.com/user-attachments/assets/cdc7f4d1-ee06-476c-8624-a1766ae87d9d)
+        - Gán thư mục con cho subdomain.
+        - Ví dụ: trỏ shops.antvpro.io.vn vào thư mục `/www/wwwroot/antvpro.io.vn/shops`.
+        - Phù hợp khi chạy nhiều ứng dụng nhỏ trên cùng domain chính.
+
+    - **Site Directory:**
+    ![image](https://github.com/user-attachments/assets/15387cc2-fdb9-4d1f-9ae5-ebd0a90d97dd)
+
+        - Quản lý đường dẫn thư mục chứa mã nguồn website.
+        - Có thể thay đổi thư mục gốc nếu cần.
+    
+    - **Limit Access:** Hạn chế /chặn truy cập thư mục
+    ![image](https://github.com/user-attachments/assets/6439a880-63c1-494e-a8a3-9b3c568353c0)
+
+    - **Traffic Control:** Giới hạn băng thông và kết nối
+    ![image](https://github.com/user-attachments/assets/9d7fb3b2-c16f-48c6-b3fa-fa0903c95b9a)
+        - Giúp ngăn chặn tình trạng quá tải hoặc tấn công DDoS đơn giản.
+        - `Turn on traffic control`: bật chức năng này
+        - `Limit plan`: chọn mẫu có sẵn
+        - `Limit of concurrency`: tổng số kết nối đồng thời tối đa
+        - `Block single IP`: số kết nối đồng thời tối đa 1 IP được phép
+        - `Traffic control`: giới hạn lưu lượng tối đa cho 1 request (KB)
+
+    - **URL Rewrite:** Cấu hình rewrite rule (giống `.htaccess`).
+    ![image](https://github.com/user-attachments/assets/c242726d-1db8-4e46-a247-e445239afc72)
+        - Chọn loại rule sẵn có hoặc tự viết
+        - Có hỗ trợ chuyển đổi rule từ Apache sang Nginx
+
+    - **Default Document:** Thiết lập tên file mặc định khi truy cập thư mục (VD: `index.html`, `index.php`...có thể ưu tiên cho file nào chạy trước:
+    ![image](https://github.com/user-attachments/assets/f169fe14-9e52-4b63-9456-bc1e2c2b0b5a)
+
+    - **Config:** Truy cập và chỉnh sửa cấu hình trực tiếp của web server cho site này
+    ![image](https://github.com/user-attachments/assets/2f6864d5-8803-400b-bc94-0829a9daae74)
+
+    - **SSL** - Cấu hình chứng chỉ HTTPS cho website.
+    ![image](https://github.com/user-attachments/assets/3621b2b6-f640-4f6e-bca2-4b8c8e3e1aec)
+
+        - Tạo SSL miễn phí Let’s Encrypt.
+        - Tải lên SSL tự ký hoặc mua từ nhà cung cấp
+        - Bật **Force HTTPS**: ép redirect toàn bộ HTTP → HTTPS
+
+    - **Redirect:** chuyển hướng URL
+    ![image](https://github.com/user-attachments/assets/c4a476d1-d09a-48c5-8ab3-99fe4184c454)
+
+        - Chuyển domain → domain khác.
+        - Chuyển www → non-www hoặc ngược lại.
+        - Chuyển sang HTTPS tùy điều kiện.
+        - `301` (Permanent Redirect): Chuyển hướng vĩnh viễn (tốt cho SEO)
+        - `302` (Temporary Redirect): Chuyển hướng tạm thời.
+    - **Reverse Proxy:**
+    ![image](https://github.com/user-attachments/assets/a4151842-9634-43d0-93d1-7c5ca64468bf)
+
+        - Thiết lập website như reverse proxy (giống nginx proxy_pass).
+        - Dùng để trỏ domain đến một server backend khác (VD: chạy NodeJS, Flask... trên port riêng).
+
+    - **Response Log:**
+    ![image](https://github.com/user-attachments/assets/480df125-f8ad-4021-b89e-31cd95da1cc9)
+
+
+        - Ghi log phản hồi từ web server.
+        - Hữu ích để gỡ lỗi khi gặp lỗi 404, 500, rewrite sai, hoặc tấn công từ client.
