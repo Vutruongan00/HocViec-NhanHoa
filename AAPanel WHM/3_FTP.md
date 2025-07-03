@@ -21,10 +21,12 @@
 ## Add FTP
 
 - Nhập `Username`,  `Password`, Document Root
+
 ![image](https://github.com/user-attachments/assets/b928c2e3-2a85-454c-87f1-ccbf76fe3771)
 
 ## Change FTP Port
 - Cổng dịch vụ FTP mặc định là 21, nếu đổi cổng chú ý mở tường lửa
+  
 ![image](https://github.com/user-attachments/assets/100bfadc-b40e-46b0-ab3d-49cdc6c691df)
 
 ## FTP log analysis (pro)
@@ -45,6 +47,7 @@
 
 
 ## Set Path - Cấu hình đường dẫn
+
 ![image](https://github.com/user-attachments/assets/9a843df4-7742-4574-b958-6775f123bfd5)
 
 - `Username ` : Tên người dùng của thư mục cần sửa đổi
