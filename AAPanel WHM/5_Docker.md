@@ -28,7 +28,8 @@
 
 ![image](https://github.com/user-attachments/assets/cb8e725c-0d52-42aa-8bf8-35f9fe272bc5)
 
-- Cấu hình proxy với domain `proxytest.antvpro.io.vn` và chuyển hướng toàn bộ trang web tới cổng `21080` mà container WP đang chạy 
+- Cấu hình proxy với domain `proxytest.antvpro.io.vn` và chuyển hướng toàn bộ trang web tới cổng `21080` mà container WP đang chạy
+
 ![image](https://github.com/user-attachments/assets/06edb8b3-700b-441f-912b-f47122752ca3)
 
 - truy cập --> http://proxytest.antvpro.io.vn
@@ -187,7 +188,8 @@ docker run -d --name mysql_test -p 3361:3306 -v /docker/mysql_data/:/var/lib/mys
     ![image](https://github.com/user-attachments/assets/e1a58cbd-1c79-4e13-90cc-6c6cff973f69)
 
     - Hoặc tự tạo mới bằng cách dán nội dung `docker-compose.yml` vào.
-    - ![image](https://github.com/user-attachments/assets/b64a43cb-51ac-4b35-9b9f-97c64022f4db)
+      
+    ![image](https://github.com/user-attachments/assets/b64a43cb-51ac-4b35-9b9f-97c64022f4db)
 
 
 - **Quản lý project**:
