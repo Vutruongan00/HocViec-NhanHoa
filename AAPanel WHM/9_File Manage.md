@@ -1,6 +1,6 @@
 > # FILE
 
-- là công cụ quản lý tệp/thư mục trực quan qua giao diện web, giúp:
+- Là công cụ quản lý tệp/thư mục trực quan qua giao diện web, giúp:
     - Tạo, sửa, xóa, di chuyển tệp/thư mục.
     - Nén/giải nén.
     - Chỉnh sửa nội dung trực tiếp.
