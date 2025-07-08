@@ -3,7 +3,7 @@
 # 2. Quản lý Logs & Giám sát hệ thống
 
 ## 2.1. Logs gửi/nhận mail
-- **Vị trí lưu **
+- **Vị trí lưu**
     - **CentOS/RHEL**: `/var/log/maillog`
     - **Debian/Ubuntu**: `/var/log/mail.log`
 
