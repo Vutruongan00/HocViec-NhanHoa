@@ -19,19 +19,20 @@ grep -i 'authentication' /opt/zimbra/log/mailbox.log | tail -n 50
 
 ## 2. Theo dõi Hoạt động Email (Ai gửi nhiều mail bất thường?)
 - Việc theo dõi email bất thường chủ yếu dựa vào **log của Mail Transfer Agent (MTA)** (ví dụ:  Postfix, Sendmail, Exim )
-- **File log chính:** `/var/log/zimbra.log
-`
-- Đếm số lượng mail gửi trong 1h theo user:
-```bash
-grep 'postfix/smtpd' /var/log/zimbra.log | grep -i 'sasl_username' | awk -F'sasl_username=' '{print $2}' | awk '{print $1}' | sort | uniq -c | sort -nr | head -10
+- **File log chính:** `/var/log/mail.log` (Debian/Ubuntu) hoặc `/var/log/maillog` (CentOS/RHEL)
+
+- Xem toàn bộ Log gửi/nhận:
+```bash!
+/opt/zimbra/libexec/zmmsgtrace
 ```
 
---> Output ví dụ:
-```graphql
-150 user1@example.com
-75  user2@example.com
+- Lọc Log theo người gửi (Sender): để tìm kiếm xem tài khoản nào đang gửi nhiều email bất thường:
+```bash!
+/opt/zimbra/libexec/zmmsgtrace -s user@yourdomain.com
 ```
-- Nếu thấy user nào gửi nhiều bất thường cần kiểm tra lại
+
+-
+
 ## 3. Tích hợp giám sát qua Zabbix / Grafana / ELK
 
 ## 4. Tích hợp fail2ban để chặn IP brute-force.
