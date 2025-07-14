@@ -1,10 +1,15 @@
 # Cài Đặt ZIMBRA (Ubuntu 22.04)
 
 > ### **Yêu cầu cài đặt:**
+> 
 > **OS**: Ubuntu 22.04 x64 (fresh cài đặt)
+> 
 > **RAM**: ≥ 4 GB (tốt nhất 8 GB nếu đầy đủ dịch vụ)
+> 
 > **Disk**: ≥ 40 GB
+> 
 > **Tên miền**: đã trỏ record A về IP (ví dụ: mail.antvpro.io.vn)
+> 
 > **Port**: 22, 25, 80, 443, 587, 465, 993 
 
 
