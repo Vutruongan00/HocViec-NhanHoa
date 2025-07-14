@@ -223,3 +223,165 @@ https://webmail.antvpro.io.vn/
 
 # 5. Anti-spam nâng cao: Rspamd
 
+ - **Zimbra FOSS** mặc định dùng **Amavis + SpamAssassin + ClamAV**, nhưng hiệu quả không cao --> Có thể tích hợp **Rspamd** đứng trước Zimbra để lọc spam tốt hơn
+
+>- **Mô hình**: Cài đặt **Postfix + Rspamd** trên 1 máy riêng (có thể chung với Roundcube) để làm Mail Gateway → Forward mail vào Zimbra.
+
+### BƯỚC 1: Cài đặt Rspamd & Redis trên máy Rspamd
+> ### IP: `34.80.242.189`
+
+```bash!
+# Thêm repo
+curl https://rspamd.com/apt-stable/gpg.key | sudo apt-key add -
+
+echo "deb https://rspamd.com/apt-stable/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/rspamd.list
+sudo apt update
+
+# Cài đặt Rspamd + Redis
+sudo apt install rspamd redis-server -y
+sudo systemctl enable --now redis-server
+sudo systemctl enable --now rspamd
+```
+
+### BƯỚC 2: Cấu hình Rspamd kết nối Redis
+```bash!
+sudo nano /etc/rspamd/local.d/redis.conf
+```
+- Thêm nội dung:
+```bash!
+servers = "127.0.0.1:6379";
+```
+
+### BƯỚC 3: Cấu hình Rspamd lắng nghe Milter từ xa (cho Zimbra kết nối)
+
+```bash
+sudo nano /etc/rspamd/local.d/worker-proxy.inc
+```
+- Thêm nội dung cấu hình sau:
+```bash!
+bind_socket = "0.0.0.0:11332";
+milter = yes;
+timeout = 120s;
+```
+
+### BƯỚC 4: Bật Web UI và Tạo Mật Khẩu truy cập (Tùy chọn)
+```bash!
+sudo rspamadm pw
+```
+- Output sẽ trả một mật khẩu đã được mã hóa dạng: 
+`$2$34zrciqueceug3nmtaaXXXXXXXXXXX...`
+
+- **Sau đó cấu hình WebUI:**
+
+```bash!
+# sudo nano /etc/rspamd/local.d/worker-controller.inc
+
+# Thêm nội dung sau:
+bind_socket = "0.0.0.0:11334";
+password = "$2$34zrciqueceug3nmtaaXXXXXXXXXXX...";
+```
+
+- Cấu hình xong **Khởi động lại Rspamd**
+```bash!
+sudo systemctl restart rspamd
+```
+- Kiểm tra lại cổng Rspamd đang lắng nghe:
+```bash!
+sudo ss -ltnp | grep 11332
+sudo ss -ltnp | grep 11334
+```
+
+- Truy cập: http://IP-Domain-your-server:11334
+
+<img width="1842" height="901" alt="image" src="https://github.com/user-attachments/assets/6cebd3d4-ac0c-4107-97d5-e2e6a87d0954" />
+
+
+### BƯỚC 5: Cấu hình Zimbra gọi Rspamd qua Milter (Thao tác trên máy Zimbra)
+
+```bash!
+zmprov mcf zimbraMtaSmtpdMilters "inet:34.80.242.189:11332"
+zmprov mcf zimbraMtaNonSmtpdMilters "inet:34.80.242.189:11332"
+zmprov mcf zimbraMtaMilterDefaultAction "accept"
+```
+- **Tắt Anti-Spam mặc định của Zimbra (Amavis + ClamAV):**
+```bash!
+zmprov ms $(zmhostname) -zimbraServiceEnabled antispam
+
+zmantispamctl stop
+
+# Kiểm tra lại các dịch vụ đang bật của Zimbra:
+zmprov gs $(zmhostname) | grep zimbraServiceEnabled
+```
+
+### BƯỚC 6:  Kiểm tra lại Postfix Milter trên Zimbra
+```bash!
+postconf smtpd_milters
+postconf non_smtpd_milters
+```
+- **Hoặc chỉnh trực tiếp:**
+```bash!
+postconf -e "smtpd_milters=inet:34.80.242.189:11332"
+postconf -e "non_smtpd_milters=inet:34.80.242.189:11332"
+postfix reload
+```
+- **Kiểm tra kết nối giữa 2 máy:**
+```bash!
+telnet 34.80.242.189 11332
+```
+--> Nếu thấy **`Connected to ...`**  → ✅ **OK**
+
+<img width="409" height="103" alt="image" src="https://github.com/user-attachments/assets/f0935053-66c0-41e8-a187-85395111d9ab" />
+
+### BƯỚC 7: Gửi Mail SPAM & Test Rspamd
+<img width="1888" height="881" alt="image" src="https://github.com/user-attachments/assets/8a8bab45-5473-4aa5-b81a-0617a9a32fc0" />
+
+.
+.
+.
+
+
+
+## 5.1. Một số module phổ biến trong Rspamd giúp tăng độ chính xác và hiệu quả trong việc lọc spam
+
+- **Bayes (Học spam/ham)**
+
+```ini
+# sudo nano /etc/rspamd/local.d/classifier-bayes.conf
+
+backend = "redis";
+autolearn = true;
+```
+> - **Bayes** là một hệ thống học máy giúp Rspamd phân biệt giữa **email spam** và **email hợp lệ (ham)** dựa trên nội dung.
+> - `backend = "redis"`: Dữ liệu học được lưu trong Redis để tăng tốc độ truy xuất.
+> - `autolearn = true`: Rspamd sẽ tự động học từ email được phân loại rõ ràng (VD: email bị đánh dấu là spam hoặc ham).
+
+- **Greylisting**:
+
+```ini=
+# sudo nano /etc/rspamd/local.d/greylist.conf
+
+enabled = true;
+servers = "127.0.0.1:6379";
+```
+> - Greylisting là kỹ thuật trì hoãn tạm thời email từ người gửi chưa biết để kiểm tra tính hợp lệ.
+> - Khi một email đến từ địa chỉ chưa từng thấy, Rspamd sẽ từ chối tạm thời.
+> - Máy chủ gửi hợp lệ sẽ thử gửi lại sau vài phút — spam bot thường không làm vậy.
+> --> Giảm lượng spam từ bot gửi hàng loạt.
+
+- **Ratelimit**
+```ini=
+# sudo nano /etc/rspamd/local.d/ratelimit.conf
+
+rates {
+  user = {
+    selector = "user.lower";
+    bucket = [1, 5, 10];
+  }
+}
+redis {
+  servers = "127.0.0.1:6379";
+}
+
+
+
+
