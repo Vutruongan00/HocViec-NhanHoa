@@ -75,3 +75,15 @@ zabbix_get -s 35.185.137.50 -k zimbra.mailbox.status
 ```
 <img width="632" height="88" alt="image" src="https://github.com/user-attachments/assets/bebbf74c-01a2-4e80-b5d0-cc082c10ea79" />
 
+---
+***Giải thích các thành phần chính**
+
+| Thành phần              | Giải thích                                                                                 |
+| ----------------------- | ------------------------------------------------------------------------------------------ |
+| `UserParameter=...`     | Định nghĩa custom item để agent có thể trả về giá trị riêng, ví dụ trạng thái từng dịch vụ |
+| `zmcontrol status`      | Lệnh kiểm tra tình trạng các dịch vụ Zimbra                                                |
+| `/tmp/zmcontrol_status` | File trung gian để agent đọc nhanh mà không phải chạy lệnh nặng                            |
+| `crontab */3`           | Cập nhật file mỗi 3 phút, tránh timeout                                                    |
+| `zabbix_get`            | Dùng trên Zabbix Server để test agent trả về gì                                            |
+| Template                | Giao diện tự động tạo các item và trigger trên Zabbix UI                                   |
+
