@@ -1,5 +1,4 @@
-
-# Install Zabbix Agent on Ubuntu 22.04
+# 1. Cài đặt Zabbix Agent trên Ubuntu 22.04
 
 ## Bước 1: **Cài đặt Zabbix Agent:**
 ```bash!
@@ -29,20 +28,31 @@ sudo systemctl enable zabbix-agent
 sudo systemctl status zabbix-agent
 ```
 
-![image](https://hackmd.io/_uploads/ryurbUmLgx.png)
+<img width="879" height="355" alt="image" src="https://github.com/user-attachments/assets/55bb5812-8ff7-4b29-91cd-c23560b76401" />
 
 ## Bước 3: Thêm Zabbix Client đến Zabbix Server
 - **Monitoring --> Hosts --> Create Host**
 - Hoặc/ **Data collection --> Hosts -->Create Host**
 - Điền những thông tin cần thiết
 
-![image](https://hackmd.io/_uploads/r1HLqLQLex.png)
+<img width="1913" height="899" alt="image" src="https://github.com/user-attachments/assets/19708b26-74cf-461c-a380-88a6c2ece6ce" />
 
-![image](https://hackmd.io/_uploads/Hy7-fF7Igg.png)
+<img width="1912" height="773" alt="image" src="https://github.com/user-attachments/assets/148db5ca-5113-4068-a074-6bddbb3f2265" />
 
-![image](https://hackmd.io/_uploads/HyTfGKQLll.png)
+<img width="1902" height="850" alt="image" src="https://github.com/user-attachments/assets/64fa768d-0db3-4fce-8e11-5edf6d2db86e" />
 
 - Kiểm tra trạng thái nếu hiện **Enabled** và **ZBX** màu xanh như ảnh thì khi đó máy chủ Zabbix sẽ bắt đầu nhận dữ liệu từ Zabbix Agent
 
-![image](https://hackmd.io/_uploads/HJD2lcXUge.png)
+<img width="1916" height="738" alt="image" src="https://github.com/user-attachments/assets/29384801-f534-4c02-ba31-12b870a731e5" />
+
+--- 
+
+
+
+
+
+
+
+
+
 
