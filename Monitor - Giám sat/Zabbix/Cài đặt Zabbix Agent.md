@@ -45,10 +45,9 @@ sudo systemctl status zabbix-agent
 
 <img width="1916" height="738" alt="image" src="https://github.com/user-attachments/assets/29384801-f534-4c02-ba31-12b870a731e5" />
 
---- 
-
-
-
+---
+[Link tham khảo Zabbix <3 Zimbra Template](https://mpolinowski.github.io/docs/DevOps/Zabbix/2022-07-15-zabbix-for-zimbra/2022-07-15/#zabbix-agent-2)
+---
 
 
 
