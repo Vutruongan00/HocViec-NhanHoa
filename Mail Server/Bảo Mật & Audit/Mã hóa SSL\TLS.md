@@ -113,7 +113,7 @@ cp /etc/letsencrypt/live/mail.antvpro.io.vn/privkey.pem /opt/zimbra/ssl/zimbra/c
 # Copy Server Certificate
 cp /etc/letsencrypt/live/mail.antvpro.io.vn/cert.pem /opt/zimbra/ssl/zimbra/commercial/commercial.crt
 # Copy CA Chain (chuỗi trung gian)
-cp /etc/letsencrypt/live/mail.antvpo.io.vn/chain.pem /opt/zimbra/ssl/zimbra/commercial/commercial_ca.crt
+cp /etc/letsencrypt/live/mail.antvpro.io.vn/chain.pem /opt/zimbra/ssl/zimbra/commercial/commercial_ca.crt
 ```
 
 #### Lưu ý quan trọng:
@@ -134,8 +134,6 @@ sudo chmod 600 /opt/zimbra/ssl/zimbra/commercial/commercial.key
 sudo chmod 644 /opt/zimbra/ssl/zimbra/commercial/commercial.crt
 sudo chmod 644 /opt/zimbra/ssl/zimbra/commercial/commercial_ca.crt
 ```
-
-
 
 ### 🔧 BƯỚC 4: Triển khai chứng chỉ cho Zimbra
 
@@ -169,6 +167,54 @@ Valid certificate chain: commercial.crt: OK
 - Kiểm tra truy cập Webmail Zimbra: https://mai.antvpro.io.vn
 
 ### BƯỚC 5 (tuỳ chọn): Tự động gia hạn
+
+---
+## 3. Cài đặt SSL SAN  với Let's Encrypt cho Zimbra Multi-Domain
+- **Giả định có thêm 2 domain:**  `mail2.antvpro.io.vn` và `mail3.antvpro.io.vn`
+- **Tạo domain:**
+```
+zmprov cd mail2.antvpro.io.vn
+zmprov cd mail3.antvpro.io.vn
+```
+- Kiểm tra:
+```
+zmprov -l gad
+```
+<img width="352" height="119" alt="image" src="https://github.com/user-attachments/assets/2de511c7-5ca4-4d01-993a-4cf4b8e11231" />
+
+- **Tạo User trong domain (Phải có ít nhất 1 user)**
+```
+zmprov ca user1@antvpro.io.vn 123456
+zmprov ca user2@mail2.antvpro.io.vn 123456
+zmprov ca user3@mail3.antvpro.io.vn 123456
+```
+- **Gán Virtual Host cho domain:** (Cái này quan trọng, đừng nên bỏ qua)
+> Zimbra dùng zimbraVirtualHostName để biết domain nào sẽ có server_name riêng trong file cấu hình NGINX.
+```bash
+zmprov md mail2.antvpro.io.vn zimbraVirtualHostName mail2.antvpro.io.vn
+zmprov md mail3.antvpro.io.vn zimbraVirtualHostName mail3.antvpro.io.vn
+```
+
+- **Chạy certbot để cấp SSL SAN Multi-domain:**
+```
+sudo certbot certonly --standalone \
+-d mail.antvpro.io.vn \
+-d mail2.antvpro.io.vn \
+-d mail3.antvpro.io.vn
+```
+- **Các bước Cài chứng chỉ vào Zimbra và Deploy chứng chỉ (Tương tự phần 2)** 
+
+- **Restart Zimbra để sinh lại nginx config:**
+```
+zmcontrol restart
+```
+
+- Kiểm tra lại truy cập Webmail
+	* [https://mail.antvpro.io.vn](https://mail.antvpro.io.vn)
+	* [https://mail2.antvpro.io.vn](https://mail2.antvpro.io.vn)
+	* [https://mail3.antvpro.io.vn](https://mail3.antvpro.io.vn)
+
+<img width="1025" height="573" alt="image" src="https://github.com/user-attachments/assets/ce8afc34-8bb4-475d-882d-e08d83d705a4" />
 
 
 ---
