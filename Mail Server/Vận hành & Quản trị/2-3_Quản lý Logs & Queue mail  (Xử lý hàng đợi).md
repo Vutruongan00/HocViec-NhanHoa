@@ -248,11 +248,11 @@ tail -f /var/log/zimbra.log
 
 
 
-### Bước 3: Xử lý - Cấu hình Zimbra sử dụng SMTP Relay qua SendGrid
+## 3.4 Cấu hình Zimbra sử dụng SMTP Relay qua SendGrid
 
-1. **Cấu hình máy chủ relay**
+### Bươc 1. **Cấu hình máy chủ relay**
 zmprov ms mail.antvpro.io.vn zimbraMtaRelayHost smtp.sendgrid.net
-2. **Tạo file thông tin xác thực:**
+### Bước 2. **Tạo file thông tin xác thực:**
 ```bash!
 echo "smtp.sendgrid.net apikey:SG.xxxxxxxxxxxxxxxxxxxx" > /opt/zimbra/conf/relay_password
 ```
@@ -263,17 +263,17 @@ echo "smtp.sendgrid.net apikey:SG.xxxxxxxxxxxxxxxxxxxx" > /opt/zimbra/conf/relay
 > - **Thiết lập SMTP Relay theo IP**: Chọn **IP Access Management -> Add IP Address:** nhập **IP server Zimbra**
 > ![image](https://github.com/user-attachments/assets/55d1805e-4344-4fc1-84ec-3f8bdeef0b90)
 
-3. **Tạo bản đồ LMDB cho Postfix**
+### Bước 3. **Tạo bản đồ LMDB cho Postfix**
 ```bash!
 postmap /opt/zimbra/conf/relay_password
 postmap -q smtp.sendgrid.net /opt/zimbra/conf/relay_password
 ```
-4. **Gán quyền file an toàn cho Zimbra:**
+### Bước 4. **Gán quyền file an toàn cho Zimbra:**
 ```bash!
 chmod 600 /opt/zimbra/conf/relay_password
 chown zimbra:zimbra /opt/zimbra/conf/relay_password
 ```
-5. **Cấu hình relay SMTP trong Zimbra:**
+### Bước 5. **Cấu hình relay SMTP trong Zimbra:**
 ```bash
 zmprov ms mail.antvpro.io.vn zimbraMtaSmtpSaslPasswordMaps lmdb:/opt/zimbra/conf/relay_password
 zmprov ms mail.antvpro.io.vn zimbraMtaSmtpSaslAuthEnable yes
@@ -281,8 +281,8 @@ zmprov ms mail.antvpro.io.vn zimbraMtaSmtpCnameOverridesServername no
 zmprov ms mail.antvpro.io.vn zimbraMtaSmtpTlsSecurityLevel may
 zmprov ms mail.antvpro.io.vn zimbraMtaSmtpSaslSecurityOptions noanonymous
 ```
-6. **Reload Postfix:**
+### Bước 6. **Reload Postfix:**
 ```bash!
 postfix reload
 ```
-### Bước 4: Test Gửi/Nhận email ra ngoài
+### Bước 7: Test Gửi/Nhận email ra ngoài
