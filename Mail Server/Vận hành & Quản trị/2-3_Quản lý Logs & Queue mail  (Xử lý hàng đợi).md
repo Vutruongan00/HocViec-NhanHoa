@@ -150,17 +150,17 @@ Các log này ghi lại hoạt động của người dùng khi họ truy cập 
 
 ---
 
-## 3. Quản lý Queue Mail 
+# 3. Quản lý Queue Mail 
 
 - **Queue mail (hàng đợi thư)** là một khu vực lưu trữ tạm thời trên mail server, nơi các email được giữ lại trước khi chúng được xử lý và gửi đi (hoặc chuyển giao cho MDA).
 - Khi một email không thể được gửi ngay lập tức (**ví dụ**: máy chủ nhận không khả dụng, lỗi mạng tạm thời, hoặc quá tải), MTA sẽ đưa nó vào hàng đợi và thử gửi lại sau.
 
-### 3.1 Kiểm tra Queue
+## 3.1 Kiểm tra Queue
 - `postqueue -p` (**Postfix**): hiển thị nội dung của hàng đợi Postfix.
 - `exim -bp` (**Exim**): hiển thị tóm tắt hoặc chi tiết các thư trong hàng đợi của Exim
 - `qmail-qstat` (cho **qmail**):
 
-### 3.2. Xử lý Mail "Stuck" (Thư bị kẹt)
+## 3.2. Xử lý Mail "Stuck" (Thư bị kẹt)
 
 Đôi khi, các email có thể bị kẹt trong hàng đợi vĩnh viễn (do lỗi cấu hình, địa chỉ đích không tồn tại, hoặc server đích không bao giờ phản hồi) 
 --> **cần xóa chúng**:
@@ -181,9 +181,9 @@ Các log này ghi lại hoạt động của người dùng khi họ truy cập 
 - **Zimbra**: Sử dụng postsuper -d như Postfix.
 
 ---
-### 3.3  Ví Dụ cụ thể về Xử lý eMail bị treo
+## 3.3  Ví Dụ cụ thể về Xử lý eMail bị treo
 
-#### Bước 1: Test gửi nhận email
+### Bước 1: Test gửi nhận email
 - Test thử dùng **`user1`** và **`user2`** gửi thư qua lại cho nhau
 
 ![image](https://github.com/user-attachments/assets/ad548947-0695-4bec-b9fc-7fd99243849b)
@@ -199,7 +199,7 @@ postqueue -p
 
 --> **Hai email này chưa được Zimbra MTA gửi đến LMTP/Mailbox server**, tức là vẫn **chưa vào inbox** do đang nằm trong queue.
 
-#### Bước 2: Đi tìm nguyên nhân
+### Bước 2: Đi tìm nguyên nhân
 
 - **Những nguyên nhân dẫn đến email bị kẹt trong hàng đợi queue**
     -  **Lỗi kết nối đến máy chủ đích:**
@@ -248,7 +248,7 @@ tail -f /var/log/zimbra.log
 
 
 
-#### Bước 3: Xử lý - Cấu hình Zimbra sử dụng SMTP Relay qua SendGrid
+### Bước 3: Xử lý - Cấu hình Zimbra sử dụng SMTP Relay qua SendGrid
 
 1. **Cấu hình máy chủ relay**
 zmprov ms mail.antvpro.io.vn zimbraMtaRelayHost smtp.sendgrid.net
@@ -285,4 +285,4 @@ zmprov ms mail.antvpro.io.vn zimbraMtaSmtpSaslSecurityOptions noanonymous
 ```bash!
 postfix reload
 ```
-#### Bước 4: Test Gửi/Nhận email
+### Bước 4: Test Gửi/Nhận email ra ngoài
