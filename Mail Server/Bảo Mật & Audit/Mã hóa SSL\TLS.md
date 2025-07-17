@@ -182,7 +182,7 @@ zmprov -l gad
 ```
 <img width="352" height="119" alt="image" src="https://github.com/user-attachments/assets/2de511c7-5ca4-4d01-993a-4cf4b8e11231" />
 
-- **Tạo User trong domain (Phải có ít nhất 1 user)**
+- **Tạo User trong domain (Phải có ít nhất 1 user cho mỗi domain)**
 ```
 zmprov ca user1@antvpro.io.vn 123456
 zmprov ca user2@mail2.antvpro.io.vn 123456
