@@ -150,15 +150,23 @@ Các log này ghi lại hoạt động của người dùng khi họ truy cập 
 
 ---
 
-# 3. Quản lý Queue Mail 
+# 3. Quản lý Postfix Queues trong Zimbra 
 
 - **Queue mail (hàng đợi thư)** là một khu vực lưu trữ tạm thời trên mail server, nơi các email được giữ lại trước khi chúng được xử lý và gửi đi (hoặc chuyển giao cho MDA).
 - Khi một email không thể được gửi ngay lập tức (**ví dụ**: máy chủ nhận không khả dụng, lỗi mạng tạm thời, hoặc quá tải), MTA sẽ đưa nó vào hàng đợi và thử gửi lại sau.
 
 ## 3.1 Kiểm tra Queue
-- `postqueue -p` (**Postfix**): hiển thị nội dung của hàng đợi Postfix.
+- `postqueue -p` hoặc `mailq` (**Postfix**): hiển thị nội dung của hàng đợi Postfix.
 - `exim -bp` (**Exim**): hiển thị tóm tắt hoặc chi tiết các thư trong hàng đợi của Exim
 - `qmail-qstat` (cho **qmail**):
+  
+-  Hiển thị tóm tắt số lượng hàng đợi:
+```
+sudo ~/libexec/zmqstat
+```
+<img width="456" height="152" alt="image" src="https://github.com/user-attachments/assets/31d5ee58-438c-4017-a66b-8c1b10721c67" />
+
+- **Xem tin nhắn trong Queue:**
 
 ## 3.2. Xử lý Mail "Stuck" (Thư bị kẹt)
 
@@ -170,15 +178,18 @@ Các log này ghi lại hoạt động của người dùng khi họ truy cập 
     ```
     postsuper -d A1B2C3D4E5
     ```
-    
-- `exim -Mrm <Message_ID>` (**Cho Exim**):
-    - Ví dụ: xóa thư có **ID** `QWERTY12345` 
-    ```
-    exim -Mrm QWERTY12345
-    ```
-    
-    
-- **Zimbra**: Sử dụng postsuper -d như Postfix.
+
+- **Xóa tất cả tin nhắn khỏi hàng chờ**
+  ```
+  postsuper -d ALL hold
+  ```
+
+--> **Hoặc gửi lại:**   
+```
+postsuper -r ALL  # gửi lại tất cả
+```
+
+> **Zimbra**: Sử dụng `postsuper` như Postfix.
 
 ---
 ## 3.3  Ví Dụ cụ thể về Xử lý eMail bị treo
@@ -197,7 +208,7 @@ postqueue -p
 ![image](https://github.com/user-attachments/assets/2ab50ae5-ef41-483a-a212-aa98d710f879)
 ![image](https://github.com/user-attachments/assets/dd576572-86f9-4c96-a570-f7f4cf28e42b)
 
---> **Hai email này chưa được Zimbra MTA gửi đến LMTP/Mailbox server**, tức là vẫn **chưa vào inbox** do đang nằm trong queue.
+--> **Hai email này chưa được Zimbra MTA gửi đến LMTP/Mailbox server**, tức là vẫn **chưa vào inbox** do đang nằm trong **queue**.
 
 ### Bước 2: Đi tìm nguyên nhân
 
