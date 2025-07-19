@@ -80,8 +80,6 @@ Quá trình hoạt động của MTA có thể được tóm tắt qua các bư�
 
 ### c. Các MTA phổ biến và đặc điểm nổi bật**
 
-Bạn đã liệt kê một số MTA phổ biến. Dưới đây là thông tin chi tiết hơn về chúng:
-
 * **Postfix:**
 
   * **Đặc điểm:** Nổi tiếng với tính bảo mật, hiệu suất cao và dễ cấu hình. Được thiết kế để là một sự thay thế an toàn và nhanh hơn cho Sendmail. Postfix hoạt động theo kiến trúc module, giúp tăng cường độ ổn định và khả năng phục hồi.
@@ -136,8 +134,6 @@ Quá trình hoạt động của MDA diễn ra sau khi MTA đã nhận được 
 5. **Thông báo (tùy chọn):** Trong một số trường hợp, MDA có thể kích hoạt các script hoặc hành động sau khi thư được gửi, ví dụ như thông báo cho người dùng mới có thư, lọc thư vào các thư mục cụ thể, hoặc chạy các bộ lọc tùy chỉnh.
 
 ### **c. Các MDA phổ biến và đặc điểm nổi bật**
-
-Bạn đã liệt kê **Dovecot** và **Cyrus**, đây là hai MDA rất phổ biến và mạnh mẽ:
 
 * **Dovecot:**
 
