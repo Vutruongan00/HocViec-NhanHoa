@@ -262,7 +262,9 @@ tail -f /var/log/zimbra.log
 ## 3.4 Cấu hình Zimbra sử dụng SMTP Relay qua SendGrid
 
 ### Bươc 1. **Cấu hình máy chủ relay**
+```
 zmprov ms mail.antvpro.io.vn zimbraMtaRelayHost smtp.sendgrid.net
+```
 ### Bước 2. **Tạo file thông tin xác thực:**
 ```bash!
 echo "smtp.sendgrid.net apikey:SG.xxxxxxxxxxxxxxxxxxxx" > /opt/zimbra/conf/relay_password
@@ -286,12 +288,15 @@ chown zimbra:zimbra /opt/zimbra/conf/relay_password
 ```
 ### Bước 5. **Cấu hình relay SMTP trong Zimbra:**
 ```bash
-zmprov ms mail.antvpro.io.vn zimbraMtaSmtpSaslPasswordMaps lmdb:/opt/zimbra/conf/relay_password
-zmprov ms mail.antvpro.io.vn zimbraMtaSmtpSaslAuthEnable yes
-zmprov ms mail.antvpro.io.vn zimbraMtaSmtpCnameOverridesServername no
-zmprov ms mail.antvpro.io.vn zimbraMtaSmtpTlsSecurityLevel may
-zmprov ms mail.antvpro.io.vn zimbraMtaSmtpSaslSecurityOptions noanonymous
+zmprov ms `zmhostname` zimbraMtaSmtpSaslPasswordMaps lmdb:/opt/zimbra/conf/relay_password
+zmprov ms `zmhostname` zimbraMtaSmtpSaslAuthEnable yes
+zmprov ms `zmhostname` zimbraMtaSmtpCnameOverridesServername no
+zmprov ms `zmhostname` zimbraMtaSmtpTlsSecurityLevel may
+zmprov ms `zmhostname` zimbraMtaSmtpSaslSecurityOptions noanonymous
+zmprov ms `zmhostname` zimbraMtaRelayHost smtp.sendgrid.net:587
 ```
+> Zimbra will reload the config after 2 minutes (by default) and your new changes will take affect.
+
 ### Bước 6. **Reload Postfix:**
 ```bash!
 postfix reload
