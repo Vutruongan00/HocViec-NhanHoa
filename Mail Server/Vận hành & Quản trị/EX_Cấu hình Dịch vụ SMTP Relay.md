@@ -92,11 +92,12 @@ chown zimbra:zimbra /opt/zimbra/conf/relay_password
 ```
 5. **Cấu hình relay SMTP trong Zimbra:**
 ```bash
-zmprov ms mail.antvpro.io.vn zimbraMtaSmtpSaslPasswordMaps lmdb:/opt/zimbra/conf/relay_password
-zmprov ms mail.antvpro.io.vn zimbraMtaSmtpSaslAuthEnable yes
-zmprov ms mail.antvpro.io.vn zimbraMtaSmtpCnameOverridesServername no
-zmprov ms mail.antvpro.io.vn zimbraMtaSmtpTlsSecurityLevel may
-zmprov ms mail.antvpro.io.vn zimbraMtaSmtpSaslSecurityOptions noanonymous
+zmprov ms `zmhostname` zimbraMtaSmtpSaslPasswordMaps lmdb:/opt/zimbra/conf/relay_password
+zmprov ms `zmhostname` zimbraMtaSmtpSaslAuthEnable yes
+zmprov ms `zmhostname` zimbraMtaSmtpCnameOverridesServername no
+zmprov ms `zmhostname` zimbraMtaSmtpTlsSecurityLevel may
+zmprov ms `zmhostname` zimbraMtaSmtpSaslSecurityOptions noanonymous
+zmprov ms `zmhostname` zimbraMtaRelayHost smtp.sendgrid.net:587
 ```
 6. **Reload Postfix:**
 ```bash!
