@@ -190,7 +190,7 @@ systemctl enable fail2ban
 tail -f /opt/zimbra/log/mailbox.log
 ```
 
-<img width="827" height="399" alt="image" src="https://github.com/user-attachments/assets/587f9d3c-fee2-49f3-8795-16323dcb7451" />
+<img width="1124" height="391" alt="image" src="https://github.com/user-attachments/assets/ede6c572-2d69-4db5-a641-bebbc2b4e624" />
 
 - **Đăng nhập sai lần thứ 4 --> Lỗi máy chủ**
 
