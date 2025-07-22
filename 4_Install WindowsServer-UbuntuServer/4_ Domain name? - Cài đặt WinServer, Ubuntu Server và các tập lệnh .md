@@ -6,6 +6,7 @@
 3. **Cài đặt Ubuntu Server trên VMWare và tìm hiểu các tập lệnh cơ bản**
    
 # **ĐÃ HOÀN THÀNH**
+
 ## 1. **Domain name?**
 - ` `Domain Name (tên miền) là địa chỉ dùng để xác định vị trí của một website trên Internet.
 - Nó thay thế cho địa chỉ IP khó nhớ (ví dụ: 172.217.194.100) thành một chuỗi dễ nhớ hơn (ví dụ: google.com).
@@ -44,6 +45,8 @@ Trình duyệt dùng IP đó để kết nối tới server chứa website.
 #### b. **Quốc tế**
 
 GoDaddy, Namecheap, Bluehost, Google Domain, Cloudflare
+
+---
 
 ## 2. **Install Windows Server 2016 trên VMWare và tìm hiểu các lệnh PowerShell cơ bản**
 - **Windows Server** là hệ điều hành do Microsoft phát triển dành riêng cho **máy chủ (server)** – nơi lưu trữ, xử lý dữ liệu và cung cấp dịch vụ mạng (như website, email, file sharing, domain, v.v.) cho nhiều máy tính khác.
@@ -92,6 +95,8 @@ Test-Connection, Get-NetIPAddress, New-NetIPAddress, Get-NetAdapter
 |Get-Service|Xem tất cả dịch vụ trên máy|Get-Service hoặc Get-Service -Name w32time|
 |Restart-Service|Khởi động lại dịch vụ|Restart-Service -Name w32time|
 |Set-Service|Thay đổi trạng thái khởi động của dịch vụ|Set-Service -Name w32time -StartupType Automatic|
+
+---
 
 ## 3. **Cài đặt Ubuntu Server trên VMWare và tìm hiểu các tập lệnh cơ bản (Đã cài đặt)**
 - **Ubuntu Server** là phiên bản hệ điều hành **Ubuntu** được thiết kế tối ưu cho **máy chủ (server)**. Không giống như Ubuntu Desktop, nó **không có giao diện đồ họa (GUI)** mặc định, chỉ sử dụng dòng lệnh (Terminal), giúp nhẹ hơn, tiết kiệm tài nguyên và an toàn hơn cho môi trường server.
