@@ -298,7 +298,7 @@ Chỉ **user root** hoặc người có quyền  sudo mới được thay đổi
 |**Lệnh**|**Mô tả**|
 | :-: | :-: |
 |hostname|Hiển thị tên hostname hiện tại.|
-|ip|Hiển thị và cấu hình giao diện mạng, định tuyến và [tunnel](https://vietnix.vn/vpn-tunnel/).|
+|ip|Hiển thị và cấu hình giao diện mạng, định tuyến và tunnel.|
 |iwconfig|Hiển thị và cấu hình giao diện mạng không dây.|
 |netplan|Cấu hình giao diện mạng bằng file YAML.|
 |ifconfig|Hiển thị và cấu hình giao diện mạng hiện tại của hệ thống.|
@@ -315,17 +315,17 @@ Dưới đây là các lệnh kết nối mạng dùng để quản lý và giá
 
 |**Lệnh**|**Mô tả**|
 | :-: | :-: |
-|arp|Ánh xạ địa chỉ IP với [địa chỉ MAC](https://vietnix.vn/dia-chi-mac-la-gi/) trên mạng LAN và quản lý bộ nhớ cache ARP.|
-|arp -a|In ra bảng [ARP](https://vietnix.vn/arp-la-gi/).|
+|arp|Ánh xạ địa chỉ IP với địa chỉ MAC trên mạng LAN và quản lý bộ nhớ cache ARP.|
+|arp -a|In ra bảng ARP .|
 |arp -a -d|Xóa tất cả các mục trong bảng ARP.|
 |arp -s|Thêm mục vào bảng ARP.|
 |netstat|Hiển thị các kết nối mạng đang hoạt động, bảng định tuyến và các thống kê mạng khác.|
 |netstat -r|Hiển thị bảng định tuyến.|
 |ping|Kiểm tra kết nối mạng giữa các máy chủ bằng cách gửi gói tin và đo thời gian phản hồi.|
-|route|Cấu hình bảng định tuyến của [kernel](https://vietnix.vn/kernel-la-gi/).|
+|route|Cấu hình bảng định tuyến của kernel.|
 |route flush|Xóa tất cả các route.|
 |traceroute|Hiển thị lộ trình mà gói tin đi đến một máy chủ từ xa qua nhiều hop.|
-|telnet|Thiết lập kết nối đến máy chủ/hệ thống từ xa thông qua mạng [TCP/IP](https://vietnix.vn/tcp-ip-la-gi/) bằng giao thức [Telnet](https://vietnix.vn/telnet-la-gi/).|
+|telnet|Thiết lập kết nối đến máy chủ/hệ thống từ xa thông qua mạng TCP/IP bằng giao thức Telnet.|
 |w|Hiển thị thông tin về những người dùng đang đăng nhập.|
 |mail|Gửi và nhận email bằng dòng lệnh.|
 |ngrep|Hiển thị và lọc dữ liệu gói tin mạng dựa trên biểu thức chính quy (regex).|
@@ -337,7 +337,7 @@ Dưới đây là các lệnh kết nối mạng dùng để quản lý và giá
 
 ### **Các lệnh DNS** 
 
-Các lệnh sau dùng để quản lý và khắc phục sự cố liên quan đến phân giải tên miền ([DNS](https://vietnix.vn/dns-la-gi/)).
+Các lệnh sau dùng để quản lý và khắc phục sự cố liên quan đến phân giải tên miền DNS.
 
 |**Lệnh**|**Mô tả**|
 | :-: | :-: |
@@ -347,16 +347,16 @@ Các lệnh sau dùng để quản lý và khắc phục sự cố liên quan đ
 
 ### **Các lệnh thông tin mạng**
 
-Dưới đây là một số lệnh mạng cơ bản giúp bạn thu thập thông tin về hệ thống từ xa, [tên miền](https://vietnix.vn/domain-la-gi/) và địa chỉ IP.
+Dưới đây là một số lệnh mạng cơ bản giúp bạn thu thập thông tin về hệ thống từ xa, tên miền và địa chỉ IP.
 
 |**Lệnh**|**Mô tả**|
 | :-: | :-: |
 |finger|Hiển thị thông tin đăng nhập của người dùng trên một hệ thống từ xa.|
-|jwhois|Lấy thông tin về quyền sở hữu tên miền từ các máy chủ [WHOIS](https://vietnix.vn/whois/).|
+|jwhois|Lấy thông tin về quyền sở hữu tên miền từ các máy chủ **WHOIS**.|
 
 ### **Các lệnh kiểm tra và giám sát mạng**
 
-Bạn có thể sử dụng các lệnh dưới đây để thực hiện các tác vụ như đo [băng thông](https://vietnix.vn/bang-thong-la-gi/) mạng, giám sát lưu lượng mạng và khắc phục sự cố kết nối mạng.
+Bạn có thể sử dụng các lệnh dưới đây để thực hiện các tác vụ như đo băng thông mạng, giám sát lưu lượng mạng và khắc phục sự cố kết nối mạng.
 
 |**Lệnh**|**Mô tả**|
 | :-: | :-: |
@@ -367,7 +367,7 @@ Bạn có thể sử dụng các lệnh dưới đây để thực hiện các t
 |socat|Chuyển dữ liệu giữa hai luồng byte hai chiều.|
 |speedometer|Hiển thị mức sử dụng băng thông theo thời gian thực.|
 |speedtest-cli|Đo hiệu suất mạng bằng cách thực hiện kiểm tra tốc độ.|
-|ss|Hiển thị các kết nối mạng đang hoạt động, thống kê [socket](https://vietnix.vn/socket-la-gi/) và các thông tin khác liên quan đến mạng.|
+|ss|Hiển thị các kết nối mạng đang hoạt động, thống kê socket và các thông tin khác liên quan đến mạng.|
 |tracepath|Theo dõi đường đi của gói tin đến một máy chủ đích, phát hiện MTU (Maximum Transmission Unit) tối đa trên đường đi.|
 
 ### **Các lệnh phân tích và giám sát mạng**
@@ -392,9 +392,9 @@ Các lệnh truy cập từ xa cho phép bạn kết nối một cách an toàn 
 
 |**Lệnh**|**Mô tả**|
 | :-: | :-: |
-|ssh|Kết nối an toàn đến một hệ thống từ xa bằng giao thức [SSH](https://vietnix.vn/ssh-la-gi/).|
-|scp|Sao chép file an toàn giữa máy [client](https://vietnix.vn/client-la-gi/) và server bằng giao thức SSH.|
-|sftp|Chuyển file an toàn giữa các server bằng giao thức [SFTP](https://vietnix.vn/sftp/).|
+|ssh|Kết nối an toàn đến một hệ thống từ xa bằng giao thức SSH.|
+|scp|Sao chép file an toàn giữa máy client và server bằng giao thức SSH.|
+|sftp|Chuyển file an toàn giữa các server bằng giao thức SFTP.|
 
 
 ### **Các lệnh bảo mật**
@@ -403,10 +403,10 @@ Các lệnh bảo mật giúp bạn chủ động theo dõi và kiểm soát cá
 
 |**Lệnh**|**Mô tả**|
 | :-: | :-: |
-|iptables|Tiện ích tường lửa quản lý lọc gói và [NAT](https://vietnix.vn/nat-la-gi/). (Network Address Translation).|
+|iptables|Tiện ích tường lửa quản lý lọc gói và **NAT**. (Network Address Translation).|
 |snort|Hệ thống phát hiện xâm nhập phân tích lưu lượng mạng để tìm kiếm hoạt động đáng ngờ.|
 |wireshark|Bắt và phân tích lưu lượng mạng ở dạng văn bản được định dạng.|
-|ufw|Quản lý [tường lửa](https://vietnix.vn/firewall-la-gi/) hệ thống và thêm/xóa/sửa đổi/đặt lại quy tắc lọc gói tin.|
+|ufw|Quản lý tường lửa hệ thống và thêm/xóa/sửa đổi/đặt lại quy tắc lọc gói tin.|
 
 Các lệnh bảo mật
 
@@ -562,7 +562,7 @@ Các lệnh tiện ích hỗ trợ thực hiện nhiều tác vụ như chuyển
 
   ``` pvcreate /dev/(tên phân vùng) ```
 
-  ![https://blog.cloud365.vn/images/img_lvm/tong_quan/screenshot_7.png](Aspose.Words.100f4d6a-f832-4608-96ea-b629fd8fad61.012.png)
+  ![](image/Aspose.Words.100f4d6a-f832-4608-96ea-b629fd8fad61.012.png)
 
 - kiểm tra lại bằng lệnh pvs xem ta tạo được thành công physical volume hay chưa:
 
