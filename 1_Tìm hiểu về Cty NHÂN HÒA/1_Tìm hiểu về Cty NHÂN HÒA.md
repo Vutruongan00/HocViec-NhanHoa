@@ -137,7 +137,7 @@ Khi bạn đăng ký tên miền để sử dụng các dịch vụ website, ema
 - UMail là dịch vụ email theo tên miền giúp doanh nghiệp có thể kết nối, tương tác với khách hàng/ đối tác một cách dễ dàng, nhanh chóng và chuyên nghiệp hơn.
 - Với UMail, doanh nghiệp có ngay một hệ thống quản lý tập trung email nhân viên, đồng thời tăng cường khả năng bảo mật với các cơ chế chống virus/ spam hiện đại.
 
-**\*\*Phân Loại\*\***
+**Phân Loại***
 
 - UMail có 4 phân loại cho người dùng 
 - Cá nhân
@@ -145,7 +145,7 @@ Khi bạn đăng ký tên miền để sử dụng các dịch vụ website, ema
 - Doanh nghiệp 
 - Chuyên nghiệp 
 
-**\*\*Tại sao nên sử dụng Umail?\*\***
+**Tại sao nên sử dụng Umail?***
 
 - Khẳng định, nâng tầm thương hiệu doanh nghiệp:
 
@@ -158,11 +158,11 @@ Khi bạn đăng ký tên miền để sử dụng các dịch vụ website, ema
 - Gia tăng độ tin cậy cho địa chỉ mail:
 - Nhờ chứng thực SPF/ DKIM xác định máy chủ mail được quyền gửi thư đại diện cho tên miền của doanh nghiệp, nội dung email sẽ được đánh giá cao hơn, đảm bảo đúng người gửi, không bị giả mạo, giảm tối đa email spam
 - Không bị bỏ sót bất cứ thông tin quan trọng nào do email được cài đặt cấu hình Catch-All, bạn có thể nhận được toàn bộ mail được gửi ngay cả trong trường hợp người gửi ghi sai tên mail.
-## 2. **Cài đặt và tìm hiểu các công cụ cần thiết:** 
+## 2. Cài đặt và tìm hiểu các công cụ cần thiết:
    ### 2.1. **VMware** 
 - VMware Workstation được biết đến là một phần mềm ảo mà tại đây người dùng có thể tạo một máy ảo làm việc trên máy tính của bạn. Tuy nhiên, máy ảo này lại hoạt động độc lập, do đó đây sẽ là môi trường lý tưởng để người dùng có thể thử nghiệm một vài hệ điều hành mới như Linux hoặc truy cập những website có độ tin cậy thấp. Bên cạnh đó, bạn còn có thể in và plug in USB drive. Công dụng chính của việc sử dụng máy ảo là để hạn chế tối đa những rủi ro ảnh hưởng đến hệ điều hành của máy tính thật.
 
-**\*Một số tính năng của VMware\*\***
+**Một số tính năng của VMware**
 
 - Người dùng có thể thử nghiệm chạy cùng lúc nhiều hệ điều hành khác nhau trên máy tính; 
 - Bất kỳ hệ điều hành nào cũng có thể tạo máy ảo và thử nghiệm như hệ điều hành Linux, Windows,... 
@@ -171,8 +171,8 @@ Khi bạn đăng ký tên miền để sử dụng các dịch vụ website, ema
 - Tối đa hóa các phần cứng, năng suất cho phép để dễ dàng thêm hoặc xóa máy tính ảo ra khỏi máy tính vật lý của bạn;
 - Khi kết nối với VMware vSphere, ESXi hoặc thậm chí các máy chủ, các server dự phòng, trạm workstation khác cũng rất đơn giản, tiện cho việc quản lý và điều khiển các máy ảo của VMware Workstation và máy chủ vật lý.
 
-  ### 2.2. **MobaXtermb / PuTTy**
-- Là** công cụ kết nối điều khiển máy chủ từ xa**,** thường dùng để** quản trị server (đặc biệt là Linux/VPS)** thông qua giao thức** SSH**.**
+  ### 2.2. MobaXtermb / PuTTy
+- Là công cụ kết nối điều khiển máy chủ từ xa, thường dùng để quản trị server (đặc biệt là Linux/VPS) thông qua giao thức** SSH**
 - **PuTTY:** nhẹ, cài nhanh, gọn (hợp với thao tác nhanh)
 
 ![](images/Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.001.png)
@@ -181,7 +181,7 @@ Khi bạn đăng ký tên miền để sử dụng các dịch vụ website, ema
 
 ![](images/Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.002.png)
 
-### 2.3. **Vitual studio code**
+### 2.3. Vitual studio code
 - **VS Code** là một **trình soạn thảo mã nguồn** do Microsoft phát triển.
   Nó dùng để **viết code, chỉnh sửa file, kết nối Git**, và cả **làm việc từ xa với server qua SSH**.
 
@@ -195,9 +195,9 @@ Khi bạn đăng ký tên miền để sử dụng các dịch vụ website, ema
 
 ![](images/Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.003.png)
 
-### 2.4. **Draw.io**
+### 2.4. Draw.io
 
-**Draw.io** (tên mới: **diagrams.net**) là **công cụ vẽ sơ đồ online miễn phí**, giúp bạn ta
+**Draw.io** (tên mới: **diagrams.net**) là **công cụ vẽ sơ đồ online miễn phí**, giúp thiết kế
 
 - Sơ đồ mạng
 - Sơ đồ cấu trúc server/hosting
@@ -205,7 +205,7 @@ Khi bạn đăng ký tên miền để sử dụng các dịch vụ website, ema
 - Lưu đồ (flowchart)
 - Kiến trúc dịch vụ (web, email, cloud...)
 
-## 3. **Tìm hiểu và sử dụng Github**
+## 3. Tìm hiểu và sử dụng Github
 - **Git** là một hệ thống quản lý phiên bản (Version Control System) giúp theo dõi lịch sử thay đổi của mã nguồn (code), cho phép làm việc nhóm hiệu quả, quay lại các phiên bản cũ, và đồng bộ code giữa các máy.
 - **Github** là một dịch vụ nổi tiếng cung cấp kho lưu trữ mã nguồn Git cho các dự án phần mềm. Github có đày đủ tính năng của Git, ngoài ra nó còn bổ sung những tính năng về social để các developer tương tác với nhau như :
 - Là công cụ giúp quản lý source code tổ chức theo dạng dữ liệu phân tán.
@@ -232,17 +232,17 @@ sau đó chạy lệnh git remote –v để kiểm tra lại
 
 - Sau khi thêm/sửa/xóa các file/thư mục trên repo vừa clone về, lần lượt chạy từng lệnh sau:
 
-git status → xem file nào thay đổi
+`git status` → xem file nào thay đổi
 
 ![](images/Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.007.png)
 
-git add . → đưa file vào danh sách theo dõi
+`git add .` → đưa file vào danh sách theo dõi
 
-git commit -m "…." → ghi lại thay đổi
+`git commit -m "…."` → ghi lại thay đổi
 
 ![](images/Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.008.png)
 
-git push -u origin master  → đẩy lên GitHub
+`git push -u origin master`  → đẩy lên GitHub
 
 ![](images/Aspose.Words.2222bb58-4ec5-48c1-b776-4b930bc3b77e.009.png)
 
@@ -264,7 +264,7 @@ git log → Xem lịch sử commit
 - viết tin nhắn trên diễn đàn
 - tạo văn bản có định dạng bằng một trình biên tập văn bản thô
    **Các cú pháp thường sử dụng:**
-###  4.1. **Tạo tiêu đề**
+###  4.1. Tạo tiêu đề
 Cú pháp:
 
 \# Tiêu đề loại 1
