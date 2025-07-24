@@ -1,9 +1,14 @@
 > # PLESK ADMIN - HOSTING SERVICES
 > <img width="697" height="378" alt="image" src="https://github.com/user-attachments/assets/f869eced-a361-4f71-8dd0-26aeff956eab" />
+>
 > - **Customers**: Quản lý tài khoản khách hàng sử dụng dịch vụ hosting.
+> 
 > - **Resellers**: Quản lý đại lý phân phối dịch vụ (reseller).
+>   
 > - **Domains**: Quản lý tên miền được cấp phát cho khách hàng.
+>
 > - **Subscriptions**: Quản lý gói dịch vụ cụ thể của từng khách hàng.
+> 
 > - **Service Plans**: Tạo và chỉnh sửa các gói dịch vụ hosting tiêu chuẩn.
 ---
 
