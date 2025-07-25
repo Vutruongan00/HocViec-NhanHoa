@@ -209,12 +209,32 @@
 
 - **📋 Danh sách tên miền**
 > Hiển thị thông tin chi tiết của từng tên miền:
-- 
+-
     * **Domain Name**: Tên miền như `antv.net`, `antvpro.lo.vn`, `shop.antvpro.lo.vn`.
     * **Subscriber**: Người đăng ký tên miền (ví dụ: ANTV Group, Vũ Trường An).
     * **Disk Usage**: Dung lượng đã sử dụng (hiện tại là 0 MB).
     * **Traffic**: Lưu lượng truy cập hàng tháng (0 MB/tháng).
     * **Status**: Trạng thái hoạt động (Active).
+## Add Domain - Thêm tên miền mới
+
+<img width="1642" height="620" alt="image" src="https://github.com/user-attachments/assets/f8448b0d-ef5f-415a-9d99-db8da4e34d14" />
+
+<img width="700" height="597" alt="image" src="https://github.com/user-attachments/assets/65d00f50-b27e-4749-b141-7a3bae28e1f1" />
+
+- Chọn các tùy chọn khởi tạo **website/subscription**:
+    - 1. **Starter page for HTML/PHP site**: Tạo trang web cơ bản với HTML hoặc PHP (mặc định đơn giản).
+    - 2. **From a local machine**: Tải mã nguồn website từ máy tính cá nhân lên server.
+    - 3. **Drag & Drop Website Builder**: Dùng công cụ kéo-thả để tạo website mà không cần viết mã.
+    - 4. **Pull files from a Git repository**: Kết nối với Git để triển khai website từ repo (GitHub, GitLab...).
+   - 5. **Latest WordPress version**: Cài đặt website WordPress mới nhất.
+   - 6. **Install a Laravel application**: Tạo website bằng framework Laravel (PHP hiện đại).
+   - 7. **Enable Node.js on your domain**: Kích hoạt môi trường Node.js để chạy ứng dụng web JavaScript.
+   - 8. **From another hosting service**: Nhập website từ dịch vụ hosting khác (di chuyển dữ liệu).
+   - 9. **Mail hosting only**: Tạo tên miền chỉ để dùng email, không có website.
+
+- Điền thông tin tên miền:
+
+<img width="801" height="462" alt="image" src="https://github.com/user-attachments/assets/a01b7765-09e5-48e2-80c8-bda45ca9cc7d" />
 
 ## Các phím biểu tượng đại diện cho các chức năng:
 
