@@ -410,10 +410,153 @@
 - **Move Domain**: Chuyển tên miền tới **subscription** khác
 - **Change domain name**: thay đổi tên tên miền
 
+---
+
+## Giao diện Quản lý 1 Domain cụ thể:
+- Click chọn vào một **Domain Name** mà bạn muốn quản lý:
+
+![image](https://hackmd.io/_uploads/ByCaCwewge.png)
+
+> Khi **click vào một domain cụ thể trong phần "Domains"**, Plesk sẽ chuyển sang giao diện **Subscription** tương ứng với domain đó. Đây là hành vi mặc định vì mỗi domain nằm trong một **subscription**, và toàn bộ cấu hình, tài nguyên, dịch vụ liên quan đều được quản lý theo subscription.
+
+![image](https://hackmd.io/_uploads/BJSuzugvxg.png)
+
+- **Các tab chức năng**
+
+    * **Dashboard**: Tổng quan dịch vụ đang dùng.
+    * **Hosting & DNS**: Cấu hình hosting, DNS, SSL...
+    * **Mail**: Quản lý email.
+    * **Get Started**: Hướng dẫn khởi tạo nhanh.
+
+### **🛠️ Dashboard**
+
+#### **Cấu hình & Kết nối**
+
+1. **Connection Info** – Thông tin kết nối FTP và database.
+2. **ODBC Data Sources** – Quản lý nguồn dữ liệu ODBC.
+3. **Virtual Directories** – Quản lý thư mục ảo (chỉ dùng cho hosting Windows).
+4. **PHP** – Cấu hình phiên bản và thiết lập PHP.
+5. **ASP.NET Settings** – Cấu hình ASP.NET (nếu dùng công nghệ .NET).
+6. **Monitoring** – Theo dõi tình trạng server (chưa kết nối).
+7. **Advisor** – Gợi ý tối ưu bảo mật và hiệu suất.
+
+---
+
+#### **🌐 Website & Bảo mật**
+
+8. **Git** – Kết nối và triển khai mã nguồn từ Git.
+9. **Website Importing** – Nhập website từ nơi khác về.
+10. **Website Copying** – Sao chép website sang domain khác.
+11. **SSL/TLS Certificates** – Quản lý chứng chỉ bảo mật HTTPS.
+12. **Password-Protected Directories** – Bảo vệ thư mục bằng mật khẩu.
+13. **Hotlink Protection** – Ngăn chặn website khác dùng hình ảnh/tài nguyên của bạn.
+
+---
+
+#### **📁 Tập tin & Dữ liệu**
+
+14. **Files** – Truy cập và quản lý tập tin website.
+15. **FTP** – Quản lý tài khoản FTP.
+16. **Databases** – Tạo và quản lý cơ sở dữ liệu.
+17. **PHP Composer** – Quản lý thư viện PHP qua Composer.
+
+---
+
+#### **🕒 Tác vụ & Sao lưu**
+
+18. **Scheduled Tasks** – Tạo cron job (tác vụ định kỳ).
+19. **Backup & Restore** – Sao lưu và khôi phục dữ liệu.
+20. **Logs** – Xem nhật ký hoạt động và lỗi.
+21. **Failed Request Tracing** – Ghi lại các yêu cầu lỗi để debug.
+
+---
+
+#### **📈 SEO & Tối ưu**
+
+22. **SEO** – Công cụ hỗ trợ tối ưu hóa công cụ tìm kiếm.
+
+---
+
+### Hosting & DNS
+
+![image](https://hackmd.io/_uploads/SyUY7dlvlg.png)
+
+#### Hosting 
+
+- [Xem ở đây](https://github.com/Vutruongan00/HocViec-NhanHoa/blob/main/PLESK_Panel/1_PLESK%20-%20Admin/%5BHosting%20Services%5D%20_%20Qu%E1%BA%A3n%20l%C3%BD%20d%E1%BB%8Bch%20v%E1%BB%A5%20l%C6%B0u%20tr%E1%BB%AF%20nh%C6%B0%20t%C3%AAn%20mi%E1%BB%81n,%20g%C3%B3i%20d%E1%BB%8Bch%20v%E1%BB%A5,%20v%C3%A0%20kh%C3%A1ch%20h%C3%A0ng.md#4-hosting-settings)
+
+#### DNS - Quản lý các bản ghi DNS cho tên miền
+
+![image](https://hackmd.io/_uploads/SJcjrugPeg.png)
+
+- **Các chức năng chính:**
+    - **Add Record**: Thêm bản ghi mới
+    - **Disable**: Tắt dịch vụ DNS local của tên miền
+    - **Switch to Secondary**: Chuyển qua lại giữa vai trò là server DNS chính, phụ của tên miền đang cấu hình
+    - **Reset to Default**: Đặt lại cấu hình bản ghi mặc định, tất cả các bản ghi tuỳ chỉnh sẽ bị xoá.
+    - **Remove**: Xoá bản ghi đang được chọn
+
+##### **Add Record**: Thêm bản ghi mới
+
+![image](https://hackmd.io/_uploads/ByxeuuePeg.png)
+
+##### Settings - Cài đặt các thông số khác
+
+![image](https://hackmd.io/_uploads/H18bYOgPlg.png)
+
+- Primary Name Server: Là máy chủ DNS chính chịu trách nhiệm quản lý vùng DNS này. Có thể chọn chế độ Autoselect, tức là hệ thống sẽ tự động chọn máy chủ chính. Hoặc lựa chọn thủ công.
+- Zone Defaults: TTL (Time To Live): Mặc định là 1 ngày. Đây là thời gian mà bản ghi DNS được lưu trong bộ nhớ cache của các máy chủ DNS khác trước khi được cập nhật lại.
+- SOA Record (Start of Authority): SOA là bản ghi đầu tiên trong một vùng DNS, chứa thông tin quản lý vùng. Các thông số:
+    - Refresh (3 giờ):Khoảng thời gian máy chủ phụ chờ trước khi kiểm tra lại bản ghi từ máy chủ chính.
+    - Retry (1 giờ): Nếu lần kiểm tra trước thất bại, máy chủ phụ sẽ thử lại sau thời gian này.
+    - Expire (2 tuần): Nếu không thể liên lạc với máy chủ chính trong thời gian này, máy chủ phụ sẽ ngừng phục vụ bản ghi.
+    - Minimum (3 giờ): Thời gian tối thiểu mà các máy chủ DNS khác nên lưu bản ghi trong cache.
+
+- Advanced DNS Features: Tính năng nâng cao
+    - Use the serial number format recommended by IETF and RIPE: Tùy chọn này bật định dạng số hiệu bản ghi (serial number) theo chuẩn quốc tế, giúp dễ quản lý và đồng bộ hóa bản ghi DNS.
+
+
+##### Zone Tranfers: Cấu hình chuyển zone DNS
+
+- Chức năng **Zone Transfers** trong DNS là để cho phép **máy chủ DNS phụ (secondary DNS)** sao chép toàn bộ vùng dữ liệu DNS từ **máy chủ DNS chính (primary DNS)**
 
 ---
 
 
+#### IIS Settings: Cấu hình máy chủ web IIS (dành cho Windows Server).
+
+#### Dedicated IIS Application Pool: Tạo môi trường riêng cho website chạy độc lập.
+
+#### Bandwidth Limiting: Giới hạn băng thông sử dụng.
+
+
+---
+
+### Mail - Quản lý Mail theo tên miền
+
+- [Click xem tại đây](https://github.com/Vutruongan00/HocViec-NhanHoa/blob/main/PLESK_Panel/1_PLESK%20-%20Admin/%5BHosting%20Services%5D%20_%20Qu%E1%BA%A3n%20l%C3%BD%20d%E1%BB%8Bch%20v%E1%BB%A5%20l%C6%B0u%20tr%E1%BB%AF%20nh%C6%B0%20t%C3%AAn%20mi%E1%BB%81n,%20g%C3%B3i%20d%E1%BB%8Bch%20v%E1%BB%A5,%20v%C3%A0%20kh%C3%A1ch%20h%C3%A0ng.md#2-mail-account---c%E1%BA%A5u-h%C3%ACnh-t%C3%A0i-kho%E1%BA%A3n-mail)
+
+![image](https://hackmd.io/_uploads/HJefiugwle.png)
+
+
+---
+---
+
+
+
+# 4. Subcriptions - Quản lý các gói đăng ký
+> Trong giao diện Subscriptions của Plesk, bạn có thể quản lý các gói dịch vụ hosting đã được đăng ký bởi khách hàng hoặc reseller.
+
+![image](https://hackmd.io/_uploads/Bk2KYwgwxg.png)
+
+- **Các chức năng chính**
+    * **Add Subscription**: Tạo gói dịch vụ mới cho khách hàng hoặc reseller.
+    * **Change Plan**: Thay đổi gói dịch vụ hiện tại (nâng cấp, hạ cấp...).
+    * **Change Subscriber**: Chuyển gói dịch vụ sang người dùng khác.
+    * **Set Status**: Bật/tắt hoặc tạm ngưng hoạt động của subscription.
+    * **Remove**: Xóa gói dịch vụ khỏi hệ thống.
+
+## 
 
 
 
@@ -422,10 +565,30 @@
 
 
 
-----
-# 4. Subcriptions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ---
 # 5. Service Plans
+
+
+
+
+
+
 
