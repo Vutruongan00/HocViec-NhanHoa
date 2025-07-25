@@ -400,13 +400,18 @@
     * Giới hạn dung lượng lưu trữ cho tên miền.
     * Giúp kiểm soát tài nguyên và tránh vượt mức.
 
+### 5. Các tùy chọn khác
+
+<img width="269" height="219" alt="image" src="https://github.com/user-attachments/assets/8434375b-ff90-4e8b-8a95-2cd8e67152f9" />
+
+- **Open**: Mở website
+- **Preview**: Mở phần preview
+- **Manage in Custom Panel / Manage in Reseller Panel**: Cho phép quản trị viên đăng nhập chuyển tới giao diện của khách hàng/reseller để quản lý, cấu hình.
+- **Move Domain**: Chuyển tên miền tới **subscription** khác
+- **Change domain name**: thay đổi tên tên miền
+
 
 ---
-
-
-
-
-
 
 
 
