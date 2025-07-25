@@ -315,8 +315,18 @@
 ---
 
 ### 3. Database - Quản lý Cơ sở dữ liệu
-<img width="722" height="183" alt="image" src="https://github.com/user-attachments/assets/8ca37e2d-cc39-420b-a296-738cd743f48d" />
+<img width="732" height="428" alt="image" src="https://github.com/user-attachments/assets/4d3c540a-cd8f-4e4d-9acf-a0bbdbe2b5c7" />
 
+- Các chức năng trong quản lý Database:
+    - 🔗 **phpMyAdmin**: Mở giao diện quản lý cơ sở dữ liệu qua trình duyệt.
+    - 📤 **Export Dump**: Xuất bản sao lưu (dump) của database ra file .sql hoặc .zip.
+    - 📥 **Import Dump**: Nhập dữ liệu từ file dump vào database hiện tại.
+    - 🔄 **Move to Subscription:** Di chuyển database sang một gói dịch vụ (subscription) khác.
+    - ℹ️ **Connection Info:** Hiển thị thông tin kết nối: host, port, username, password...
+    - 🗑️ **Remove Database:** Xóa toàn bộ database khỏi hệ thống.
+    - 📋 **Copy**: Tạo bản sao của database (rất hữu ích khi cần nhân bản cấu trúc/dữ liệu).
+    - 🔍 **Check and Repair**: Kiểm tra và sửa lỗi trong database (ví dụ: bảng bị hỏng, index lỗi...).
+  
 #### **🔹 + Add Database**
 
 <img width="731" height="720" alt="image" src="https://github.com/user-attachments/assets/479a74cf-14af-4cb0-915f-b5d2661e219f" />
@@ -333,7 +343,11 @@
 
 * Quản lý người dùng database: tạo mới, đổi mật khẩu, phân quyền.
 
+<img width="717" height="858" alt="image" src="https://github.com/user-attachments/assets/d1d022de-44d8-451c-b2dd-9d07a961905a" />
+
 #### **🔹 Backup Manager**
+
+<img width="721" height="398" alt="image" src="https://github.com/user-attachments/assets/9a9011c7-cfc8-4f43-b70d-051d2243306c" />
 
 * Sao lưu hoặc khôi phục cơ sở dữ liệu.
 * Có thể tải về bản sao lưu hoặc khôi phục từ bản sao trước đó.
