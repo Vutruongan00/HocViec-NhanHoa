@@ -1,4 +1,4 @@
-> # PLESK ADMIN - HOSTING SERVICES
+<img width="1649" height="852" alt="image" src="https://github.com/user-attachments/assets/b37ff27d-e4cc-430d-b313-4694f4b929bb" />> # PLESK ADMIN - HOSTING SERVICES
 > <img width="697" height="378" alt="image" src="https://github.com/user-attachments/assets/f869eced-a361-4f71-8dd0-26aeff956eab" />
 >
 > - **Customers**: Quản lý tài khoản khách hàng sử dụng dịch vụ hosting.
@@ -563,48 +563,263 @@
 ---
 
 
-
 # 4. Subcriptions - Quản lý các gói đăng ký
 > Trong giao diện Subscriptions của Plesk, bạn có thể quản lý các gói dịch vụ hosting đã được đăng ký bởi khách hàng hoặc reseller.
 
-![image](https://hackmd.io/_uploads/Bk2KYwgwxg.png)
+<img width="930" height="527" alt="image" src="https://github.com/user-attachments/assets/ac82a410-2e6f-4826-a9a4-6e81a000320e" />
 
 - **Các chức năng chính**
     * **Add Subscription**: Tạo gói dịch vụ mới cho khách hàng hoặc reseller.
     * **Change Plan**: Thay đổi gói dịch vụ hiện tại (nâng cấp, hạ cấp...).
+    * <img width="1390" height="419" alt="image" src="https://github.com/user-attachments/assets/41de69b4-9eaf-4f27-9c1d-63d4c19876fc" />
+
     * **Change Subscriber**: Chuyển gói dịch vụ sang người dùng khác.
+    * <img width="1354" height="902" alt="image" src="https://github.com/user-attachments/assets/6aa3af73-03b8-4e91-be4f-62479dedd3b4" />
+
     * **Set Status**: Bật/tắt hoặc tạm ngưng hoạt động của subscription.
     * **Remove**: Xóa gói dịch vụ khỏi hệ thống.
 
-## 
+## Add Subscription
+> Tạo gói dịch vụ mới cho khách hàng/reseller.
+Các tùy chọn khởi tạo website/subscription
 
+<img width="1499" height="587" alt="image" src="https://github.com/user-attachments/assets/a3bc138b-f49f-410e-a4a0-526484e96180" />
 
+- Chọn các tùy chọn khởi tạo **website/subscription**:
+- <img width="700" height="597" alt="image" src="https://github.com/user-attachments/assets/96943324-162e-428f-a6d5-1ac76459d005" />
 
+--> Tương tự như khi **Thêm tên miền mới -** [Add Domain](https://github.com/Vutruongan00/HocViec-NhanHoa/blob/main/PLESK_Panel/1_PLESK%20-%20Admin/%5BHosting%20Services%5D%20_%20Qu%E1%BA%A3n%20l%C3%BD%20d%E1%BB%8Bch%20v%E1%BB%A5%20l%C6%B0u%20tr%E1%BB%AF%20nh%C6%B0%20t%C3%AAn%20mi%E1%BB%81n,%20g%C3%B3i%20d%E1%BB%8Bch%20v%E1%BB%A5,%20v%C3%A0%20kh%C3%A1ch%20h%C3%A0ng.md#add-domain---th%C3%AAm-t%C3%AAn-mi%E1%BB%81n-m%E1%BB%9Bi)
 
+## Quản lý từng Subscriptions
+- Click chọn 1 gói bất kỳ để quản lý
 
+<img width="1347" height="649" alt="image" src="https://github.com/user-attachments/assets/524997ef-e7aa-4154-9b74-4ccc367ab1eb" />
 
+- Giao diện tổng quan quản lý theo từng Subcriptions:
 
+<img width="1917" height="859" alt="image" src="https://github.com/user-attachments/assets/f130a594-653c-48a9-b7fd-70f07f4f0914" />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Thanh chức năng chính: 
+    - **📂 Websites & Domains**: Quản lý tên miền, thư mục website, SSL, DNS, PHP, Git, Node.js...
+    - **📧 Mail**: Tạo và quản lý tài khoản email, alias, chuyển tiếp, chống spam...
+    - **🧩 Applications**: Cài đặt ứng dụng web như WordPress, Joomla, Laravel, v.v.
+    - **📁 Files**: Truy cập và quản lý tập tin website (File Manager).
+    - **🗄️ Databases**: Tạo và quản lý cơ sở dữ liệu (MySQL, MariaDB...).
+    - **📊 Statistics**: Xem thống kê dung lượng, băng thông, truy cập...
+    - **👥 Users**: Tạo và phân quyền người dùng phụ cho subscription.
+    - **🧾 Account**: Thông tin tài khoản, gói dịch vụ, giới hạn tài nguyên...
+    - **🌐 WordPress**: Quản lý tất cả các website WordPress trong subscription.
+    - **📈 SEO**: Công cụ hỗ trợ tối ưu hóa website cho công cụ tìm kiếm.
 
 
 
 ---
+---
+
 # 5. Service Plans
+- **Service Plan** là các gói dịch vụ định nghĩa tài nguyên, tính năng và quyền mà người dùng được cấp khi đăng ký hosting. Mỗi gói bao gồm các thông số như dung lượng ổ đĩa, băng thông, số lượng tên miền, hộp thư, cơ sở dữ liệu, và quyền thao tác như quản lý DNS, email, ứng dụng.
+- Quản trị viên có thể tạo, chỉnh sửa, gán hoặc mở rộng gói dịch vụ thông qua các add-on plans. Việc sử dụng Service Plans giúp chuẩn hóa cấu hình, tự động hóa cấp phát tài nguyên, và kiểm soát hiệu quả việc sử dụng dịch vụ.
+
+<img width="1905" height="672" alt="image" src="https://github.com/user-attachments/assets/af387321-5488-4fcc-a476-8be14875441b" />
+
+- **Các chức năng chính:**
+    - **Hosting Plans**: Cấu hình các gói dịch vụ, gói bổ sung add-ons
+    - **Reseller Plans**: Cấu hình các gói dịch vụ của Reseller.
+    - **Additional Services**: Cấu hình các gói dịch vụ bổ sung cung cấp kèm theo gói hosting
+
+## 5.1.  Hosting Plans 
+
+### Add a Plans - Thêm Gói dịch vụ mới
+
+- **Service plan name * :** Đặt tên cho gói dịch vụ 
+
+<img width="559" height="141" alt="image" src="https://github.com/user-attachments/assets/cce73a6b-ef2a-4a99-b477-a3cbb7e5b9cb" />
+
+ ***Các mục cần cấu hình, gồm:**
+ 
+#### Resources - Cấu hình giới hạn tài nguyên cho gói hosting
+
+- **Overuse Policy:** Quy định khi khách hàng vượt quá giới hạn tài nguyên:
+    - <img width="707" height="294" alt="image" src="https://github.com/user-attachments/assets/9cc3253d-677c-4a05-a5a1-b26401a1defe" />
+    - **Overuse is not allowe**: Không cho vượt.
+    - **Overuse of disk space and traffic is allowed**: Cho vượt dung lượng và băng thông.
+    - **Overuse is allowed (not recommended)**: Cho vượt toàn bộ (không khuyến nghị).
+
+
+- **Giới hạn dung lượng tài nguyên**
+    - <img width="679" height="271" alt="image" src="https://github.com/user-attachments/assets/6c5fa1ad-b640-4619-b37c-8358c715f3d7" />
+    * **Disk Space**: Giới hạn dung lượng lưu trữ (hoặc không giới hạn).
+    * **Traffic**: Giới hạn băng thông hàng tháng (hoặc không giới hạn).
+    * **Thông báo khi gần đầy**: Cảnh báo khi sử dụng gần hết tài nguyên.
+
+
+- **Giới hạn Website và tiên miền:**
+    - <img width="572" height="173" alt="image" src="https://github.com/user-attachments/assets/5a61d592-335b-4f1f-8391-3ee2e9aa314b" />
+    * **Domains**: Số lượng tên miền được phép.
+    * **Subdomains**: Số lượng tên miền phụ.
+    * **Domain Aliases**: Số lượng alias cho tên miền.
+
+- **Mail Settings:**
+    - <img width="573" height="214" alt="image" src="https://github.com/user-attachments/assets/6eeb97ce-153b-4c3a-b273-bd4cf2beefcc" />
+    * **Mailboxes**: Số lượng hộp thư email.
+    * **Mailbox Size**: Dung lượng mỗi hộp thư (MB).
+* **Web Users**: Người dùng web (tùy chọn không giới hạn).
+* **ODBC Connections**: Kết nối ODBC (tùy chọn không giới hạn).
+
+- **Các thông sô về CSDL và FTP:**
+    - <img width="666" height="442" alt="image" src="https://github.com/user-attachments/assets/58c88972-66b8-4248-b945-29a5c4f4539e" />
+    - **MariaDB/MySQL databases**: Số lượng database MySQL/MariaDB.
+    - **Total MariaDB/MySQL databases quota**: Tổng dung lượng cho tất cả database MySQL/MariaDB...
+    - **MS SQL database file size**: Dung lượng tối đa của file database MS SQL.
+
+- **Các Thông số về thời gian & WordPress:**
+    - <img width="725" height="482" alt="image" src="https://github.com/user-attachments/assets/0169ee04-6eed-4cbc-b982-b38bc14e5a5d" />
+    - **Expiration date**: Thời hạn sử dụng gói (tính theo ngày)
+    - **WordPress Websites:** Số lượng website WordPress có thể cài qua WP Toolkit...
+    - ...
+
+#### Permissions: Quyền mà người dùng hosting được phép sử dụng
+- Cấu hình quyền thao tác của khách hàng
+* Các quyền này xác định những gì khách hàng có thể tự thay đổi trong gói dịch vụ của họ sau khi đăng ký.
+* **Quản lý hệ thống và dịch vụ**
+    - <img width="476" height="161" alt="image" src="https://github.com/user-attachments/assets/7e2f3662-fd74-496d-88b8-6ec0f6f8db76" />
+    * **Remote Desktop Access**: Cho phép truy cập máy chủ qua Remote Desktop.
+    * **DNS Zone Management**: Cho phép khách hàng quản lý vùng DNS.
+    * **Hosting Settings Management**: Cho phép thay đổi các thiết lập hosting như hỗ trợ SSL/TLS, ngôn ngữ lập trình, tài liệu lỗi tùy chỉnh, và cấu hình máy chủ web.
+
+* **Quản lý PHP**
+    - <img width="476" height="115" alt="image" src="https://github.com/user-attachments/assets/f44879aa-cc28-412f-8b4f-415462d2185b" />
+    * **Common PHP Settings Management**: Cho phép điều chỉnh các thiết lập PHP chung cho từng website.
+    * **PHP Version and Handler Management**: Cho phép chọn phiên bản PHP và kiểu xử lý PHP cho từng website.
+
+* **Bảo mật và FTP**
+
+  * **Setup of Potentially Insecure Web Scripting Options**: Cho phép hoặc từ chối các thiết lập web không an toàn (ảnh hưởng đến bảo mật và khả năng quản lý PHP).
+  * **Anonymous FTP Management**: Cho phép quản lý dịch vụ FTP ẩn danh.
+* ...v.v..
+
+
+#### Hosting Parameters
+- Thiết lập các thông số kỹ thuật của hosting:
+    - <img width="1649" height="852" alt="image" src="https://github.com/user-attachments/assets/a12abd68-dc1c-4cc7-9d3a-4f3b488452d0" />
+    - **Web scripting**: Bật/tắt CGI, Perl, Python, SSI.
+    - **Web statistics**: Chọn công cụ thống kê như AWStats.
+    - **Anonymous FTP**: Cho phép FTP ẩn danh hay không.
+
+#### PHP Settings
+<img width="1510" height="858" alt="image" src="https://github.com/user-attachments/assets/205bbcbf-06fa-4b41-88f6-034e32a99482" />
+
+- Cấu hình môi trường PHP:
+    - **Phiên bản PHP**: Chọn phiên bản phù hợp.
+    - **Handler**: Apache module, FastCGI, FPM, v.v.
+    - **Giới hạn**: memory_limit, upload_max_filesize, max_execution_time.
+
+#### Mail - Thiết lập dịch vụ email:
+<img width="1117" height="854" alt="image" src="https://github.com/user-attachments/assets/68c8c21a-2631-4f6a-b46a-7cdaab08f0aa" />
+
+
+#### DNS
+- Cấu hình tùy chọn **Primary** tự quản lý DNS cho các domain trong gói hosting./ 
+- Hoặc **Secondary** nếu bạn đã có máy chủ DNS chính bên ngoài và chỉ muốn Plesk sao lưu hoặc hỗ trợ.
+<img width="703" height="263" alt="image" src="https://github.com/user-attachments/assets/a443a084-fc0f-48f5-8a7d-e28817f9b7c2" />
+
+#### Performance - Cấu hình hiệu suất:
+<img width="1136" height="876" alt="image" src="https://github.com/user-attachments/assets/fd618778-7f39-4f00-87c4-bec6bf469e80" />
+- CPU usage, RAM, I/O: Giới hạn tài nguyên hệ thống.
+- Process limits: Số lượng tiến trình tối đa.
+#### Logs & Statistics - Thiết lập ghi log và thống kê
+<img width="1033" height="660" alt="image" src="https://github.com/user-attachments/assets/4fcdb04a-ff51-4bda-8c8a-a0485301bc77" />
+- Log rotation: Tự động xoay vòng log
+- Web statistics: Công cụ thống kê truy cập web.
+#### Applications
+#### Additional Services
+
+
+---
+---
+
+## 5.2. Reseller Plans 
+
+<img width="936" height="609" alt="image" src="https://github.com/user-attachments/assets/ec0fba25-5697-408d-97a6-c58483a52254" />
+
+### Add Plan (Reseller)
+
+#### Resources - Thiết lập tài nguyên
+> Tương tự phần trước
+
+#### Permissions 
+> Tương tự
+
+#### IP Addresses
+- Cấu hình địa chỉ IP mà reseller có thể sử dụng cho các khách hàng của họ.
+
+<img width="1898" height="916" alt="image" src="https://github.com/user-attachments/assets/b6cc1ab5-63c8-4115-8458-c3613f98d34b" />
+
+- **Các tùy chọn chính:**
+
+    * **Allocate shared IP addresses**: Chọn địa chỉ IP dùng chung mà reseller có thể sử dụng (ví dụ: `103.170.123.157`).
+    * **Allocate dedicated IPv4 addresses**: Số lượng địa chỉ IPv4 riêng biệt cấp cho reseller.
+    * **Allocate dedicated IPv6 addresses**: Số lượng địa chỉ IPv6 riêng biệt cấp cho reseller.
+
+
+---
+
+## 5.3. Additional Services
+
+- Tab này cho phép bạn quản lý các dịch vụ bổ sung có thể được cung cấp kèm theo gói dịch vụ (Reseller Plan hoặc Hosting Plan). Đây là các dịch vụ không bắt buộc, nhưng có thể được thêm vào để mở rộng tính năng cho khách hàng.
+
+- Danh sách này hiển thị cả các dịch vụ được định nghĩa thủ công và các dịch vụ được cung cấp bởi các ứng dụng đã cài đặt dưới dạng tiện ích mở rộng của Plesk.
+
+- Việc thêm dịch vụ thủ công rất hữu ích khi bạn muốn hướng khách hàng đến một dịch vụ trực tuyến bên ngoài – thao tác này sẽ thêm một nút tương ứng vào giao diện khách hàng.
+
+- Theo mặc định, tất cả các dịch vụ bổ sung đều được liệt kê trong phần thuộc tính của gói hosting, tại tab Additional Services. Điều này cho phép bạn và các đại lý (resellers) đưa các dịch vụ này vào gói hosting.
+
+- Nếu bạn không muốn các đại lý sử dụng một dịch vụ và cung cấp nó cho khách hàng của họ, hãy sử dụng Make Unavailable để vô hiệu hóa dịch vụ đó.
+
+- Tổng quan giao diện
+
+<img width="1898" height="916" alt="image" src="https://github.com/user-attachments/assets/39d786de-d33a-4fed-89b4-c2d8a7621df9" />
+
+### Add Service - Thêm dịch vụ mới vào hệ thống
+
+<img width="688" height="900" alt="image" src="https://github.com/user-attachments/assets/b0b6d726-9f16-4805-9b52-76d1b35369ce" />
+
+* Các trường cần cấu hình
+
+  * **Service name** *(bắt buộc)*: Tên dịch vụ – sẽ hiển thị trên nút tùy chỉnh.
+  * **Service description** *(bắt buộc)*: Mô tả dịch vụ – sẽ hiển thị dưới dạng tooltip khi di chuột.
+  * **URL attached to the custom button** *(bắt buộc)*: Đường dẫn đến dịch vụ bên ngoài.
+  * **Background image for the custom button**: Hình nền cho nút dịch vụ (có thể tải lên file ảnh).
+  * **Tùy chọn hiển thị**
+
+    * **Use custom button for the service**: Hiển thị nút dịch vụ trên trang chính và trang website của người dùng.
+    * **Open the URL in Plesk**: Chọn cách mở liên kết – trong giao diện Plesk hoặc cửa sổ trình duyệt mới.
+    * **Do not use frames**: Nếu liên kết dẫn đến tiện ích mở rộng hoặc ứng dụng trong Plesk, bạn có thể chọn hiển thị trong khung (frame) hoặc tích hợp vào giao diện Plesk.
+    * Thêm thông tin động vào URL
+
+      * Có thể chèn các biến động vào URL để truyền thông tin người dùng: `&dom_id=<dom_id>`: ID của subscription `&dom_name=<dom_name>`: Tên miền chính `&ftp_user=<ftp_user>`: Tên người dùng FTP `&ftp_pass=<ftp_pass>`: Mật khẩu FTP `&cl_id=<cl_id>`: ID khách hàng `&cname=<cname>`: Tên công ty khách hàng `&pname=<pname>`: Tên liên hệ khách hàng `&email=<email>`: Email khách hàng → Những biến này giúp dịch vụ bên ngoài nhận diện người dùng và cung cấp nội dung phù hợp.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
