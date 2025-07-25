@@ -415,11 +415,11 @@
 ## Giao diện Quản lý 1 Domain cụ thể:
 - Click chọn vào một **Domain Name** mà bạn muốn quản lý:
 
-![image](https://hackmd.io/_uploads/ByCaCwewge.png)
+<img width="1894" height="661" alt="image" src="https://github.com/user-attachments/assets/f0034323-79cb-4a81-9672-0ca20ad99f7b" />
 
 > Khi **click vào một domain cụ thể trong phần "Domains"**, Plesk sẽ chuyển sang giao diện **Subscription** tương ứng với domain đó. Đây là hành vi mặc định vì mỗi domain nằm trong một **subscription**, và toàn bộ cấu hình, tài nguyên, dịch vụ liên quan đều được quản lý theo subscription.
 
-![image](https://hackmd.io/_uploads/BJSuzugvxg.png)
+<img width="1656" height="866" alt="image" src="https://github.com/user-attachments/assets/c2098bc9-fe59-4564-ac50-32b3efb2e1e9" />
 
 - **Các tab chức năng**
 
@@ -487,7 +487,7 @@
 
 #### DNS - Quản lý các bản ghi DNS cho tên miền
 
-![image](https://hackmd.io/_uploads/SJcjrugPeg.png)
+<img width="1411" height="507" alt="image" src="https://github.com/user-attachments/assets/2afc2121-cf25-4b36-8e2b-db3deb262ad1" />
 
 - **Các chức năng chính:**
     - **Add Record**: Thêm bản ghi mới
@@ -498,11 +498,11 @@
 
 ##### **Add Record**: Thêm bản ghi mới
 
-![image](https://hackmd.io/_uploads/ByxeuuePeg.png)
+<img width="730" height="427" alt="image" src="https://github.com/user-attachments/assets/4af87a6f-3ba8-41b1-8e98-883722c95d26" />
 
 ##### Settings - Cài đặt các thông số khác
 
-![image](https://hackmd.io/_uploads/H18bYOgPlg.png)
+<img width="750" height="648" alt="image" src="https://github.com/user-attachments/assets/674a745f-a4e9-45f2-b1fa-36810d45a51c" />
 
 - Primary Name Server: Là máy chủ DNS chính chịu trách nhiệm quản lý vùng DNS này. Có thể chọn chế độ Autoselect, tức là hệ thống sẽ tự động chọn máy chủ chính. Hoặc lựa chọn thủ công.
 - Zone Defaults: TTL (Time To Live): Mặc định là 1 ngày. Đây là thời gian mà bản ghi DNS được lưu trong bộ nhớ cache của các máy chủ DNS khác trước khi được cập nhật lại.
@@ -536,7 +536,7 @@
 
 - [Click xem tại đây](https://github.com/Vutruongan00/HocViec-NhanHoa/blob/main/PLESK_Panel/1_PLESK%20-%20Admin/%5BHosting%20Services%5D%20_%20Qu%E1%BA%A3n%20l%C3%BD%20d%E1%BB%8Bch%20v%E1%BB%A5%20l%C6%B0u%20tr%E1%BB%AF%20nh%C6%B0%20t%C3%AAn%20mi%E1%BB%81n,%20g%C3%B3i%20d%E1%BB%8Bch%20v%E1%BB%A5,%20v%C3%A0%20kh%C3%A1ch%20h%C3%A0ng.md#2-mail-account---c%E1%BA%A5u-h%C3%ACnh-t%C3%A0i-kho%E1%BA%A3n-mail)
 
-![image](https://hackmd.io/_uploads/HJefiugwle.png)
+<img width="685" height="224" alt="image" src="https://github.com/user-attachments/assets/ab86fca9-6207-49c1-ad70-12b93021b932" />
 
 
 ---
