@@ -1,4 +1,4 @@
-<img width="1649" height="852" alt="image" src="https://github.com/user-attachments/assets/b37ff27d-e4cc-430d-b313-4694f4b929bb" />> # PLESK ADMIN - HOSTING SERVICES
+> # PLESK ADMIN - HOSTING SERVICES
 > <img width="697" height="378" alt="image" src="https://github.com/user-attachments/assets/f869eced-a361-4f71-8dd0-26aeff956eab" />
 >
 > - **Customers**: Quản lý tài khoản khách hàng sử dụng dịch vụ hosting.
