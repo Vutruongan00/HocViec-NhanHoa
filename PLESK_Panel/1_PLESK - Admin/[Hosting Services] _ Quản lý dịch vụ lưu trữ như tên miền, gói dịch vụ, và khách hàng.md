@@ -499,7 +499,7 @@
 
 ### Hosting & DNS
 
-![image](https://hackmd.io/_uploads/SyUY7dlvlg.png)
+<img width="1411" height="507" alt="image" src="https://github.com/user-attachments/assets/1e338615-17e3-4c54-8e38-c2799eab2ea9" />
 
 #### Hosting 
 
