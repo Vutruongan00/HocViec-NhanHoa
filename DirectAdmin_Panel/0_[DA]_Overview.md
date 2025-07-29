@@ -51,8 +51,6 @@
 
 # 2. Giao diện tổng quan
 
-<img width="1902" height="921" alt="image" src="https://github.com/user-attachments/assets/8c8c16de-40a1-4bd5-a412-1f839d51a947" />
-
 ## Những cấp độ user trong DirectAdmin
 
 ### Administrator:
@@ -72,3 +70,58 @@
 * Cấp độ có quyền hạn thấp nhất.
 * Tài khoản được tạo ra bởi Admin hoặc Reseller.
 * Chỉ có quyền thay đổi thông tin liên quan đến tài khoản của mình.
+
+---
+
+## Giao diện Menu chính
+- Đây là nơi quản trị viên có thể theo dõi tình trạng hoạt động của các dịch vụ và tài nguyên hệ thống. 
+
+- Click vào biểu tượng DirectAdmin ở góc trên bên trái
+
+<img width="1897" height="910" alt="image" src="https://github.com/user-attachments/assets/b4b72e43-10be-4a87-b1db-f5ab1a8aeea9" />
+
+- **Menu**:
+    - Hiển thị toàn bộ các nhóm chức năng cấu hình trong hệ thống.
+    - Cho phép truy cập nhanh đến các khu vực như: Account Manager, Server Manager, Admin Tools, System Info & Files, v.v. 
+
+- **Widget**: Khu vực hiển thị các khối thông tin nhanh (widget) về tài nguyên và dịch vụ
+
+- <img width="1429" height="813" alt="image" src="https://github.com/user-attachments/assets/5487c541-6177-4e6f-b138-f1c014bf388f" />
+
+    - **SERVICE**: Tên dịch vụ (ví dụ: dovecot, exim, httpd, mysqlid, php-fpm, sshd, v.v.)
+    - **PID(S)**: Mã tiến trình (Process ID) tương ứng với từng dịch vụ
+    - **Memory Usage**: Dung lượng RAM mà dịch vụ đang sử dụng (hiển thị theo MB)
+
+- **Bên phải: Các nút chức năng thống kê và giám sát**: Gồm các nút chính, mỗi nút có tùy chọn **"VIEW MORE"** để xem chi tiết:
+
+    * **Reseller Stats** – Thống kê tài khoản đại lý
+    * **List Users** – Danh sách người dùng bạn đang quản lý
+    * **Admin Stats** – Thống kê tài khoản quản trị viên
+    * **All Users** – Danh sách toàn bộ tài khoản trên máy chủ
+    * **Mail Queue** – Hàng đợi email đang chờ gửi
+    * **Services** – Giám sát tất cả dịch vụ đang chạy
+
+---
+
+## My Messages - Thông báo
+Hiển thị các thông báo hệ thống, cảnh báo hoặc cập nhật.
+
+<img width="1902" height="673" alt="image" src="https://github.com/user-attachments/assets/54881dd2-53e3-4755-a0b1-18c0c150d369" />
+
+---
+
+## User Profile - Thông tin người dùng
+Truy cập thông tin tài khoản đang đăng nhập:
+
+<img width="1895" height="925" alt="image" src="https://github.com/user-attachments/assets/5cf35c6e-21ff-45e1-9dfd-46b9772773ff" />
+
+- **Thông tin cá nhân (Personal Information)**
+- **Quản lý mật khẩu (Password Management)**
+- **Cài đặt thông báo (Notification Settings)**
+- **Two-Step Authentication**: bật xác thực 2 lớp 
+- **Skin Options**: Tùy chỉnh giao diện hiển thị (giao diện sáng/tối, bố cục...).
+
+<img width="1892" height="918" alt="image" src="https://github.com/user-attachments/assets/aa0f8b22-da73-4a85-9027-c6742640be02" />
+
+## Language - tùy chọn ngôn ngữ
+
