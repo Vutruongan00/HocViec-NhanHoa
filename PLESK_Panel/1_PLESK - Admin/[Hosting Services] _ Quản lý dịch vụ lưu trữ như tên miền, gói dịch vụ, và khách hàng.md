@@ -15,15 +15,20 @@
 # 1. Customers - Quản lý khách hàng
 - Các chức năng chính trong giao diện **Customers:**
 - <img width="928" height="301" alt="image" src="https://github.com/user-attachments/assets/be68de81-1e24-436e-bdd8-97e03dd05993" />
+    
     - **Add Customer**: Tạo mới một tài khoản khách hàng.
+    
     - **Convert to Reseller**: Chuyển đổi khách hàng thành đại lý phân phối dịch vụ (**Reseller**).
+    
     - **Move to**: Cho phép bạn chuyển quyền sở hữu khách hàng từ một người dùng (hoặc reseller) sang một người dùng khác. Đây là cách để tái tổ chức hoặc phân quyền lại hệ thống hosting.
+    
     - **Change Status**: Kích hoạt hoặc vô hiệu hóa tài khoản khách hàng.
+    
     - **Remove**: Xóa tài khoản khách hàng khỏi hệ thống.
 
 ## Add Customer - Thêm Tài khoản cho khách hàng mới
 
-1. Đăng nhập vào **Plesk Administrator.**
+1. Đăng nhập vào **Plesk Administrator**
 2. Từ menu điều hướng bên trái, mở rộng  **Hosting Services**, sau đó nhấp vào  tab **Customers**
 
 <img width="202" height="286" alt="image" src="https://github.com/user-attachments/assets/c0105b88-1c6c-47d7-933d-26fc7bf93856" />
