@@ -567,3 +567,124 @@ Quản lý chứng chỉ bảo mật TLS/SSL cho máy chủ, giúp mã hóa kế
 ---
 
 # 3. Admin Tools
+**Admin Tools** là tập hợp các công cụ dành riêng cho quản trị viên hệ thống, giúp thực hiện các tác vụ giám sát, bảo trì, sao lưu, bảo mật và quản lý giao diện của máy chủ. Đây là nơi bạn có thể kiểm soát toàn diện hoạt động của hệ thống DirectAdmin từ cấp độ cao nhất.
+
+<img width="1365" height="352" alt="image" src="https://github.com/user-attachments/assets/fd2b3002-9e02-4087-965d-ffddddf1079c" />
+
+Các chức năng chính có trong Admin Tools:
+* **Admin Backup/Transfer** – Sao lưu hoặc chuyển dữ liệu hệ thống
+* **Brute Force Monitor** – Giám sát và phát hiện tấn công brute force
+* **Process Monitor** – Theo dõi các tiến trình đang chạy
+* **Mail Queue Administration** – Quản lý hàng đợi email
+* **Service Monitor** – Kiểm tra trạng thái các dịch vụ hệ thống
+* **System Backup** – Tạo bản sao lưu toàn bộ hệ thống
+* **cPanel Import** – Nhập dữ liệu từ tài khoản cPanel
+* **Message All Users** – Gửi thông báo đến toàn bộ người dùng
+* **Skin Manager** – Quản lý giao diện hệ thống
+* **Customize Evolution Skin** – Tùy chỉnh giao diện Evolution
+* **Maintenance** – Thực hiện các tác vụ bảo trì hệ thống
+
+## 3.1 Admin Backup/Transfer – Sao lưu hoặc chuyển dữ liệu hệ thống
+
+<img width="952" height="463" alt="image" src="https://github.com/user-attachments/assets/1d926a4c-a182-43b8-8ac7-b69d77438fd9" />
+
+- **Các chức năng trong Admin Backup/Transfer**
+    * **Site Backup (Sao lưu Trang web)**: Lối tắt đưa bạn đến giao diện sao lưu dành cho người dùng cuối.
+    * **Schedule Backups** – Lên lịch sao lưu tự động theo ngày/giờ định sẵn
+    * **Restore Backups** – Khôi phục dữ liệu từ bản sao lưu đã tạo
+    * **Danh sách lịch backup** – Hiển thị các lịch backup
+    * **Backup/Restore Settings** = (Cài đặt Sao lưu/Khôi phục):
+
+
+### Schedule Backups 
+Quá trình này được chia thành bốn bước chính: Xác định **Đối tượng** (**Who**), **Thời điểm** (**When**), Vị **trí lưu trữ (Where)** và **Nội dung (What) cần sao lưu.**
+
+<img width="956" height="779" alt="image" src="https://github.com/user-attachments/assets/f96db8be-c41d-461a-af2c-3d2d301354cf" />
+
+### Backup/Restore Settings
+<img width="887" height="613" alt="image" src="https://github.com/user-attachments/assets/d095bd8a-7285-4c26-9c42-8e67125c74ab" />
+
+- Giao diện của nút chức năng này cho phép cấu hình chi tiết cách hệ thống thực hiện sao lưu và khôi phục dữ liệu, gồm các tùy chọn:
+    - Gửi thông báo khi backup hoàn tất
+    - Khôi phục với NameServer hoặc SPF từ bản backup hoặc dùng giá trị local
+    - Kiểm tra xung đột domain trong file domainowners
+    - . . .
+
+---
+
+## 3.2. Brute Force Monitor
+Brute Force Monitor là công cụ giúp giám sát và phát hiện các cuộc tấn công brute force. Công cụ này giúp bảo vệ hệ thống khỏi bị truy cập trái phép bằng cách ghi nhận, cảnh báo và có thể chặn các IP đáng ngờ.
+
+<img width="1900" height="809" alt="image" src="https://github.com/user-attachments/assets/03b26d0c-267b-4cd2-b796-98e55252539f" />
+
+- **Các tab chức năng chính**
+- <img width="1405" height="189" alt="image" src="https://github.com/user-attachments/assets/e6d9f0a9-74df-4b0c-a9f4-7963385665cd" />
+
+    * **Failed Logins** – Hiển thị chi tiết các lần đăng nhập thất bại (lọc theo IP hoặc user)
+    * **Failed Logins: IP List** – Danh sách các IP có hành vi đăng nhập sai
+    * **Failed Logins: Usernames List** – Danh sách các username bị tấn công
+    * **Skip List** – Danh sách IP hoặc user được bỏ qua, không giám sát
+    * **Block List** – Danh sách IP đã bị chặn, có thể xem hoặc xóa
+
+- Ví dụ: trong Tab **Failed Login** - Hiển thị danh sách các lần đăng nhập thất bại, bao gồm các cột:
+    - Thời gian
+    - IP Address
+    - User
+    - Attempts – Số lần thử đăng nhập
+    - Filter – Loại hình tấn công hoặc phương thức bị phát hiện
+    - Log Entry – Nội dung nhật ký ghi lại lỗi hoặc cảnh báo
+
+
+---
+
+## 3.3. Process Monitor
+
+Giao diện Process Monitor hiển thị thông tin chi tiết về các tiến trình đang hoạt động, bao gồm thông tin tổng quan về hệ thống và một bảng danh sách các tiến trình riêng lẻ.
+
+<img width="1812" height="889" alt="image" src="https://github.com/user-attachments/assets/1ecda9d7-7fe8-4b1e-a1b1-1c26c25db04c" />
+
+
+## 3.4. Mail Queue Administration
+Cái này thì đơn giản là 1 công cụ để quản lý hàng đợi email thôi. Khi email không thể gửi ngay (do lỗi mạng, máy chủ đích không phản hồi...), nó sẽ được đưa vào hàng đợi. Công cụ này giúp bạn theo dõi, xử lý và kiểm soát các email đang chờ gửi.
+
+
+## 3.5. Service Monitor
+Service Monitor là công cụ dùng để giám sát trạng thái hoạt động của các dịch vụ hệ thống như web server, email, database, FTP, SSH... Công cụ này giúp quản trị viên kiểm tra nhanh xem dịch vụ nào đang chạy, bị lỗi, hoặc tiêu tốn nhiều tài nguyên.
+
+<img width="1833" height="804" alt="image" src="https://github.com/user-attachments/assets/926fb916-61cf-4cdc-a164-dbbe79502d92" />
+
+Chức năng này sẽ hiển thị: 
+- Bảng danh sách các dịch vụ
+- Trạng thái dịch vụ
+- PID
+- Memory Usage
+
+## 3.6. System Backup 
+
+System Backup là công cụ dùng để sao lưu toàn bộ hệ thống máy chủ, bao gồm dữ liệu web, email, database, cấu hình dịch vụ... Công cụ này giúp đảm bảo an toàn dữ liệu và khả năng khôi phục khi xảy ra sự cố.
+
+<img width="1826" height="909" alt="image" src="https://github.com/user-attachments/assets/321c05e1-9280-48d0-a9dc-4a978b4d50d3" />
+
+ **Giao diện System Backup gồm các phần chính**
+
+* **Basic Configuration** – Cấu hình sao lưu toàn bộ hệ thống
+* **Remote Transfer** – Thiết lập chuyển bản backup sang máy chủ từ xa
+* **Directories** – Chọn thư mục cần sao lưu
+* **Files** – Chọn file cụ thể để sao lưu
+* **Backup Path** – Đường dẫn lưu bản backup (`$MOUNT_POINT/backup`)
+* **Minimum Disk Space** – Thiết lập dung lượng tối thiểu để thực hiện backup
+* **Tùy chọn dữ liệu cần backup**:
+
+  * HTTPD data (web server)
+  * DNS data
+  * MySQL Databases
+  * Custom Directories & Files
+* **Add user home directories** – Tùy chọn thêm thư mục người dùng vào danh sách backup
+* **Nút RUN SYSTEM BACKUP** – Thực hiện sao lưu ngay
+
+* **View Last Backup Log** – Xem nhật ký backup gần nhất
+* **Cron Schedule** – Lên lịch backup tự động
+
+---
+
+# 4 
